@@ -1,0 +1,66 @@
+    :root {
+      --ink: #0b0c2a;
+      --muted: #6c757d;
+      --panel: #232437;
+      --accent-a: #2ad3c9;
+      --accent-b: #245bff;
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+
+    }
+
+    /* Css. Header */
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .5rem;
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      flex: 0 0 28px;
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      color: #2b2f36;
+      font-size: .95rem;
+    }
+
+    /* Breadcrumbs */
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    .topbar {
+      padding: 12px 0
+    }

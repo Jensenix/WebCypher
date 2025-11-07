@@ -22,8 +22,11 @@
             --panel: #232437;
             --accent-a: #2ad3c9;
             --accent-b: #245bff;
-        }
+            --brand-blue: #245bff;
+            --brand-teal: #2ad3c9;
 
+        }
+        
         body {
             font-family: "Rinter", system-ui, -apple-system, Segoe UI, Roboto,
                 "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
@@ -37,7 +40,7 @@
             background: linear-gradient(135deg, #60a5fa, #3b82f6);
             clip-path: path("M0,0 L0,80 Q360,160 720,80 T1440,80 L1440,0 Z");
         }
-        
+
 
         /* Shared badges/buttons (kept consistent with main) */
         .badge-soft {
@@ -55,9 +58,10 @@
             background: linear-gradient(270deg, var(--accent-a), var(--accent-b), var(--accent-a));
             background-size: 600% 600%;
             color: #fff !important;
+
             text-align: center;
             display: inline-block;
-            padding: 12px 26px;
+            padding: 16px 26px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
@@ -98,7 +102,7 @@
 
         /* ====== Header / hero ====== */
         .hero-about {
-            padding: 90px 0 40px;
+            padding: 60px 0 40px;
             background: #fff;
         }
 
@@ -249,6 +253,7 @@
             transition: .3s ease;
             height: 100%;
         }
+
         .member:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
@@ -262,7 +267,7 @@
         }
 
         .member h6 {
-            color: white ;
+            color: white;
             margin-top: 12px;
             margin-bottom: 4px;
             font-weight: 700;
@@ -323,8 +328,11 @@
         .cta-band {
             padding: 90px 0;
             color: #fff;
-            background: linear-gradient(180deg, var(--accent-a), var(--accent-b));
+            background: linear-gradient(180deg, #2ad3c877, var(--accent-b));
             text-align: center;
+            box-shadow: 0 0 170px #2ad3c8;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
         }
 
         .cta-band h2 {
@@ -373,10 +381,83 @@
         .footer-section {
             overflow: hidden;
         }
+
+        .topbar {
+            padding: 12px 0
+        }
+
+        /* Css. Header */
+        .back-link {
+            color: #5b6677;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .brand-chip {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            background: var(--surface);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+        }
+
+        .brand-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            flex: 0 0 28px;
+            background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: .9rem;
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: #2b2f36;
+            font-size: .95rem;
+        }
+
+        /* Breadcrumbs */
+        .crumbs {
+            font-size: .9rem;
+            color: #98a2b3
+        }
+
+        .crumbs a {
+            color: #6c7a8a;
+            text-decoration: none
+        }
+
+        .crumbs a:hover {
+            color: #2b2f36;
+            text-decoration: underline
+        }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
+    <header class="topbar">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+            <div class="brand-chip">
+                <div class="brand-avatar">C</div>
+                <div class="brand-name">Cypher Digital</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="crumbs mb-4 mt-3">
+            <a href="Main page.html">Home</a> &nbsp;›&nbsp; <strong>About Us</strong>
+        </div>
+    </div>
+
     <!-- ===== Hero / Intro ===== -->
     <section class="hero-about">
         <div class="container section-animate">
@@ -392,7 +473,7 @@
                     </p>
                     <div class="d-flex flex-wrap gap-3 mt-3">
                         <a href="index.html#idservice" class="btn-gradient">Lihat Layanan</a>
-                        <a href="#team" class="btn btn-outline-primary rounded-pill px-4">Kenal Tim</a>
+                        <a href="#team" class="btn btn-outline-primary rounded-pill py-3 px-4 ">Kenal Tim</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -548,7 +629,7 @@
     </section>
 
     <!-- ===== Timeline ===== -->
-    <section class="timeline" >
+    <section class="timeline">
         <div class="container section-animate">
             <div class="row g-4 align-items-start">
                 <div class="col-lg-5">
