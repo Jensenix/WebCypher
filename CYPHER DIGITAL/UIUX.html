@@ -1,0 +1,1459 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI/UX Design — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: Rinter;
+      src: url('Rinter.woff2')
+    }
+
+    :root {
+      --b: #245bff;
+      --t: #2ad3c9;
+      --ink: #0b0c2a;
+      --card: 18px
+    }
+
+    body {
+      font-family: Rinter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: var(--ink)
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      padding: .45rem .8rem;
+      border-radius: 999px
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      font-weight: 700
+    }
+
+    .hero {
+      padding: 24px 0 64px
+    }
+
+    /* .showcase {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden;
+      object-fit:cover;
+    }
+
+    .showcase:after {
+      content: 'hiiiiiiiiiii';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-size: 140px;
+    } */
+
+    .section {
+      padding: 56px 0
+    }
+
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .75rem 1rem
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .metric,
+    .case {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 18px
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      box-shadow: 0 10px 28px rgba(16, 24, 40, .06)
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25)
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    .price.pop {
+      border-color: #b7ccff;
+      box-shadow: 0 20px 44px rgba(36, 91, 255, .18);
+      min-height: 560px;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column
+    }
+
+    .price .btn {
+      margin-top: auto
+    }
+
+    .dark {
+      background: #0e1420;
+      color: #e8eef7
+    }
+
+    .tool {
+      background: #0f1a2a;
+      border: 1px solid #1d2a3d;
+      border-radius: 14px;
+      padding: 1rem;
+      text-align: center
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #e9f3ff
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    .thumb {
+      height: 200px;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+
+    }
+
+    .thumb img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+
+    }
+
+    /* Case Study Modal (CSS-only) */
+    .story-link {
+      display: block;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .story-modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1055;
+      background: rgba(13, 18, 28, .6);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease
+    }
+
+    .story-modal-overlay:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto
+    }
+
+    .story-modal {
+      width: min(920px, 95vw);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(13, 18, 28, .35);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform .2s ease
+    }
+
+    .story-modal-overlay:target .story-modal {
+      transform: translateY(0)
+    }
+
+    .story-modal .modal-hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff)
+    }
+
+    .modal-hero img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .story-modal .modal-hero {
+        height: 320px
+      }
+    }
+
+    .story-modal .modal-body {
+      padding: 18px 22px 24px
+    }
+
+    .story-modal .modal-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .story-modal .modal-sub {
+      color: #6c757d
+    }
+
+    .story-modal .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #1aa5a2;
+      font-weight: 800;
+      font-size: .8rem;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25);
+      margin-right: 8px
+    }
+
+    .overlay-close {
+      position: absolute;
+      inset: 0;
+      display: block
+    }
+
+    .cta {
+      background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b)));
+      color: #fff;
+      text-align: center;
+      padding: 80px 0
+    }
+
+    .faq .accordion-button {
+      border-radius: 12px;
+      background: #fff
+    }
+
+    .faq .accordion-item {
+      border: 0;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(24, 32, 56, .06)
+    }
+
+    .cta .btn {
+      font-weight: 700
+    }
+
+    .cta+footer {
+      margin-top: 0
+    }
+
+    footer {
+      background: #0e1420;
+      color: #94a3b8;
+      padding: 28px 0
+    }
+
+    /* Overrides to align with webdev header/logo and hero */
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      border-radius: 50px;
+      overflow: hidden;
+      justify-content: center;
+      padding: 0
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    .crumbs {
+      margin-bottom: 1.5rem
+    }
+
+    .hero {
+      padding: 24px 0 48px
+    }
+
+    .hero-left {
+      padding-top: 24px
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600
+    }
+
+    .hero-copy {
+      color: #6c757d;
+      max-width: 54ch
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-gradient {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    /* .showcase:after {
+      content: "</>";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-weight: 800;
+      font-size: 160px;
+      letter-spacing: -.04em
+    } */
+
+    @media (min-width:992px) {
+      .hero {
+        padding: 16px 0 88px
+      }
+
+      .showcase {
+        height: 440px
+      }
+    }
+
+    /* Hide duplicate CTA placed right after hero */
+    .hero+.cta {
+      display: none
+    }
+
+    /* Ensure inner CTA (if used) is visible */
+    /* .section.pt-0 .cta{display:none} */
+  </style>
+  <style>
+    /* Align styling patterns with webdev.html */
+    @font-face {
+      font-family: 'Rinter';
+      src: url('Rinter.woff2');
+    }
+
+    :root {
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+      --ink: #0b0c2a;
+      --muted: #6c757d;
+      --surface: #ffffff;
+      --canvas: #f8f9fa;
+      --card-radius: 18px;
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: 'Rinter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Top bar + crumbs */
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .back-link:hover {
+      color: #2b2f36
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3;
+      margin-bottom: 1.5rem
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    /* Hero */
+    .hero {
+      padding: 24px 0 48px
+    }
+
+    .hero-left {
+      padding-top: 24px
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 54ch
+    }
+
+    /* @media (min-width: 992px) {
+      .hero {
+        padding: 16px 0 88px
+      }
+    }
+ */
+    /* Buttons */
+    .btn-gradient {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25);
+    }
+
+    .btn-gradient:hover {
+      filter: brightness(1.02)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      font-weight: 700;
+    }
+
+    /* Showcase */
+    .showcase {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* .showcase::after {
+      content: "<ee/>";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-weight: 800;
+      font-size: 160px;
+      letter-spacing: -.04em;
+    } */
+
+    /* @media (min-width: 992px) {
+      .showcase {
+        height: 440px
+      }
+    } */
+
+    /* Sections */
+    .section {
+      padding: 56px 0
+    }
+
+    .section h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-align: center;
+    }
+
+    .section p.lead {
+      color: var(--muted);
+      text-align: center;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Pills and chips */
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: #364152;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    /* Cards */
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(24, 32, 56, .08);
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25);
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+    }
+
+    .price.pop {
+      outline: 2px solid #356dff
+    }
+
+    /* Dark tools */
+    .dark {
+      background: #0e1220;
+      color: #e9eef5
+    }
+
+    .tool {
+      background: #12172a;
+      border: 1px solid #2a3045;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      color: #d8deea;
+    }
+
+    /* Results band */
+    .band {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      color: #e9f3ff
+    }
+
+    .band p.lead {
+      color: #ffffff
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 18px
+    }
+
+    /* Thumbs */
+    /* .thumb {
+      height: 200px;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5
+    } */
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b)));
+      color: #fff;
+      text-align: center;
+      padding: 80px 0
+    }
+
+    .cta+footer {
+      margin-top: 0
+    }
+
+    .cta .btn {
+      font-weight: 700;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 12px
+    }
+
+    .cta .form-control {
+      border-radius: 12px;
+      max-width: 280px
+    }
+
+    /* Badges */
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e1220;
+      color: #b7c1d6;
+      padding: 24px 0;
+      text-align: center
+    }
+
+    /* Utilities */
+    .hero+.cta {
+      display: none
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar + crumbs -->
+  <div class="container topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+      <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="crumbs mb-2">Home › <a href="#">Services</a> › UI/UX Design</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-start g-4 g-lg-5">
+        <div class="col-lg-6 hero-left">
+          <span class="badge-custom">USER‑CENTERED</span>
+          <h1 class="display-4 hero-title mb-3">UI/UX Design</h1>
+          <h5 class="hero-sub mb-3">Interfaces That Users Love</h5>
+          <p class="hero-copy mb-4">We craft beautiful, intuitive interfaces that delight users and drive engagement.
+            Every pixel is intentional, every interaction meaningful.</p>
+          <div class="d-flex gap-3">
+            <a class="btn btn-gradient" href="#contact">Get Started →</a>
+            <a class="btn btn-outline" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase"><img src="UIUX Icon/UIUX SHOWCASE.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Modals -->
+  <div id="ux-case1" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="uxTitle1">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="UIUX Icon/Healthcare Patient.png" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="badge bg-info-subtle text-info fw-bold">UI/UX Design</span>
+        <h3 id="uxTitle1" class="modal-title mt-2 mb-1">Healthcare Patient Portal</h3>
+        <div class="modal-sub mb-3">MediCare Plus</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>95% user satisfaction</li>
+            <li><span class="check-dot">✓</span>60% fewer support tickets</li>
+            <li><span class="check-dot">✓</span>+180% online bookings</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Tools:</div>
+          <span class="chip">Figma</span> <span class="chip">User Testing</span> <span class="chip">Prototyping</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="ux-case2" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="uxTitle2">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="UIUX Icon/Travel Booking.png" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="badge bg-info-subtle text-info fw-bold">UI/UX Design</span>
+        <h3 id="uxTitle2" class="modal-title mt-2 mb-1">Travel Booking Platform</h3>
+        <div class="modal-sub mb-3">WanderLust Travel</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>+220% conversion</li>
+            <li><span class="check-dot">✓</span>+340% mobile bookings</li>
+            <li><span class="check-dot">✓</span>-55% cart abandonment</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Tools:</div>
+          <span class="chip">Figma</span> <span class="chip">Adobe XD</span> <span class="chip">Maze</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Design That Converts -->
+  <section class="section pt-0">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Design That Converts</h2>
+      <p class="lead text-muted mb-4">Create memorable experiences that keep users coming back</p>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="pill">✓ User research & personas</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Information architecture & flows</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ High‑fidelity mockups & prototypes</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Design systems for consistency</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Usability testing & iteration</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Accessibility‑first (WCAG 2.1)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section" style="background:#f7fafc">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">What You Get</h2>
+      <p class="lead text-muted mb-4">Comprehensive solutions designed for excellence</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/User Research.png" alt=""></div>
+              <div class="fw-bold">User Research</div>
+            </div>
+            <div class="text-muted">Interviews, analytics, personas, journey maps.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/Visual Design.png" alt=""></div>
+              <div class="fw-bold">Visual Design</div>
+            </div>
+            <div class="text-muted">Brand‑aligned UI that captivates.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/User Testing.png" alt=""></div>
+              <div class="fw-bold">User Testing</div>
+            </div>
+            <div class="text-muted">Feedback integrated in every iteration.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/Design system.png" alt=""></div>
+              <div class="fw-bold">Design Systems</div>
+            </div>
+            <div class="text-muted">Scalable component libraries.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/Conversion focus.png" alt=""></div>
+              <div class="fw-bold">Conversion Focus</div>
+            </div>
+            <div class="text-muted">Optimize for engagement & metrics.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="UIUX Icon/Micro Interaction.png" alt=""></div>
+              <div class="fw-bold">Micro‑interactions</div>
+            </div>
+            <div class="text-muted">Delightful animations & transitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Our Process</h2>
+      <p class="lead text-muted mb-4">A proven methodology that delivers results</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">1</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">RESEARCH</div>
+                <div class="fw-semibold">Understanding Users</div>
+              </div>
+            </div>
+            <div class="text-muted">Research, personas, journeys.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Report</span> <span
+                class="chip">Personas</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">2</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">STRATEGY</div>
+                <div class="fw-semibold">Information Architecture</div>
+              </div>
+            </div>
+            <div class="text-muted">Sitemap, user flows, wireframes.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Sitemap</span> <span
+                class="chip">Flows</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">3</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">DESIGN</div>
+                <div class="fw-semibold">Visual Design</div>
+              </div>
+            </div>
+            <div class="text-muted">High‑fidelity UI & prototypes.</div>
+            <div class="mt-2"><span class="chip time">2‑4 weeks</span> <span class="chip">Design System</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">4</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">TESTING</div>
+                <div class="fw-semibold">Validate & Iterate</div>
+              </div>
+            </div>
+            <div class="text-muted">Usability tests and refinements.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">A/B</span> <span
+                class="chip">Accessibility</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">5</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">HANDOFF</div>
+                <div class="fw-semibold">Developer‑Ready</div>
+              </div>
+            </div>
+            <div class="text-muted">Docs and assets for dev.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Export</span> <span
+                class="chip">Docs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Investment Options</h2>
+      <p class="lead text-muted mb-4">Flexible packages to match your needs</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Essentials</div>
+            <div class="display-5 mb-3">$5,000 <span class="fs-6 text-muted">USD</span></div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Up to 10 screens</li>
+              <li>✓ Research & personas</li>
+              <li>✓ Wireframes</li>
+              <li>✓ High‑fidelity mockups</li>
+              <li>✓ Prototype</li>
+              <li>✓ Style guide</li>
+              <li>✓ 2 revisions</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price pop p-3">
+            <div class="d-flex justify-content-between">
+              <div class="h5">Complete</div><span class="badge bg-primary-subtle text-primary fw-bold">Most
+                Popular</span>
+            </div>
+            <div class="display-5 mb-3">$12,000 <span class="fs-6 text-muted">USD</span></div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Up to 30 screens</li>
+              <li>✓ In‑depth research</li>
+              <li>✓ Flows & journeys</li>
+              <li>✓ Interactive prototype</li>
+              <li>✓ Design system</li>
+              <li>✓ Usability testing</li>
+              <li>✓ Dev handoff</li>
+              <li>✓ Unlimited revisions</li>
+            </ul><a class="btn btn-gradient w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Enterprise</div>
+            <div class="display-5 mb-3">Custom</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Unlimited screens</li>
+              <li>✓ Advanced research</li>
+              <li>✓ A/B testing</li>
+              <li>✓ Workshops</li>
+              <li>✓ Dedicated designer</li>
+              <li>✓ Ongoing support</li>
+              <li>✓ White‑label</li>
+              <li>✓ Priority support</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Client Testimonials</h2>
+      <p class="lead text-muted mb-4">Hear from those who've worked with us</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"UX improvements elevated satisfaction from 68% to 95%. Truly user‑centered."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden;">
+                <img src="https://i.pravatar.cc/40?img=20" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">Emily Watson</div>
+                <div class="text-muted">VP of Product, MediCare Plus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"Our booking conversion more than doubled after the redesign. Best investment."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden;">
+                <img src="https://i.pravatar.cc/40?img=22" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">David Park</div>
+                <div class="text-muted">Head of Digital, WanderLust Travel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Technologies & Tools</h2>
+      <p class="lead mb-4">Industry‑leading tools for exceptional results</p>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="tool">Figma<br /><small>Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Adobe XD<br /><small>Prototyping</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Sketch<br /><small>UI</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">InVision<br /><small>Collaboration</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Maze<br /><small>Testing</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Hotjar<br /><small>Analytics</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Principle<br /><small>Animation</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Zeplin<br /><small>Handoff</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Proven Results</h2>
+      <p class="lead mb-4">Data-backed outcomes from real projects</p>
+
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="92" data-suffix="%">+92%</div>
+            <div>User Satisfaction</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="156" data-suffix="%">+156%</div>
+            <div>Conversion Rate</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="-40" data-suffix="%">-40%</div>
+            <div>Task Time</div>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="73" data-suffix="%">+73%</div>
+            <div>Return Users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="idsuccess" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Success Stories</h2>
+      <p class="lead text-muted mb-4">Real results from real clients</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <a href="#ux-case1" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="UIUX Icon/Healthcare Patient.png" alt="">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">UI/UX Design</span>
+                <div class="h5 mb-1">Healthcare Patient Portal</div>
+                <div class="text-muted mb-2">MediCare Plus</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ 95% satisfaction</li>
+                  <li>✓ 60% fewer tickets</li>
+                  <li>✓ +180% bookings</li>
+                </ul>
+                <div><span class="chip">Figma</span> <span class="chip">Testing</span> <span class="chip">Proto</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#ux-case2" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="UIUX Icon/Travel Booking.png" alt="">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">UI/UX Design</span>
+                <div class="h5 mb-1">Travel Booking Platform</div>
+                <div class="text-muted mb-2">WanderLust Travel</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ +220% conversion</li>
+                  <li>✓ +340% mobile bookings</li>
+                  <li>✓ ‑55% cart abandon</li>
+                </ul>
+                <div><span class="chip">Figma</span> <span class="chip">Adobe XD</span> <span class="chip">Maze</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ    -->
+  <section class="section faq py-5" id="faq">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Frequently Asked Questions</h2>
+      <p class="lead text-muted mb-4">Everything you need to know</p>
+
+      <div class="accordion" id="faqUIUX">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u1">
+              What is included in a UI/UX design project?
+            </button>
+          </h2>
+          <div id="u1" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              Our UI/UX projects include research, personas, information architecture, wireframes,
+              high-fidelity designs, prototype, and developer-ready assets/design system.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u2">
+              Do you design for web, mobile, or both?
+            </button>
+          </h2>
+          <div id="u2" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              We design for both web and mobile (iOS/Android). Each layout follows a responsive
+              grid system and platform-specific UI guidelines.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u3">
+              How long does UI/UX design take?
+            </button>
+          </h2>
+          <div id="u3" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              On average 2–5 weeks depending on project complexity, number of screens, and revisions.
+              A dashboard app requires more time than a landing page.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u4">
+              Can you redesign our existing app?
+            </button>
+          </h2>
+          <div id="u4" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              Yes. We audit your UI usability, improve structure, reduce friction, and modernize your
+              visual identity without disrupting existing workflows.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u5">
+              Do you provide the design file?
+            </button>
+          </h2>
+          <div id="u5" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              Absolutely. You’ll receive Figma file, assets, design system, prototypes, and export-ready
+              components for the development team.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#u6">
+              Can you collaborate with our internal development team?
+            </button>
+          </h2>
+          <div id="u6" class="accordion-collapse collapse" data-bs-parent="#faqUIUX">
+            <div class="accordion-body">
+              Yes. We structure our handoff for seamless collaboration: developer specs, spacing tokens,
+              components naming convention, and ready-to-use assets.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <div>
+        <h2 class="display-5 mb-3">Ready to Get Started?</h2>
+        <p class="lead mb-4">Let's build something amazing together. Schedule a free consultation to discuss your
+          project.
+        </p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a class="btn btn-light px-4" href="#">Schedule Consultation</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      let activated = false;
+
+      const animateCounter = () => {
+        counters.forEach(counter => {
+          const target = parseFloat(counter.dataset.target);
+          const suffix = counter.dataset.suffix || "";
+          let current = 0;
+
+          const totalDuration = 1800;
+          const frames = totalDuration / 3;
+          const increment = Math.abs(target) / frames;
+          const isNegative = target < 0;
+
+          function update() {
+            current += increment;
+            let output = isNegative ? -current : current;
+
+            if (Math.abs(output) < Math.abs(target)) {
+              counter.textContent = (output % 1 === 0 ? Math.floor(output) : output.toFixed(0)) + suffix;
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = target + suffix;
+            }
+          }
+          update();
+        });
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !activated) {
+          activate = true;
+          animateCounter();
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.querySelector(".band"));
+    });
+  </script>
+
+</body>
+
+</html>

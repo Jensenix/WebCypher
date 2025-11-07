@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development • Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Pull key styling cues from Main page.html */
+    @font-face {
+      font-family: 'Rinter';
+      src: url('Rinter.woff2');
+    }
+
+    :root {
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+      --ink: #0b0c2a;
+      --muted: #6c757d;
+      --surface: #ffffff;
+      --canvas: #f8f9fa;
+      --card-radius: 18px;
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: 'Rinter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Top bar brand (right) */
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .5rem;
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      flex: 0 0 28px;
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      color: #2b2f36;
+      font-size: .95rem;
+    }
+
+    /* Back link */
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2b2f36
+    }
+
+    /* Breadcrumbs */
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    /* Badge similar to Main page .badge-custom */
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600
+    }
+
+    .hero-copy {
+      color: #6c757d;
+      max-width: 54ch
+    }
+
+    /* Buttons: gradient + outline (derived from Main page .TOJA / .btn-outline) */
+    .btn-gradient {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25);
+    }
+
+    .btn-gradient:hover {
+      filter: brightness(1.02)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      font-weight: 700;
+    }
+
+    /* Right gradient card */
+    .showcase {
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase::after {
+      content: "</>";
+      /* stylized code glyph */
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-weight: 800;
+      font-size: 160px;
+      letter-spacing: -.04em;
+    }
+
+    .hero-wrap {
+      padding: 24px 0 48px
+    }
+
+    .hero-left {
+      padding-top: 24px
+    }
+
+    @media (min-width: 992px) {
+      .hero-wrap {
+        padding: 16px 0 88px
+      }
+
+      .hero-left {
+        padding-top: 40px
+      }
+
+      /* Slightly larger than text beside it */
+      .showcase {
+        height: 440px
+      }
+    }
+
+    /* Sections below hero */
+    .section {
+      padding: 56px 0
+    }
+
+    .section h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-align: center
+    }
+
+    .section p.lead {
+      color: #6c757d;
+      text-align: center;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    /* Feature pills grid */
+    .features-grid {
+      row-gap: 16px
+    }
+
+    .feature-pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: #364152;
+    }
+
+    .icon-check {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #1aa5a2;
+      font-weight: 800;
+      font-size: .9rem;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25);
+      flex: 0 0 26px;
+    }
+
+    /* Band and cards */
+    .band {
+      background: linear-gradient(180deg, #f7f9fc 0%, #f8f9fa 100%)
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      height: 100%;
+      box-shadow: 0 10px 28px rgba(24, 32, 56, .08);
+      border: 1px solid #eef2f7;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(24, 32, 56, .12)
+    }
+
+    .benefit-title {
+      font-weight: 700;
+      margin-bottom: .25rem
+    }
+
+    .benefit-text {
+      color: #6c757d;
+      font-size: .95rem
+    }
+
+    .benefit-head {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: .5rem
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25);
+    }
+
+    .benefit-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #fff
+    }
+
+    /* Process cards */
+    .process-card {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(24, 32, 56, .08);
+      padding: 22px;
+      height: 100%
+    }
+
+    .step-badge {
+      width: 46px;
+      height: 56px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      box-shadow: 0 8px 22px rgba(36, 91, 255, .25)
+    }
+
+    .mini-pill {
+      display: inline-block;
+      background: #eef4ff;
+      border: 1px solid #e2e8f0;
+      color: #6b7a8a;
+      font-size: .75rem;
+      border-radius: 8px;
+      padding: .2rem .5rem;
+      margin-right: .25rem
+    }
+
+    .stage {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      color: #3662ff
+    }
+
+    /* Technologies (dark) */
+    .dark {
+      background: #0e1220;
+      color: #e9eef5
+    }
+
+    .tool-card {
+      background: #12172a;
+      border: 1px solid #2a3045;
+      color: #d8deea;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .35rem
+    }
+
+    .tool-card small {
+      opacity: .75
+    }
+
+    /* Results band */
+    .results {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      color: #eaf3ff
+    }
+
+    .results p.lead {
+      color: #ffffff
+    }
+
+    .result-box {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 18px;
+      padding: 26px;
+      text-align: center;
+      color: #fff
+    }
+
+    .result-box .big {
+      font-size: 2rem;
+      font-weight: 800
+    }
+
+    /* Success stories */
+    .story-card {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(24, 32, 56, .08);
+      height: 100%
+    }
+
+    .story-img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%
+    }
+
+    .story-body {
+      padding: 18px
+    }
+
+    /* Case Study Modal (CSS-only via :target) */
+    .story-link {
+      display: block;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .story-modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1055;
+      background: rgba(13, 18, 28, .6);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease
+    }
+
+    .story-modal-overlay:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto
+    }
+
+    .story-modal {
+      width: min(920px, 95vw);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(13, 18, 28, .35);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform .2s ease
+    }
+
+    .story-modal-overlay:target .story-modal {
+      transform: translateY(0)
+    }
+
+    .story-modal .modal-hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover
+    }
+
+    @media (min-width: 992px) {
+      .story-modal .modal-hero {
+        height: 320px
+      }
+    }
+
+    .story-modal .modal-body {
+      padding: 18px 22px 24px
+    }
+
+    .story-modal .modal-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .story-modal .modal-sub {
+      color: #6c757d
+    }
+
+    .story-modal .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #1aa5a2;
+      font-weight: 800;
+      font-size: .8rem;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25);
+      margin-right: 8px
+    }
+
+    #modalResults li {
+      margin-bottom: 6px;
+      color: #49566c
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #fff;
+      border: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(24, 32, 56, .2);
+      font-size: 20px;
+      line-height: 1
+    }
+
+    .overlay-close {
+      position: absolute;
+      inset: 0;
+      display: block
+    }
+
+    .pricing-card {
+      background: #fff;
+      border: 1px solid #e7ecf3;
+      border-radius: 18px;
+      box-shadow: 0 14px 30px rgba(24, 32, 56, .08);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card.featured {
+      min-height: 560px;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .pricing-card.featured::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: inherit;
+      background: conic-gradient(from 0deg,
+          #60a5fa,
+          #a855f7,
+          #ec4899,
+          #facc15,
+          #60a5fa);
+      animation: spin 4s linear infinite;
+      z-index: -1;
+    }
+        @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* === isi card === */
+    .pricing-card.featured::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      background: #ffffff;
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+
+    .pricing-card.featured:hover,
+    .pricing-card:hover {
+      box-shadow: 0 15px 40px rgba(80, 94, 134, .3);
+      transition: all .3s ease;
+      transform: translateY(-10px);
+    }
+
+    .pricing-card a.btn {
+      margin-top: auto
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: 800
+    }
+
+    .check {
+      color: #1aa5a2;
+      margin-right: .5rem
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(24, 32, 56, .10);
+      padding: 26px
+    }
+
+    .stars {
+      color: #ffbf00
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      object-fit: cover;
+      display: block;
+      flex: 0 0 44px
+    }
+
+    /* FAQ */
+    .faq .accordion-button {
+      border-radius: 12px;
+      background: #fff
+    }
+
+    .faq .accordion-item {
+      border: 0;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(24, 32, 56, .06)
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      color: #fff;
+      text-align: center;
+      padding: 80px 0
+    }
+
+    .cta .btn {
+      font-weight: 700
+    }
+
+    /* Footer */
+    footer {
+      background: #0e1220;
+      color: #b7c1d6;
+      padding: 24px 0;
+      text-align: center
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+      <div class="brand-chip">
+        <div class="brand-avatar">C</div>
+        <div class="brand-name">Cypher Digital</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero-wrap">
+    <div class="container">
+      <div class="crumbs mb-4">
+        <a href="Main page.html">Home</a> &nbsp;›&nbsp; <span>Services</span> &nbsp;›&nbsp; <strong>Web
+          Development</strong>
+      </div>
+
+      <div class="row align-items-start g-4 g-lg-5">
+        <div class="col-lg-6 hero-left">
+          <div class="mb-3"><span class="badge-custom">FAST &amp; SCALABLE</span></div>
+          <h1 class="display-4 hero-title mb-3">Web Development</h1>
+          <h5 class="hero-sub mb-3">Lightning-Fast Applications Built for Scale</h5>
+          <p class="hero-copy mb-4">
+            We build modern, performant web applications using cutting-edge technologies that grow with your business.
+            From concept to deployment, we deliver solutions that exceed expectations.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-gradient">Get Started</a>
+            <a href="#" class="btn btn-outline">View Pricing</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Building the Future section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 mb-2">Building the Future of Web</h2>
+      <p class="lead mb-4">Transform your vision into reality with enterprise‑grade web applications</p>
+
+      <div class="row features-grid">
+        <div class="col-lg-4">
+          <div class="feature-pill"><span class="icon-check">✓</span> Custom web applications tailored to your unique
+            business needs</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="feature-pill"><span class="icon-check">✓</span> Modern tech stacks including React, Next.js,
+            Node.js, and more</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="feature-pill"><span class="icon-check">✓</span> Scalable architecture designed for growth and high
+            performance</div>
+        </div>
+
+        <div class="col-lg-4 mt-3">
+          <div class="feature-pill"><span class="icon-check">✓</span> SEO‑optimized solutions that rank and convert
+          </div>
+        </div>
+        <div class="col-lg-4 mt-3">
+          <div class="feature-pill"><span class="icon-check">✓</span> Responsive design that works flawlessly on all
+            devices</div>
+        </div>
+        <div class="col-lg-4 mt-3">
+          <div class="feature-pill"><span class="icon-check">✓</span> API integrations and third‑party service
+            connections</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get cards -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 mb-2">What You Get</h2>
+      <p class="lead mb-4">Comprehensive solutions designed for excellence</p>
+
+      <div class="row g-4">
+        <div class="col-lg-4 mt-lg-5">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 11l1-7-6 10h3l-1 7 6-10h-3z" />
+                </svg>
+              </div>
+              <div class="benefit-title">Blazing Fast Performance</div>
+            </div>
+            <div class="benefit-text">Optimized for speed with lazy loading, code splitting, and advanced caching
+              strategies</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-lg-5">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="benefit-title">Security First</div>
+            </div>
+            <div class="benefit-text">Built with industry best practices, secure authentication, and data encryption
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="8" ry="3" />
+                  <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+                  <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+                </svg>
+              </div>
+              <div class="benefit-title">Scalable Architecture</div>
+            </div>
+            <div class="benefit-text">Microservices-ready infrastructure that scales horizontally with your growth</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 8h8M8 12h6M4 4h16v16H4z" />
+                </svg>
+              </div>
+              <div class="benefit-title">Clean Code</div>
+            </div>
+            <div class="benefit-text">Maintainable, well-documented codebase following industry standards</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                </svg>
+              </div>
+              <div class="benefit-title">User-Centric Design</div>
+            </div>
+            <div class="benefit-text">Intuitive interfaces built with user experience as the top priority</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="benefit-card">
+            <div class="benefit-head">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v7l3 3" />
+                  <rect x="4" y="11" width="16" height="9" rx="2" ry="2" />
+                </svg>
+              </div>
+              <div class="benefit-title">Quality Assurance</div>
+            </div>
+            <div class="benefit-text">Comprehensive testing including unit, integration, and E2E tests</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 mb-2">Our Process</h2>
+      <p class="lead mb-4">A proven methodology that delivers results</p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">1</div>
+            <div>
+              <div class="stage mb-1">DISCOVERY</div>
+              <h5 class="mb-2">Understanding Your Vision</h5>
+              <p class="text-muted mb-2">We dive deep into your goals, audience, and technical requirements to craft the
+                perfect solution.</p>
+              <div class="mb-2"><span class="mini-pill">1–2 weeks</span></div>
+              <div>
+                <span class="mini-pill">Project Roadmap</span>
+                <span class="mini-pill">Technical Specification</span>
+                <span class="mini-pill">Timeline & Milestones</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">2</div>
+            <div>
+              <div class="stage mb-1">DESIGN</div>
+              <h5 class="mb-2">Crafting the Blueprint</h5>
+              <p class="text-muted mb-2">Wireframes and high‑fidelity mockups that bring your vision to life.</p>
+              <div class="mb-2"><span class="mini-pill">2–3 weeks</span></div>
+              <div>
+                <span class="mini-pill">Wireframes</span>
+                <span class="mini-pill">UI/UX Design</span>
+                <span class="mini-pill">Design System</span>
+                <span class="mini-pill">Prototype</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">3</div>
+            <div>
+              <div class="stage mb-1">DEVELOPMENT</div>
+              <h5 class="mb-2">Building with Precision</h5>
+              <p class="text-muted mb-2">We transform designs into fully functional, tested, and optimized code.</p>
+              <div class="mb-2"><span class="mini-pill">4–8 weeks</span></div>
+              <div>
+                <span class="mini-pill">Frontend</span>
+                <span class="mini-pill">Backend</span>
+                <span class="mini-pill">API Integration</span>
+                <span class="mini-pill">Database Setup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">4</div>
+            <div>
+              <div class="stage mb-1">TESTING</div>
+              <h5 class="mb-2">Quality at Every Level</h5>
+              <p class="text-muted mb-2">Rigorous testing ensures everything works perfectly across all devices and
+                browsers.</p>
+              <div class="mb-2"><span class="mini-pill">1–2 weeks</span></div>
+              <div>
+                <span class="mini-pill">QA</span>
+                <span class="mini-pill">Performance</span>
+                <span class="mini-pill">Security</span>
+                <span class="mini-pill">Bug Fixes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">5</div>
+            <div>
+              <div class="stage mb-1">LAUNCH</div>
+              <h5 class="mb-2">Going Live</h5>
+              <p class="text-muted mb-2">Deployment, monitoring, and training to ensure a smooth launch.</p>
+              <div class="mb-2"><span class="mini-pill">1 week</span></div>
+              <div>
+                <span class="mini-pill">Deployment</span>
+                <span class="mini-pill">Docs</span>
+                <span class="mini-pill">Training</span>
+                <span class="mini-pill">Monitoring</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="process-card d-flex gap-3 align-items-start">
+            <div class="step-badge">6</div>
+            <div>
+              <div class="stage mb-1">SUPPORT</div>
+              <h5 class="mb-2">Ongoing Excellence</h5>
+              <p class="text-muted mb-2">Post‑launch support and continuous improvements keep your app running smoothly.
+              </p>
+              <div class="mb-2"><span class="mini-pill">Ongoing</span></div>
+              <div>
+                <span class="mini-pill">Bug Fixes</span>
+                <span class="mini-pill">Feature Updates</span>
+                <span class="mini-pill">Monitoring</span>
+                <span class="mini-pill">24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies & Tools -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-5 mb-2">Technologies &amp; Tools</h2>
+      <p class="lead mb-4">Industry‑leading tools for exceptional results</p>
+
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">React <small>Frontend</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">Next.js <small>Framework</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">TypeScript <small>Language</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">Tailwind CSS <small>Styling</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">Node.js <small>Backend</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">PostgreSQL <small>Database</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">AWS <small>Cloud</small></div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="tool-card">Docker <small>DevOps</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proven Results -->
+  <section class="section results">
+    <div class="container">
+      <h2 class="display-5 mb-2">Proven Results</h2>
+      <p class="lead mb-4">Data-backed outcomes from real projects</p>
+
+      <div class="row g-3">
+        <div class="col-lg-3 col-6">
+          <div class="result-box">
+            <div class="big counter" data-target="127">127%</div>
+            <div>Increase Conversion Rates</div><small>Average increase after launch</small>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="result-box">
+            <div class="big counter" data-target="2.3">2.3s</div>
+            <div>Faster Load Times</div><small>60% faster than industry</small>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="result-box">
+            <div class="big counter" data-target="85">+85%</div>
+            <div>Higher Engagement</div><small>Longer session duration</small>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="result-box">
+            <div class="big counter" data-target="100">100%</div>
+            <div>Security Compliance</div><small>GDPR and industry</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="idsuccess" class="section">
+    <div class="container">
+      <h2 class="display-5 mb-2">Success Stories</h2>
+      <p class="lead mb-4">Real results from real clients</p>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="#case1" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=1200"
+                alt="dashboard" />
+              <div class="story-body">
+                <span class="mini-pill">Web Development</span>
+                <h5 class="mt-2 mb-1">FinTech Banking Platform</h5>
+                <div class="text-muted mb-2">NeoBank Digital</div>
+                <div class="mb-2">
+                  <div class="text-muted">✓ 300% increase in daily active users</div>
+                  <div class="text-muted">✓ Sub‑2s load times</div>
+                  <div class="text-muted">✓ 99.9% uptime</div>
+                </div>
+                <div><span class="mini-pill">React</span><span class="mini-pill">Node.js</span><span
+                    class="mini-pill">PostgreSQL</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a href="#case2" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?q=80&w=1200"
+                alt="cart" />
+              <div class="story-body">
+                <span class="mini-pill">Web Development</span>
+                <h5 class="mt-2 mb-1">E‑Commerce Platform</h5>
+                <div class="text-muted mb-2">RetailPro Global</div>
+                <div class="mb-2">
+                  <div class="text-muted">✓ 145% increase in sales</div>
+                  <div class="text-muted">✓ 68% lower cart abandonment</div>
+                  <div class="text-muted">✓ Mobile conversion up 220%</div>
+                </div>
+                <div>
+                  <span class="mini-pill">Next.js</span>
+                  <span class="mini-pill">Shopify</span>
+                  <span class="mini-pill">Stripe</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a href="#case3" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200"
+                alt="analytics" />
+              <div class="story-body">
+                <span class="mini-pill">Web Development</span>
+                <h5 class="mt-2 mb-1">SaaS Analytics Dashboard</h5>
+                <div class="text-muted mb-2">DataMetrics AI</div>
+                <div class="mb-2">
+                  <div class="text-muted">✓ Real‑time for 1M+ users</div>
+                  <div class="text-muted">✓ 40% faster visualization</div>
+                  <div class="text-muted">✓ 10× traffic ready</div>
+                </div>
+                <div><span class="mini-pill">React</span><span class="mini-pill">D3.js</span><span
+                    class="mini-pill">GraphQL</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Options -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 mb-2">Investment Options</h2>
+      <p class="lead mb-4">Flexible packages to match your needs</p>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="pricing-card d-flex flex-column">
+            <h5>Starter</h5>
+            <div class="price">$8,000 <small class="text-muted">USD</small></div>
+            <div class="text-muted mb-3">Perfect for small businesses and startups</div>
+            <ul class="list-unstyled flex-grow-1">
+              <li><span class="check">✓</span>Up to 10 pages</li>
+              <li><span class="check">✓</span>Responsive design</li>
+              <li><span class="check">✓</span>Basic SEO</li>
+              <li><span class="check">✓</span>Contact forms</li>
+              <li><span class="check">✓</span>3 months support</li>
+              <li><span class="check">✓</span>Basic analytics</li>
+            </ul>
+            <a class="btn btn-light mt-2" href="#">Get Started</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="pricing-card featured d-flex flex-column">
+            <div><span class="mini-pill"
+                style="background:linear-gradient(180deg,var(--brand-teal),var(--brand-blue));color:#fff;border:0">Most
+                Popular</span></div>
+            <h5 class="mt-2">Professional</h5>
+            <div class="price">$18,000 <small class="text-muted">USD</small></div>
+            <div class="text-muted mb-3">Ideal for growing businesses</div>
+            <ul class="list-unstyled flex-grow-1">
+              <li><span class="check">✓</span>Up to 25 pages</li>
+              <li><span class="check">✓</span>Advanced animations</li>
+              <li><span class="check">✓</span>Advanced SEO & performance</li>
+              <li><span class="check">✓</span>CMS integration</li>
+              <li><span class="check">✓</span>6 months support</li>
+              <li><span class="check">✓</span>Advanced analytics</li>
+              <li><span class="check">✓</span>API integrations</li>
+              <li><span class="check">✓</span>Custom features</li>
+            </ul>
+            <a class="btn btn-gradient" href="#">Get Started</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="pricing-card d-flex flex-column">
+            <h5>Enterprise</h5>
+            <div class="price">Custom</div>
+            <div class="text-muted mb-3">For complex applications</div>
+            <ul class="list-unstyled flex-grow-1">
+              <li><span class="check">✓</span>Unlimited pages</li>
+              <li><span class="check">✓</span>Custom architecture</li>
+              <li><span class="check">✓</span>Advanced security</li>
+              <li><span class="check">✓</span>Multi‑platform support</li>
+              <li><span class="check">✓</span>12 months support</li>
+              <li><span class="check">✓</span>Dedicated team</li>
+              <li><span class="check">✓</span>Priority support</li>
+              <li><span class="check">✓</span>SLA guarantees</li>
+            </ul>
+            <a class="btn btn-light mt-2" href="#">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 mb-2">Client Testimonials</h2>
+      <p class="lead mb-4">Hear from those who've worked with us</p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="testimonial">
+            <div class="stars mb-3">★★★★★</div>
+            <p class="text-muted">"Cypher Digital transformed our vision into a production‑ready platform in just 10
+              weeks. Their technical expertise and attention to detail are unmatched. The application handles 50K+ daily
+              users without breaking a sweat."</p>
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <img class="avatar" src="https://i.pravatar.cc/60?img=5" alt="avatar" />
+              <div>
+                <strong>Sarah Chen</strong>
+                <div class="text-muted">CTO, NeoBank Digital</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testimonial">
+            <div class="stars mb-3">★★★★★</div>
+            <p class="text-muted">"The web application they built increased our sales by 145% in the first quarter. Best
+              development team we've ever worked with."</p>
+            <div class="d-flex align-items-center gap-2 mt-3">
+              <img class="avatar" src="https://i.pravatar.cc/60?img=12" alt="avatar" />
+              <div>
+                <strong>Marcus Rodriguez</strong>
+                <div class="text-muted">Founder & CEO, RetailPro Global</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="container">
+      <h2 class="display-5 mb-2">Frequently Asked Questions</h2>
+      <p class="lead mb-4">Everything you need to know</p>
+
+      <div class="accordion" id="faq">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q1">What technologies do you use for web development?</button>
+          </h2>
+          <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">We primarily use React/Next.js, Node.js, and PostgreSQL, with TypeScript across
+              the stack for reliability.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q2">How long does it take to build a web application?</button>
+          </h2>
+          <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">Typical projects range from 6–12 weeks depending on scope and complexity.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q3">Do you provide ongoing maintenance and support?</button>
+          </h2>
+          <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">Yes, we offer flexible support plans including monitoring, bug fixes, and
+              feature updates.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q4">Can you integrate with our existing systems?</button></h2>
+          <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">We integrate with CRMs, ERPs, and third‑party services via secure APIs.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q5">What is your development process?</button></h2>
+          <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">Discovery → Design → Development → Testing → Launch → Support. See the full
+              process above.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#q6">Do you handle hosting and deployment?</button></h2>
+          <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faq">
+            <div class="accordion-body">We deploy to AWS, Vercel, or your preferred cloud and set up CI/CD pipelines.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2 class="display-5 mb-3">Ready to Get Started?</h2>
+      <p class="lead mb-4">Let's build something amazing together. Schedule a free consultation to discuss your project.
+      </p>
+      <a class="btn btn-light px-4" href="#">Schedule Consultation →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Case Study Modals (CSS-only :target) -->
+  <div id="case1" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle1">
+      <a href="#idsuccess" class="modal-close" aria-label="Close">&times;</a>
+      <img class="modal-hero" src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=1200"
+        alt="FinTech Banking Platform" />
+      <div class="modal-body">
+        <span class="mini-pill">Web Development</span>
+        <h3 id="modalTitle1" class="modal-title mt-2 mb-1">FinTech Banking Platform</h3>
+        <div class="modal-sub mb-3">NeoBank Digital</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>300% increase in daily active users</li>
+            <li><span class="check-dot">✓</span>Sub-2s page load times</li>
+            <li><span class="check-dot">✓</span>99.9% uptime since launch</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Technologies Used:</div>
+          <span class="mini-pill">React</span><span class="mini-pill">Node.js</span><span
+            class="mini-pill">PostgreSQL</span>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-gradient">Start Similar Project →</a>
+          <a href="#" class="btn btn-outline">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="case2" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle2">
+      <a href="#idsuccess" class="modal-close" aria-label="Close">&times;</a>
+      <img class="modal-hero" src="https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?q=80&w=1200"
+        alt="E-Commerce Platform" />
+      <div class="modal-body">
+        <span class="mini-pill">Web Development</span>
+        <h3 id="modalTitle2" class="modal-title mt-2 mb-1">E-Commerce Platform</h3>
+        <div class="modal-sub mb-3">RetailPro Global</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>145% increase in sales</li>
+            <li><span class="check-dot">✓</span>68% lower cart abandonment</li>
+            <li><span class="check-dot">✓</span>Mobile conversion up 220%</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Technologies Used:</div>
+          <span class="mini-pill">Next.js</span><span class="mini-pill">Shopify</span><span
+            class="mini-pill">Stripe</span>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-gradient">Start Similar Project →</a>
+          <a href="#" class="btn btn-outline">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="case3" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle3">
+      <a href="#idsuccess" class="modal-close" aria-label="Close">&times;</a>
+      <img class="modal-hero" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200"
+        alt="SaaS Analytics Dashboard" />
+      <div class="modal-body">
+        <span class="mini-pill">Web Development</span>
+        <h3 id="modalTitle3" class="modal-title mt-2 mb-1">SaaS Analytics Dashboard</h3>
+        <div class="modal-sub mb-3">DataMetrics AI</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>Real-time for 1M+ users</li>
+            <li><span class="check-dot">✓</span>40% faster visualization</li>
+            <li><span class="check-dot">✓</span>10x traffic ready</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Technologies Used:</div>
+          <span class="mini-pill">React</span><span class="mini-pill">D3.js</span><span class="mini-pill">GraphQL</span>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-gradient">Start Similar Project →</a>
+          <a href="#" class="btn btn-outline">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Script untuk counter proven serultnya -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      let activated = false; // agar animasi tidak jalan dua kali
+
+      function animateCount() {
+        counters.forEach(counter => {
+          let target = +counter.getAttribute("data-target");
+          let duration = 1500; // ms
+          let step = target / (duration / 3); // 60fps
+
+          let count = 0;
+          function update() {
+            count += step;
+            if (count < target) {
+              counter.textContent = target % 1 !== 0 ? count.toFixed(1) : Math.floor(count) + "%";
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = target % 1 !== 0 ? target + "s" : target + "%";
+            }
+          }
+          update();
+        });
+      }
+
+      // Trigger animation ketika section muncul
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !activated) {
+          animateCount();
+          activated = true;
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.querySelector(".results"));
+    });
+  </script>
+
+</body>
+
+</html>

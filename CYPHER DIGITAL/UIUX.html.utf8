@@ -1,0 +1,1091 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI/UX Design — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: Rinter;
+      src: url('Rinter.woff2')
+    }
+
+    :root {
+      --b: #245bff;
+      --t: #2ad3c9;
+      --ink: #0b0c2a;
+      --card: 18px
+    }
+
+    body {
+      font-family: Rinter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: var(--ink)
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      padding: .45rem .8rem;
+      border-radius: 999px
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      font-weight: 700
+    }
+
+    .hero {
+      padding: 24px 0 64px
+    }
+
+    .showcase {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden
+    }
+
+    .showcase:after {
+      content: '🎨';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-size: 140px
+    }
+
+    .section {
+      padding: 56px 0
+    }
+
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .75rem 1rem
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .metric,
+    .case {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 18px
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      box-shadow: 0 10px 28px rgba(16, 24, 40, .06)
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25)
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    .price.pop {
+      border-color: #b7ccff;
+      box-shadow: 0 20px 44px rgba(36, 91, 255, .18)
+    }
+
+    .dark {
+      background: #0e1420;
+      color: #e8eef7
+    }
+
+    .tool {
+      background: #0f1a2a;
+      border: 1px solid #1d2a3d;
+      border-radius: 14px;
+      padding: 1rem;
+      text-align: center
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #e9f3ff
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    .thumb {
+      height: 200px;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5
+    }
+
+    .cta {background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b))); color:#fff; text-align:center; padding:80px 0}
+    .cta .btn{font-weight:700}
+
+    footer {
+      background: #0e1420;
+      color: #94a3b8;
+      padding: 28px 0
+    }
+
+    /* Overrides to align with webdev header/logo and hero */
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      border-radius: 50px;
+      overflow: hidden;
+      justify-content: center;
+      padding: 0
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    .crumbs {
+      margin-bottom: 1.5rem
+    }
+
+    .hero {
+      padding: 24px 0 48px
+    }
+
+    .hero-left {
+      padding-top: 24px
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600
+    }
+
+    .hero-copy {
+      color: #6c757d;
+      max-width: 54ch
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-gradient {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .showcase:after {
+      content: "</>";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-weight: 800;
+      font-size: 160px;
+      letter-spacing: -.04em
+    }
+
+    @media (min-width:992px) {
+      .hero {
+        padding: 16px 0 88px
+      }
+
+      .showcase {
+        height: 440px
+      }
+    }
+
+    /* Hide duplicate CTA placed right after hero */
+    .hero+.cta {
+      display: none
+    }
+
+    /* Ensure inner CTA (if used) is visible */
+    /* .section.pt-0 .cta{display:none} */
+  </style>
+  <style>
+    /* Align styling patterns with webdev.html */
+    @font-face {
+      font-family: 'Rinter';
+      src: url('Rinter.woff2');
+    }
+
+    :root {
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+      --ink: #0b0c2a;
+      --muted: #6c757d;
+      --surface: #ffffff;
+      --canvas: #f8f9fa;
+      --card-radius: 18px;
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: 'Rinter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Top bar + crumbs */
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .back-link:hover {
+      color: #2b2f36
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3;
+      margin-bottom: 1.5rem
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    /* Hero */
+    .hero {
+      padding: 24px 0 48px
+    }
+
+    .hero-left {
+      padding-top: 24px
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 54ch
+    }
+
+    @media (min-width: 992px) {
+      .hero {
+        padding: 16px 0 88px
+      }
+    }
+
+    /* Buttons */
+    .btn-gradient {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25);
+    }
+
+    .btn-gradient:hover {
+      filter: brightness(1.02)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      font-weight: 700;
+    }
+
+    /* Showcase */
+    .showcase {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase::after {
+      content: "</>";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-weight: 800;
+      font-size: 160px;
+      letter-spacing: -.04em;
+    }
+
+    @media (min-width: 992px) {
+      .showcase {
+        height: 440px
+      }
+    }
+
+    /* Sections */
+    .section {
+      padding: 56px 0
+    }
+
+    .section h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-align: center;
+    }
+
+    .section p.lead {
+      color: var(--muted);
+      text-align: center;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Pills and chips */
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: #364152;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    /* Cards */
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(24, 32, 56, .08);
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25);
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+    }
+
+    .price.pop {
+      outline: 2px solid #356dff
+    }
+
+    /* Dark tools */
+    .dark {
+      background: #0e1220;
+      color: #e9eef5
+    }
+
+    .tool {
+      background: #12172a;
+      border: 1px solid #2a3045;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      color: #d8deea;
+    }
+
+    /* Results band */
+    .band {
+      background: linear-gradient(180deg, var(--brand-teal), var(--brand-blue));
+      color: #e9f3ff
+    }
+    .band p.lead{color:#ffffff}
+
+    .metric {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 18px
+    }
+
+    /* Thumbs */
+    .thumb {
+      height: 200px;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5
+    }
+
+    /* CTA */
+    .cta {background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b))); color:#fff; text-align:center; padding:80px 0}
+
+    .cta .btn {
+      font-weight: 700;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 12px
+    }
+
+    .cta .form-control {
+      border-radius: 12px;
+      max-width: 280px
+    }
+
+    /* Badges */
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e1220;
+      color: #b7c1d6;
+      padding: 24px 0;
+      text-align: center
+    }
+
+    /* Utilities */
+    .hero+.cta {
+      display: none
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar + crumbs -->
+  <div class="container topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Main page.html" class="back-link">← Back to Home</a>
+      <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="crumbs mb-2">Home › <a href="#">Services</a> › UI/UX Design</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-start g-4 g-lg-5">
+        <div class="col-lg-6 hero-left">
+          <span class="badge-custom">USER‑CENTERED</span>
+          <h1 class="display-4 hero-title mb-3">UI/UX Design</h1>
+          <h5 class="hero-sub mb-3">Interfaces That Users Love</h5>
+          <p class="hero-copy mb-4">We craft beautiful, intuitive interfaces that delight users and drive engagement.
+            Every pixel is intentional, every interaction meaningful.</p>
+          <div class="d-flex gap-3">
+            <a class="btn btn-gradient" href="#contact">Get Started →</a>
+            <a class="btn btn-outline" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="display-5 mb-3">Ready to Get Started?</h2>
+      <p class="lead mb-4">Let's build something amazing together. Schedule a free consultation to discuss your project.
+      </p>
+      <a class="btn btn-light px-4" href="#">Schedule Consultation \u001a</a>
+    </div>
+  </section>
+
+  <!-- Design That Converts -->
+  <section class="section pt-0">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Design That Converts</h2>
+      <p class="lead text-muted mb-4">Create memorable experiences that keep users coming back</p>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="pill">✓ User research & personas</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Information architecture & flows</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ High‑fidelity mockups & prototypes</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Design systems for consistency</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Usability testing & iteration</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Accessibility‑first (WCAG 2.1)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section" style="background:#f7fafc">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">What You Get</h2>
+      <p class="lead text-muted mb-4">Comprehensive solutions designed for excellence</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><img src="target (1).png" alt="" ></div>
+              <div class="fw-bold">User Research</div>
+            </div>
+            <div class="text-muted">Interviews, analytics, personas, journey maps.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"></div>
+              <div class="fw-bold">Visual Design</div>
+            </div>
+            <div class="text-muted">Brand‑aligned UI that captivates.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"></div>
+              <div class="fw-bold">User Testing</div>
+            </div>
+            <div class="text-muted">Feedback integrated in every iteration.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"></div>
+              <div class="fw-bold">Design Systems</div>
+            </div>
+            <div class="text-muted">Scalable component libraries.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"></div>
+              <div class="fw-bold">Conversion Focus</div>
+            </div>
+            <div class="text-muted">Optimize for engagement & metrics.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"></div>
+              <div class="fw-bold">Micro‑interactions</div>
+            </div>
+            <div class="text-muted">Delightful animations & transitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Our Process</h2>
+      <p class="lead text-muted mb-4">A proven methodology that delivers results</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">1</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">RESEARCH</div>
+                <div class="fw-semibold">Understanding Users</div>
+              </div>
+            </div>
+            <div class="text-muted">Research, personas, journeys.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Report</span> <span
+                class="chip">Personas</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">2</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">STRATEGY</div>
+                <div class="fw-semibold">Information Architecture</div>
+              </div>
+            </div>
+            <div class="text-muted">Sitemap, user flows, wireframes.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Sitemap</span> <span
+                class="chip">Flows</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">3</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">DESIGN</div>
+                <div class="fw-semibold">Visual Design</div>
+              </div>
+            </div>
+            <div class="text-muted">High‑fidelity UI & prototypes.</div>
+            <div class="mt-2"><span class="chip time">2‑4 weeks</span> <span class="chip">Design System</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">4</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">TESTING</div>
+                <div class="fw-semibold">Validate & Iterate</div>
+              </div>
+            </div>
+            <div class="text-muted">Usability tests and refinements.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">A/B</span> <span
+                class="chip">Accessibility</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">5</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">HANDOFF</div>
+                <div class="fw-semibold">Developer‑Ready</div>
+              </div>
+            </div>
+            <div class="text-muted">Docs and assets for dev.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Export</span> <span
+                class="chip">Docs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Investment Options</h2>
+      <p class="lead text-muted mb-4">Flexible packages to match your needs</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="price p-3 h-100">
+            <div class="h5">Essentials</div>
+            <div class="display-6 fw-bold">$5,000 <span class="fs-6 text-muted">USD</span></div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Up to 10 screens</li>
+              <li>✓ Research & personas</li>
+              <li>✓ Wireframes</li>
+              <li>✓ High‑fidelity mockups</li>
+              <li>✓ Prototype</li>
+              <li>✓ Style guide</li>
+              <li>✓ 2 revisions</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price pop p-3 h-100">
+            <div class="d-flex justify-content-between">
+              <div class="h5">Complete</div><span class="badge bg-primary-subtle text-primary fw-bold">Most
+                Popular</span>
+            </div>
+            <div class="display-6 fw-bold">$12,000 <span class="fs-6 text-muted">USD</span></div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Up to 30 screens</li>
+              <li>✓ In‑depth research</li>
+              <li>✓ Flows & journeys</li>
+              <li>✓ Interactive prototype</li>
+              <li>✓ Design system</li>
+              <li>✓ Usability testing</li>
+              <li>✓ Dev handoff</li>
+              <li>✓ Unlimited revisions</li>
+            </ul><a class="btn btn-gradient w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price p-3 h-100">
+            <div class="h5">Enterprise</div>
+            <div class="display-6 fw-bold">Custom</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Unlimited screens</li>
+              <li>✓ Advanced research</li>
+              <li>✓ A/B testing</li>
+              <li>✓ Workshops</li>
+              <li>✓ Dedicated designer</li>
+              <li>✓ Ongoing support</li>
+              <li>✓ White‑label</li>
+              <li>✓ Priority support</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Client Testimonials</h2>
+      <p class="lead text-muted mb-4">Hear from those who've worked with us</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"UX improvements elevated satisfaction from 68% to 95%. Truly user‑centered."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3" style="background:linear-gradient(180deg,var(--t),var(--b))"></div>
+              <div>
+                <div class="fw-bold">Emily Watson</div>
+                <div class="text-muted">VP of Product, MediCare Plus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"Our booking conversion more than doubled after the redesign. Best investment."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3" style="background:linear-gradient(180deg,var(--t),var(--b))"></div>
+              <div>
+                <div class="fw-bold">David Park</div>
+                <div class="text-muted">Head of Digital, WanderLust Travel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Technologies & Tools</h2>
+      <p class="lead mb-4">Industry‑leading tools for exceptional results</p>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="tool">Figma<br /><small>Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Adobe XD<br /><small>Prototyping</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Sketch<br /><small>UI</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">InVision<br /><small>Collaboration</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Maze<br /><small>Testing</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Hotjar<br /><small>Analytics</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Principle<br /><small>Animation</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Zeplin<br /><small>Handoff</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Proven Results</h2>
+      <p class="lead mb-4">Data‑backed outcomes from real projects</p>
+      <div class="row g-3">
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-6 fw-bold">+92%</div>
+            <div>User Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-6 fw-bold">+156%</div>
+            <div>Conversion Rate</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-6 fw-bold">‑40%</div>
+            <div>Task Time</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-6 fw-bold">+73%</div>
+            <div>Return Users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Success Stories</h2>
+      <p class="lead text-muted mb-4">Real results from real clients</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="case h-100">
+            <div class="thumb"></div>
+            <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">UI/UX Design</span>
+              <div class="h5 mb-1">Healthcare Patient Portal</div>
+              <div class="text-muted mb-2">MediCare Plus</div>
+              <ul class="small list-unstyled mb-2">
+                <li>✓ 95% satisfaction</li>
+                <li>✓ 60% fewer tickets</li>
+                <li>✓ +180% bookings</li>
+              </ul>
+              <div><span class="chip">Figma</span> <span class="chip">Testing</span> <span class="chip">Proto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="case h-100">
+            <div class="thumb"></div>
+            <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">UI/UX Design</span>
+              <div class="h5 mb-1">Travel Booking Platform</div>
+              <div class="text-muted mb-2">WanderLust Travel</div>
+              <ul class="small list-unstyled mb-2">
+                <li>✓ +220% conversion</li>
+                <li>✓ +340% mobile bookings</li>
+                <li>✓ ‑55% cart abandon</li>
+              </ul>
+              <div><span class="chip">Figma</span> <span class="chip">Adobe XD</span> <span class="chip">Maze</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <div class="cta">
+        <h2 class="display-6 fw-bold">Ready to Get Started?</h2>
+        <p class="lead">Let's build something amazing together. Schedule a free consultation to discuss your project.
+        </p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a class="btn px-3 py-2" href="#pricing">Schedule Consultation →</a>
+          <input class="form-control w-auto" placeholder="Your email" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-4">
+    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  </footer>
+</body>
+
+</html>
+

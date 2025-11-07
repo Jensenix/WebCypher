@@ -1,0 +1,1076 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Strategy — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: Rinter;
+      src: url('Rinter.woff2')
+    }
+
+    :root {
+      --b: #245bff;
+      --t: #2ad3c9;
+      --ink: #0b0c2a;
+      --card: 18px
+    }
+
+    body {
+      font-family: Rinter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: var(--ink)
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      padding: .45rem .8rem;
+      border-radius: 999px
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      font-weight: 700
+    }
+
+    .hero {
+      padding: 24px 0 64px
+    }
+
+    .showcase {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden
+    }
+
+    .showcase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* .showcase:after {
+      content: '📈';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-size: 140px
+    }
+ */
+    .section {
+      padding: 56px 0
+    }
+
+    .section h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-align: center
+    }
+
+    .section p.lead {
+      color: #6c757d;
+      text-align: center;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .75rem 1rem
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .metric,
+    .case {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 18px
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      box-shadow: 0 10px 28px rgba(16, 24, 40, .06)
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25)
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    .price.pop {
+      border-color: #b7ccff;
+      box-shadow: 0 20px 44px rgba(36, 91, 255, .18);
+      min-height: 560px;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column
+    }
+
+    .price .btn {
+      margin-top: auto
+    }
+
+    .dark {
+      background: #0e1420;
+      color: #e8eef7
+    }
+
+    .tool {
+      background: #0f1a2a;
+      border: 1px solid #1d2a3d;
+      border-radius: 14px;
+      padding: 1rem;
+      text-align: center
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #e9f3ff
+    }
+
+    .band p.lead {
+      color: #ffffff
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    .thumb {
+      height: 200px;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5;
+    }
+
+    .thumb img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+
+    /* Case Study Modal (CSS-only) */
+    .story-link {
+      display: block;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .story-modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1055;
+      background: rgba(13, 18, 28, .6);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease
+    }
+
+    .story-modal-overlay:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto
+    }
+
+    .story-modal {
+      width: min(920px, 95vw);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(13, 18, 28, .35);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform .2s ease
+    }
+
+    .story-modal-overlay:target .story-modal {
+      transform: translateY(0)
+    }
+
+    .story-modal .modal-hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff)
+    }
+
+    .modal-hero img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+
+    @media (min-width: 992px) {
+      .story-modal .modal-hero {
+        height: 320px
+      }
+    }
+
+    .story-modal .modal-body {
+      padding: 18px 22px 24px
+    }
+
+    .story-modal .modal-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .story-modal .modal-sub {
+      color: #6c757d
+    }
+
+    .story-modal .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #1aa5a2;
+      font-weight: 800;
+      font-size: .8rem;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25);
+      margin-right: 8px
+    }
+
+    .overlay-close {
+      position: absolute;
+      inset: 0;
+      display: block
+    }
+
+    /* FAQ */
+    .faq .accordion-button {
+      border-radius: 12px;
+      background: #fff
+    }
+
+    .faq .accordion-item {
+      border: 0;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(24, 32, 56, .06)
+    }
+
+    .cta {
+      background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b)));
+      color: #fff;
+      text-align: center;
+      padding: 80px 0
+    }
+
+    .cta .btn {
+      font-weight: 700
+    }
+
+    .cta+footer {
+      margin-top: 0
+    }
+
+    footer {
+      background: #0e1420;
+      color: #94a3b8;
+      padding: 28px 0
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar + crumbs -->
+  <div class="container topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+      <div class="brand-chip">
+        <div class="brand-avatar">C</div>
+        <div class="fw-semibold">Cypher Digital</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="crumbs mb-2">Home › <a href="#">Services</a> › Digital Strategy</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge-custom">ROI DRIVEN</span>
+          <h1 class="display-4 fw-bold mt-3">Digital Strategy</h1>
+          <div class="h5 text-muted fw-semibold mb-3">Data-Backed Roadmaps for Growth</div>
+          <p class="text-muted mb-4">We develop comprehensive digital strategies aligned with your business goals and
+            measurable results. Every decision backed by data, every move calculated for maximum impact.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-grad" href="#contact">Get Started →</a>
+            <a class="btn btn-outline" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase">
+            <img src="Digital Strategy Icon/DIGITAL STRATEGY SHOWCASE.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Modals -->
+  <div id="ds-case1" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="dsTitle1">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="Digital Strategy Icon/Image (SaaS Growth Strategy).png" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="badge bg-info-subtle text-info fw-bold">Digital Strategy</span>
+        <h3 id="dsTitle1" class="modal-title mt-2 mb-1">SaaS Growth Strategy</h3>
+        <div class="modal-sub mb-3">CloudSync Pro</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>Grew from 5K to 50K users in 8 months</li>
+            <li><span class="check-dot">✓</span>MRR increased 420%</li>
+            <li><span class="check-dot">✓</span>CAC reduced by 55%</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Tools:</div>
+          <span class="chip">Google Analytics</span> <span class="chip">Mixpanel</span> <span
+            class="chip">HubSpot</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="ds-case2" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="dsTitle2">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="Digital Strategy Icon/Image (Digital Transformation).png" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="badge bg-info-subtle text-info fw-bold">Digital Strategy</span>
+        <h3 id="dsTitle2" class="modal-title mt-2 mb-1">Digital Transformation</h3>
+        <div class="modal-sub mb-3">RetailMax</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>Online revenue up 380%</li>
+            <li><span class="check-dot">✓</span>Omnichannel integration complete</li>
+            <li><span class="check-dot">✓</span>Customer lifetime value up 62%</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Tools:</div>
+          <span class="chip">Tableau</span> <span class="chip">Ahrefs</span> <span class="chip">Amplitude</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Strategic Growth Planning -->
+  <section class="section pt-0">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Strategic Growth Planning</h2>
+      <p class="lead text-muted mb-4">Transform your digital presence with data‑driven strategies</p>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="pill">✓ Comprehensive digital audit and competitive analysis</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Customer journey mapping and optimization</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Multi‑channel marketing strategy development</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ KPI definition and measurement frameworks</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Technology stack evaluation and recommendations</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Implementation roadmap with clear milestones</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section" style="background:#f7fafc">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">What You Get</h2>
+      <p class="lead text-muted mb-4">Comprehensive solutions designed for excellence</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/data-analytics.png" alt="">
+              </div>
+              <div class="fw-bold">Data Analytics</div>
+            </div>
+            <div class="text-muted">Deep dive into your data to uncover insights and opportunities for growth</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/alignment.png" alt="">
+              </div>
+              <div class="fw-bold">Goal Alignment</div>
+            </div>
+            <div class="text-muted">Strategies perfectly aligned with your business objectives and KPIs</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/hacking.png" alt="">
+              </div>
+              <div class="fw-bold">Growth Hacking</div>
+            </div>
+            <div class="text-muted">Innovative tactics to accelerate growth and market penetration</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/insight.png" alt="">
+              </div>
+              <div class="fw-bold">Audience Insights</div>
+            </div>
+            <div class="text-muted">Understanding your customers to reach them effectively</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/idea.png" alt="">
+              </div>
+              <div class="fw-bold">Innovation Planning</div>
+            </div>
+            <div class="text-muted">Stay ahead of trends with forward‑thinking strategies</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Digital Strategy Icon/podium.png" alt="">
+              </div>
+              <div class="fw-bold">Competitive Edge</div>
+            </div>
+            <div class="text-muted">Strategies that differentiate you in the marketplace</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Our Process</h2>
+      <p class="lead text-muted mb-4">A proven methodology that delivers results</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">1</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">AUDIT</div>
+                <div class="fw-semibold">Current State Analysis</div>
+              </div>
+            </div>
+            <div class="text-muted">Comprehensive assessment of your digital presence, competitors, and market position.
+            </div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Digital Audit Report</span>
+              <span class="chip">Competitor Analysis</span> <span class="chip">SWOT Analysis</span> <span
+                class="chip">Market Research</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">2</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">STRATEGY</div>
+                <div class="fw-semibold">Strategic Planning</div>
+              </div>
+            </div>
+            <div class="text-muted">Develop a comprehensive roadmap aligned with your business goals.</div>
+            <div class="mt-2"><span class="chip time">2‑3 weeks</span> <span class="chip">Strategy Document</span> <span
+                class="chip">Journey Maps</span> <span class="chip">Channel Strategy</span> <span class="chip">KPI
+                Framework</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">3</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">ROADMAP</div>
+                <div class="fw-semibold">Implementation Plan</div>
+              </div>
+            </div>
+            <div class="text-muted">Detailed action plan with timelines, resources, and milestones.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">90‑Day Plan</span> <span
+                class="chip">Resourcing</span> <span class="chip">Budget</span> <span class="chip">Success
+                Metrics</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">4</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">EXECUTION</div>
+                <div class="fw-semibold">Strategy Implementation</div>
+              </div>
+            </div>
+            <div class="text-muted">Work with your team to execute the strategy and achieve goals.</div>
+            <div class="mt-2"><span class="chip time">3‑6 months</span> <span class="chip">Campaigns</span> <span
+                class="chip">Monitoring</span> <span class="chip">Reporting</span> <span
+                class="chip">Optimization</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <div class="process p-3 ">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">5</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">OPTIMIZATION</div>
+                <div class="fw-semibold">Continuous Improvement</div>
+              </div>
+            </div>
+            <div class="text-muted">Ongoing analysis and refinement based on performance data.</div>
+            <div class="mt-2"><span class="chip time">Ongoing</span> <span class="chip">Performance Reports</span> <span
+                class="chip">Refinements</span> <span class="chip">A/B Testing</span> <span class="chip">Quarterly
+                Reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Investment Options</h2>
+      <p class="lead text-muted mb-4">Flexible packages to match your needs</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Foundation</div>
+            <div class="display-5 mb-3">$7,500 <span class="fs-6 text-muted">USD</span></div>
+            <div class="text-muted mb-2">Strategic assessment & roadmap</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Digital audit</li>
+              <li>✓ Competitor analysis</li>
+              <li>✓ Strategy document</li>
+              <li>✓ 90‑day roadmap</li>
+              <li>✓ KPI framework</li>
+              <li>✓ One strategy session</li>
+              <li>✓ Email support</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price pop p-3">
+            <div class="d-flex justify-content-between">
+              <div class="h5">Growth</div><span class="badge bg-primary-subtle text-primary fw-bold">Most Popular</span>
+            </div>
+            <div class="display-5 mb-3">$15,000 <span class="fs-6 text-muted">USD</span></div>
+            <div class="text-muted mb-2">Complete strategy + implementation</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Everything in Foundation</li>
+              <li>✓ Customer journey mapping</li>
+              <li>✓ Multi‑channel strategy</li>
+              <li>✓ Quarterly strategy reviews</li>
+              <li>✓ Implementation support</li>
+              <li>✓ Monthly reporting</li>
+              <li>✓ Priority support</li>
+            </ul><a class="btn btn-grad w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Enterprise</div>
+            <div class="display-5 mb-3">Custom</div>
+            <div class="text-muted mb-2">Full‑service strategic partnership</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Everything in Growth</li>
+              <li>✓ Dedicated strategist</li>
+              <li>✓ Advanced analytics setup</li>
+              <li>✓ Custom integrations</li>
+              <li>✓ Weekly check‑ins</li>
+              <li>✓ 24/7 support</li>
+              <li>✓ White‑label options</li>
+              <li>✓ Executive workshops</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Client Testimonials</h2>
+      <p class="lead text-muted mb-4">Hear from those who've worked with us</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4"><em>"Cypher Digital's strategic guidance transformed our business. We went from struggling
+                to find product‑market fit to 10x growth in less than a year. Their data‑driven approach and market
+                insights were game‑changing."</em>
+            </p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden;">
+                <img src="https://i.pravatar.cc/40?img=23" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">Jennifer Liu</div>
+                <div class="text-muted">CEO, CloudSync Pro</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4"><em>"The ROI on our digital strategy engagement was incredible. Online revenue increased
+                380% and we finally have a clear roadmap for the next 3 years. Best strategic partner we've worked
+                with."</em>
+            </p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden;">
+                <img src="https://i.pravatar.cc/40?img=50" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">Michael Torres</div>
+                <div class="text-muted">VP of Growth, RetailMax</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Technologies & Tools</h2>
+      <p class="lead mb-4">Industry‑leading tools for exceptional results</p>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="tool">Google Analytics<br /><small>Analytics</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Mixpanel<br /><small>Product Analytics</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Hotjar<br /><small>User Behavior</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">SEMrush<br /><small>SEO</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">HubSpot<br /><small>Marketing</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Tableau<br /><small>Visualization</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Ahrefs<br /><small>SEO Research</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Amplitude<br /><small>Analytics</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Proven Results</h2>
+      <p class="lead mb-4">Data-backed outcomes from real projects</p>
+
+      <div class="row g-3">
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="235" data-suffix="%">+235%</div>
+            <div>Revenue Growth</div><small class="d-block mt-1">Average revenue increase within 12 months</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="-42" data-suffix="%">-42%</div>
+            <div>Cost Efficiency</div><small class="d-block mt-1">Reduction in CAC via optimization</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="68" data-suffix="%">+68%</div>
+            <div>Market Share</div><small class="d-block mt-1">Increase in share and brand awareness</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="8.5" data-suffix="×">8.5×</div>
+            <div>ROI</div><small class="d-block mt-1">Average return on investment</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="idsuccess" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Success Stories</h2>
+      <p class="lead text-muted mb-4">Real results from real clients</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <a href="#ds-case1" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="Digital Strategy Icon/Image (SaaS Growth Strategy).png">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">Digital Strategy</span>
+                <div class="h5 mb-1">SaaS Growth Strategy</div>
+                <div class="text-muted mb-2">CloudSync Pro</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ User base grew from 5K to 50K in 8 months</li>
+                  <li>✓ MRR increased 420%</li>
+                  <li>✓ CAC reduced by 55%</li>
+                </ul>
+                <div><span class="chip">Google Analytics</span> <span class="chip">Mixpanel</span> <span
+                    class="chip">HubSpot</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#ds-case2" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="Digital Strategy Icon/Image (Digital Transformation).png" alt="">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">Digital Strategy</span>
+                <div class="h5 mb-1">Digital Transformation</div>
+                <div class="text-muted mb-2">RetailMax</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ Online revenue up 380%</li>
+                  <li>✓ Omnichannel integration complete</li>
+                  <li>✓ Customer lifetime value up 145%</li>
+                </ul>
+                <div><span class="chip">Shopify</span> <span class="chip">Google Analytics</span> <span
+                    class="chip">Klaviyo</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (note: you mentioned an error here; leaving simple static list) -->
+  <section class="section faq py-5" id="faq">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Frequently Asked Questions</h2>
+      <p class="lead text-muted mb-4">Everything you need to know</p>
+
+      <div class="accordion" id="faqDigitalStrategy">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds1">
+              What does a digital strategy include?
+            </button>
+          </h2>
+          <div id="ds1" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              It includes audience analysis, market positioning, platform selection, messaging, funnel structure,
+              and channel planning — ensuring every decision supports business goals.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds2">
+              How is this different from marketing services?
+            </button>
+          </h2>
+          <div id="ds2" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              Digital strategy defines **what to do and why**, while marketing executes it (campaigns, content,
+              ads, etc.). Strategy gives direction so execution becomes efficient and measurable.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds3">
+              Do you help with implementation?
+            </button>
+          </h2>
+          <div id="ds3" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              Yes. We offer both **strategy-only** and **strategy + execution** packages depending on your needs.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds4">
+              How do you measure success?
+            </button>
+          </h2>
+          <div id="ds4" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              Every strategy comes with KPIs — such as traffic growth, lead generation, conversion rates,
+              acquisition cost, and revenue impact.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds5">
+              How often should we update our digital strategy?
+            </button>
+          </h2>
+          <div id="ds5" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              We recommend a quarterly review and a full strategy update every 6–12 months to stay aligned with
+              market shifts and new opportunities.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ds6">
+              Can you work with our existing marketing team?
+            </button>
+          </h2>
+          <div id="ds6" class="accordion-collapse collapse" data-bs-parent="#faqDigitalStrategy">
+            <div class="accordion-body">
+              Absolutely — we can collaborate with internal teams or external vendors. We act as your strategic
+              partner and guide execution for consistency and alignment.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <div>
+        <h2 class="display-5 mb-3">Ready to Get Started?</h2>
+        <p class="lead mb-4">Let's build something amazing together. Schedule a free consultation to discuss your
+          project.
+        </p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a class="btn btn-light px-4" href="#">Schedule Consultation →</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      let hasStarted = false;
+
+      function animateCounter() {
+        counters.forEach(counter => {
+          const target = parseFloat(counter.getAttribute("data-target"));
+          const suffix = counter.getAttribute("data-suffix") || "";
+          const duration = 1500;
+          let current = 0;
+          const isNegative = target < 0;
+          const absTarget = Math.abs(target);
+          const increment = absTarget / (duration / 3); // 60fps approx
+
+          function update() {
+            current += increment;
+            let value = isNegative ? -current : current;
+
+            if (Math.abs(value) < absTarget) {
+              counter.textContent = value.toFixed(value % 1 ? 1 : 0) + suffix;
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = target + suffix;
+            }
+          }
+
+          update();
+        });
+      }
+
+      // Trigger animation when section enters viewport
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          animateCounter();
+          hasStarted = true;
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.querySelector(".band"));
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinTech Revolution — Project Case Study</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: Rinter;
+      src: url('Rinter.woff2')
+    }
+
+    :root {
+      --b: #245bff;
+      --t: #2ad3c9;
+      --ink: #0b0c2a;
+      --card: 18px
+    }
+
+    body {
+      font-family: Rinter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: var(--ink)
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      padding: .35rem .7rem;
+      border-radius: 999px
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-outline {
+      border: 1px solid #2b3445;
+      background: rgba(255, 255, 255, .06);
+      color: #e8eef7;
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      font-weight: 700
+    }
+
+    /* Hero dark banner */
+    .hero-dark {
+      background: radial-gradient(1200px 600px at 80% -10%, #0f2b3a 0%, #0e1420 55%), #0e1420;
+      color: #e8eef7;
+      padding: 20px 0 36px
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: .01em
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      background: #101a2b;
+      border: 1px solid #223046;
+      color: #b3c4da;
+      font-size: .75rem;
+      margin-right: .35rem
+    }
+
+    .meta {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 14px;
+      padding: .9rem 1.1rem;
+      color: #c9d6ea
+    }
+
+    /* Sections */
+    .section {
+      padding: 56px 0
+    }
+
+    .light {
+      background: #f7fafc
+    }
+
+    .dark {
+      background: #0e1420;
+      color: #e8eef7
+    }
+
+    /* Demo */
+    .demo-card {
+      background: linear-gradient(135deg, #d8f3f0, #d4defa);
+      border: 1px solid #e6eef7;
+      border-radius: 22px;
+      height: 340px;
+      display: grid;
+      place-items: center;
+      color: #23314a;
+      box-shadow: 0 18px 44px rgba(16, 24, 40, .15)
+    }
+
+    .play {
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #0fb6ad;
+      box-shadow: 0 8px 22px rgba(16, 24, 40, .2)
+    }
+
+    /* Info cards */
+    .info {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
+    }
+
+    .info h5 {
+      margin: 0 0 .35rem 0
+    }
+
+    /* Metrics */
+    .band {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #e9f3ff
+    }
+
+    .metric {
+      background: rgba(7, 14, 28, .7);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 18px;
+      padding: 1.25rem
+    }
+
+    .metric .value {
+      font-size: 40px;
+      font-weight: 800
+    }
+
+    /* Stack */
+    .stack-card {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
+    }
+
+    .stack-tag {
+      display: inline-block;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: #3b82f6;
+      border: 1px solid #d7e8ff;
+      font-size: .75rem;
+      padding: .15rem .45rem
+    }
+
+    /* Process */
+    .process-card {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
+    }
+
+    .step-pill {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 999px;
+      background: #0b0c2a
+    }
+
+    /* Segmented header (Timeline / Features / Team) */
+    .seg-wrap {
+      display: flex;
+      justify-content: center
+    }
+
+    .labels {
+      display: flex;
+      gap: 6px;
+      background: #eef2f6;
+      border-radius: 9999px;
+      padding: 6px
+    }
+
+    .seg-item {
+      padding: .4rem 1rem;
+      border-radius: 9999px;
+      color: #637186;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+      cursor: pointer
+    }
+
+    .seg-item.active {
+      background: #fff;
+      color: #0b0c2a;
+      box-shadow: 0 4px 10px rgba(16, 24, 40, .08)
+    }
+
+    /* Feature list */
+    .feat-card {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 14px;
+      padding: .9rem 1.1rem;
+      box-shadow: 0 10px 20px rgba(16, 24, 40, .06);
+      display: flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .check-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #0fa6a0;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25)
+    }
+
+    /* Team members */
+    .member-card {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 16px;
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
+    }
+
+    .avatar-lg {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto .5rem;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(36, 91, 255, .25)
+    }
+
+    .role-chip {
+      display: inline-block;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      background: #eefaf9;
+      color: #0b8a82;
+      font-size: .75rem;
+      font-weight: 700;
+      border: 1px solid #c8efe9;
+      margin: .25rem 0 .35rem
+    }
+
+    /* CSS-only tabs for Development section */
+    .dev-tabs input {
+      display: none
+    }
+
+    .dev-tabs .tab-panel {
+      display: none
+    }
+
+    #tab-timeline:checked~#dev-timeline {
+      display: block
+    }
+
+    #tab-features:checked~#dev-features {
+      display: block
+    }
+
+    #tab-team:checked~#dev-team {
+      display: block
+    }
+
+    #tab-timeline:checked~.seg-wrap .labels label[for="tab-timeline"],
+    #tab-features:checked~.seg-wrap .labels label[for="tab-features"],
+    #tab-team:checked~.seg-wrap .labels label[for="tab-team"] {
+      background: #fff;
+      color: #0b0c2a;
+      box-shadow: 0 4px 10px rgba(16, 24, 40, .08)
+    }
+
+    /* Gallery */
+    .shot {
+      height: 220px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #2a3342, #2b3646);
+      border: 1px solid #333d50
+    }
+
+    /* Quote */
+    .quote {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #fff;
+      border-radius: 22px;
+      padding: 36px 22px;
+      box-shadow: 0 18px 44px rgba(16, 24, 40, .2)
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .18)
+    }
+
+    /* More projects */
+    .tile {
+      height: 200px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(16, 24, 40, .15)
+    }
+
+    .tile.g1 {
+      background: linear-gradient(180deg, #02d66b, #078a47)
+    }
+
+    .tile.g2 {
+      background: linear-gradient(180deg, #b95cff, #ff2f6d)
+    }
+
+    .tile.g3 {
+      background: linear-gradient(180deg, #ff7a00, #d90000)
+    }
+
+    .tag {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      background: #eef2f6;
+      color: #667085;
+      font-size: .75rem;
+      margin-top: .75rem
+    }
+
+    /* CTA */
+    .cta-dark {
+      background: radial-gradient(1200px 600px at 80% -10%, #153247 0%, #0e1420 65%), #0e1420;
+      color: #e8eef7;
+      border-top: 1px solid #1b2a3b;
+      padding: 64px 0
+    }
+
+    .cta-dark .btn-outline {
+      border-color: #445266;
+      color: #c8d2e2
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="container topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Main page.html" class="back-link">← Back to Home</a>
+      <div class="brand-chip">
+        <div class="brand-avatar">C</div>
+        <div class="fw-semibold">Cypher Digital</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark banner with title and meta -->
+  <section class="hero-dark">
+    <div class="container">
+      <div class="mb-2">
+        <span class="pill">Web App</span><span class="pill">Real‑time</span><span class="pill">Trading</span><span
+          class="pill">FinTech</span>
+      </div>
+      <h1 class="display-4 hero-title">FinTech Revolution</h1>
+      <p class="lead" style="max-width:58ch">A comprehensive real‑time trading platform that revolutionizes how users
+        trade with lightning‑fast execution, advanced charting, and seamless performance under heavy load.</p>
+      <div class="row g-3 mt-2">
+        <div class="col-6 col-lg-3">
+          <div class="meta">Client<br><span class="fw-bold text-white">FinanceHub</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="meta">Year<br><span class="fw-bold text-white">2024</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="meta">Duration<br><span class="fw-bold text-white">6 months</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="meta">Category<br><span class="fw-bold text-white">FinTech</span></div>
+        </div>
+      </div>
+      <div class="d-flex gap-2 mt-3">
+        <a class="btn btn-grad" href="#demo">Watch Demo</a>
+        <a class="btn btn-outline" href="#">Visit Live Site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1) Demos -->
+  <section id="demo" class="section">
+    <div class="container">
+      <h2 class="display-6 fw-bold mb-3">Project Demo</h2>
+      <div class="demo-card">
+        <div class="text-center">
+          <div class="play mb-2">▶</div>
+          <div class="small">View Project Demo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2) The Challenge / Our Solution -->
+  <section class="section light">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="info">
+            <h5>🎯 The Challenge</h5>
+            <div class="text-muted">FinanceHub needed a robust, real‑time trading platform that could handle thousands
+              of concurrent users without lag. The existing system was outdated and couldn't scale to meet growing
+              demand.</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="info">
+            <h5>✅ Our Solution</h5>
+            <div class="text-muted">We built a modern, cloud‑native trading platform using React, Node.js, and WebSocket
+              technology. The system features real‑time data streaming, advanced charting, and lightning‑fast trade
+              execution.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) Impact & Results -->
+  <section class="section band">
+    <div class="container text-center">
+      <span class="badge-custom">Impact & Results</span>
+      <h2 class="display-5 fw-bold mt-2">Measurable Success</h2>
+      <p class="lead">The platform exceeded all KPIs and delivered exceptional business value</p>
+      <div class="row g-3 mt-2 text-start">
+        <div class="col-6 col-lg-3">
+          <div class="metric h-100">
+            <div class="value">300%</div>
+            <div>User Growth</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric h-100">
+            <div class="value">&lt;50ms</div>
+            <div>Response Time</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric h-100">
+            <div class="value">10K+</div>
+            <div>Active Users</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="metric h-100">
+            <div class="value">99.9%</div>
+            <div>Uptime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) Technology Stack -->
+  <section class="section light">
+    <div class="container">
+      <h2 class="display-6 fw-bold mb-2">Technology Stack</h2>
+      <p class="lead text-muted mb-3">Cutting‑edge technologies for a modern, scalable solution</p>
+      <div class="row g-3">
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Frontend</span>
+            <div class="h5 mt-2">React</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Backend</span>
+            <div class="h5 mt-2">Node.js</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Real‑time</span>
+            <div class="h5 mt-2">WebSocket</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Database</span>
+            <div class="h5 mt-2">PostgreSQL</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Caching</span>
+            <div class="h5 mt-2">Redis</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stack-card h-100"><span class="stack-tag">Cloud</span>
+            <div class="h5 mt-2">AWS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) Development Process -->
+  <section class="section" id="development">
+    <div class="container">
+      <h2 class="display-5 fw-bold text-center">Development Process</h2>
+      <p class="lead text-muted text-center mb-4">A structured approach from concept to launch</p>
+
+      <div class="dev-tabs">
+        <input type="radio" name="devtab" id="tab-timeline" checked>
+        <input type="radio" name="devtab" id="tab-features">
+        <input type="radio" name="devtab" id="tab-team">
+        <div class="seg-wrap mb-3">
+          <div class="labels">
+            <label for="tab-timeline" class="seg-item">Timeline</label>
+            <label for="tab-features" class="seg-item">Features</label>
+            <label for="tab-team" class="seg-item">Team</label>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="vstack gap-3 tab-panel" id="dev-timeline">
+          <div class="process-card">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-pill">1</div>
+                <div class="fw-semibold">Discovery & Research</div>
+              </div>
+              <span class="badge bg-success">100% Complete</span>
+            </div>
+            <div class="text-muted small mb-2">2 weeks · User research, competitive analysis, technical audit</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="process-card">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-pill">2</div>
+                <div class="fw-semibold">Design & Prototyping</div>
+              </div>
+              <span class="badge bg-success">100% Complete</span>
+            </div>
+            <div class="text-muted small mb-2">3 weeks · UI/UX design, interactive prototypes, user testing</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="process-card">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-pill">3</div>
+                <div class="fw-semibold">Development Sprint 1</div>
+              </div>
+              <span class="badge bg-success">100% Complete</span>
+            </div>
+            <div class="text-muted small mb-2">8 weeks · Core trading features, real‑time streaming</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="process-card">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-pill">4</div>
+                <div class="fw-semibold">Development Sprint 2</div>
+              </div>
+              <span class="badge bg-success">100% Complete</span>
+            </div>
+            <div class="text-muted small mb-2">6 weeks · Advanced charting, analytics dashboard</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="process-card">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-pill">5</div>
+                <div class="fw-semibold">Testing & Launch</div>
+              </div>
+              <span class="badge bg-success">100% Complete</span>
+            </div>
+            <div class="text-muted small mb-2">5 weeks · Security audit, performance testing, deployment</div>
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+
+        <!-- Features block -->
+        <div class="mt-2 tab-panel" id="dev-features">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Real‑time Trade Execution
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Advanced Charting Tools
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Portfolio Analytics
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Market Data Streaming
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Multi‑Asset Support
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Risk Management Tools
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>Mobile Trading App
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feat-card">
+                <div class="check-icon">✓</div>API Integration
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team block -->
+        <div class="mt-2 tab-panel" id="dev-team">
+          <div class="row g-3">
+            <div class="col-lg-3 col-md-6">
+              <div class="member-card h-100">
+                <div class="avatar-lg">SC</div>
+                <div class="fw-semibold">Sarah Chen</div>
+                <div class="role-chip">Lead Designer</div>
+                <div class="text-muted small">Led UX research and design system</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="member-card h-100">
+                <div class="avatar-lg">MR</div>
+                <div class="fw-semibold">Michael Ross</div>
+                <div class="role-chip">Tech Lead</div>
+                <div class="text-muted small">Architecture and backend development</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="member-card h-100">
+                <div class="avatar-lg">EP</div>
+                <div class="fw-semibold">Emily Parker</div>
+                <div class="role-chip">Frontend Dev</div>
+                <div class="text-muted small">React implementation and animations</div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="member-card h-100">
+                <div class="avatar-lg">DK</div>
+                <div class="fw-semibold">David Kim</div>
+                <div class="role-chip">Mobile Dev</div>
+                <div class="text-muted small">React Native app development</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) Visual Showcase -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-6 fw-bold text-center">Visual Showcase</h2>
+      <p class="lead text-center mb-4">Explore the interface design and user experience</p>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="shot"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="shot"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="shot"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="shot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7) The Quote -->
+  <section class="section">
+    <div class="container">
+      <div class="quote">
+        <div class="display-6 text-center mb-2">“”</div>
+        <p class="lead text-center mb-4">"Cypher Digital transformed our vision into reality. The platform exceeded our
+          expectations in every way — from design to performance to user satisfaction. Our users love it, and our
+          business has grown exponentially."</p>
+        <div class="d-flex justify-content-center align-items-center gap-3">
+          <div class="avatar">JD</div>
+          <div>
+            <div class="fw-bold">John Davidson</div>
+            <div class="small" style="opacity:.85">CEO, FinanceHub Inc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8) More Projects -->
+  <section class="section light">
+    <div class="container">
+      <h2 class="display-5 fw-bold text-center">More Projects</h2>
+      <p class="lead text-center text-muted mb-4">Explore our other success stories</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="tile g1"></div>
+          <span class="tag">HealthTech</span>
+          <div class="h5 mt-1">HealthSync Platform</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="tile g2"></div>
+          <span class="tag">E‑commerce</span>
+          <div class="h5 mt-1">RetailPro Dashboard</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="tile g3"></div>
+          <span class="tag">Education</span>
+          <div class="h5 mt-1">EduTech Learning</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9) Ready to Start CTA -->
+  <section class="cta-dark">
+    <div class="container text-center">
+      <h2 class="display-4 fw-bold">Ready to Start Your Project?</h2>
+      <p class="lead">Let's create something extraordinary together. Get in touch to discuss your ideas.</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <a class="btn btn-grad" href="#contact">Start a Project</a>
+        <a class="btn btn-outline" href="#demo">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

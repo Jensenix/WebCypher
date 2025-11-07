@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Rinter';
+      src: url(Rinter.woff2);
+    }
+
+    body {
+      font-family: 'Rinter', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .brand-section {
+      background-color: #0b0c2a;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .brand-section .btn-group .btn {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      margin: 5px;
+      color: white;
+      width: 60px;
+      height: 60px;
+      font-weight: bold;
+    }
+
+    .hero-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+
+    .hero-section h1 {
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    .hero-section p {
+      color: #6c757d;
+    }
+
+    .stats-box {
+      background-color: white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+    }
+
+    .TOMBOL {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: white;
+      width: 60px;
+      height: 60px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      padding-inline: 10rem;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      margin: 1rem;
+      position: relative;
+
+
+    }
+
+    .TOMBOL img {
+      width: 18rem;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+    }
+
+    .TOMBOL:hover {
+      box-shadow: 0 0 15px 4px rgba(0, 123, 255, 0.6);
+      background-color: rgba(0, 123, 255, 0.2);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .stats-box h4 {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .btn-primary {
+      background-color: #3e8bff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 50px;
+    }
+
+    .btn-outline {
+      border: 2px solid #3e8bff;
+      color: #3e8bff;
+      border-radius: 50px;
+      padding: 10px 25px;
+      background: transparent;
+    }
+
+    .badge-custom {
+      background-color: #e0f7fa;
+      color: #00bcd4;
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-weight: bold;
+    }
+
+    .LGOE {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: white;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(180deg, rgba(42, 211, 201, 1) 0%, rgba(36, 91, 255, 1) 100%);
+      border-radius: 15px;
+      margin-inline: 5.44rem;
+
+    }
+
+    .stats-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* horizontal center */
+      justify-content: center;
+      /* vertical center */
+      text-align: center;
+      height: 13rem;
+      align-items: center;
+    }
+
+    .GLGOE {
+      margin-top: 0.8rem;
+    }
+
+    .TOJA {
+      background: linear-gradient(180deg, rgba(42, 211, 201, 1) 0%, rgba(36, 91, 255, 1) 100%);
+      border-radius: 25px;
+      height: 3rem;
+      width: 9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    .why-section {
+      background-color: #ffffff;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .why-section .why-badge {
+      display: inline-block;
+      background-color: #e8f4ff;
+      color: #007bff;
+      font-size: 0.75rem;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .why-section h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #0b0c2a;
+      margin-bottom: 15px;
+    }
+
+    .why-section p.lead {
+      color: #6c757d;
+      font-size: 1rem;
+      margin-bottom: 60px;
+    }
+
+    .why-section .why-card {
+      background-color: #232437;
+      border-radius: 16px;
+      padding: 30px;
+      color: white;
+      text-align: left;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .why-section .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .why-section .why-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    /* Warna ikon */
+    .icon-teal {
+      background-color: #00bfa671;
+    }
+
+    .icon-blue {
+      background-color: #3e4bff67;
+    }
+
+    .icon-purple {
+      background-color: #7c4dff65;
+    }
+
+    .icon-green {
+      background-color: #3fffc96b;
+    }
+
+    .why-section h5 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .why-section .why-text {
+      color: #c9c9d2;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .service-section {
+      background-color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .service-section .section-badge {
+      color: #007bff;
+      background-color: #e6f0ff;
+      font-weight: 600;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .service-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0b0c2a;
+    }
+
+    .service-section p.description {
+      color: #6c757d;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      font-size: 1rem;
+    }
+
+    .service-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+      text-align: left;
+      transition: 0.3s ease;
+      height: 100%;
+    }
+
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      background: linear-gradient(135deg, #2ad3c9, #245bff);
+      color: white;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .service-badge {
+      background-color: #e6f7ff;
+      color: #007bff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #212529;
+    }
+
+    .service-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .impact-section {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .impact-section .section-badge {
+      display: inline-block;
+      background-color: #e6f0ff;
+      color: #007bff;
+      font-size: 0.75rem;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .impact-section h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #0b0c2a;
+      margin-bottom: 10px;
+    }
+
+    .impact-section p.lead-desc {
+      color: #6c757d;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      color: white;
+      transition: all 0.3s ease;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project-card .card-body {
+      background-color: #121829;
+      padding: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .project-card .card-tag {
+      font-size: 0.75rem;
+      background-color: #2f2f3e;
+      color: #00f5d4;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .project-card h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .project-card .stats-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .project-card .stats-line .highlight {
+      color: #2af598;
+      font-weight: 600;
+    }
+
+    .project-card .arrow-icon {
+      text-decoration: none;
+
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .impact-showcase {
+      padding: 100px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .impact-showcase .impact-header {
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .impact-showcase .badge {
+      background-color: #e6f0ff;
+      color: #00bcd4;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .impact-showcase h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0b0c2a;
+      margin-bottom: 10px;
+    }
+
+    .impact-showcase p {
+      color: #6c757d;
+      font-size: 1rem;
+    }
+
+    .impact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .impact-card {
+      height: 400px;
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      border-radius: 20px;
+      width: 300px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: all 0.3s ease;
+    }
+
+    .impact-card .arrow-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .impact-card .card-body-a {
+      background-color: #121829;
+      padding: 30px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      color: white;
+      text-align: left;
+    }
+
+    .impact-card .card-tag {
+      font-size: 0.75rem;
+      background-color: #2f2f3e;
+      color: #00f5d4;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .impact-card h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .impact-card p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+
+    .impact-card .card-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      align-items: center;
+    }
+
+    .impact-card .highlight {
+      color: #2af598;
+      font-weight: 600;
+    }
+
+    .impact-card a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 0.85rem;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .clients-section {
+      background-color: #ffffff;
+    }
+
+    .clients-badge {
+      background-color: #e6f4ff;
+      color: #00bcd4;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .clients-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #0b0c2a;
+    }
+
+    .clients-subtext {
+      color: #6c757d;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .client-card {
+      background-color: #f9fafc;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .client-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .client-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      border-radius: 15px;
+      margin: 0 auto;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .client-tag {
+      display: inline-block;
+      background-color: #e0f7fa;
+      color: #00bcd4;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin: 5px 0;
+    }
+
+    .client-desc {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .stats-item h4 {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .stats-item p {
+      font-size: 0.95rem;
+    }
+
+    .testimonial-wrapper {
+      background-color: #ffffff;
+    }
+
+    .testimonial-badge {
+      background-color: #e6f4ff;
+      color: #00bcd4;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .testimonial-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #0b0c2a;
+    }
+
+    .testimonial-subtitle {
+      color: #6c757d;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .testimonial-logo {
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      color: white;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .testimonial-stars {
+      color: #00c389;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .btn-testimonial-cta {
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      padding: 12px 28px;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-testimonial-cta:hover {
+      box-shadow: 0 8px 25px rgba(36, 91, 255, 0.3);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .pricing-section {
+      .pricing-section {
+        background-color: #fff;
+      }
+    }
+
+    .pricing-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: left;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Hover effect for all cards */
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-card h5 {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .pricing-card .desc {
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+
+    .pricing-card h2 {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .pricing-card h2 small {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    /* Button Gradient */
+    .btn-gradient {
+      background: linear-gradient(270deg, #2ad3c9, #245bff, #2ad3c9);
+      background-size: 600% 600%;
+      color: #fff !important;
+      text-align: center;
+      display: block;
+      padding: 10px 0;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      animation: gradientMove 3s ease infinite;
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .section-animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.5s ease-out;
+    }
+
+    .section-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .brand-section,
+    .hero-section,
+    .why-section,
+    .service-section,
+    .impact-showcase,
+    .clients-section,
+    .testimonial-wrapper,
+    .pricing-section,
+    .form-section-wrapper-x91,
+    .footer-section {
+      overflow: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Featured (Tengah) */
+    .pricing-card.featured {
+      background: linear-gradient(180deg, #2ad3c9, #245bff);
+      color: #fff;
+      position: relative;
+      min-height: 600px;
+      /* lebih tinggi dari lainnya */
+      margin-top: 20px;
+      /* membuatnya tampak menonjol ke atas */
+      z-index: 2;
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 40px rgba(36, 91, 255, 0.3);
+    }
+
+    .pricing-card.featured h2 small,
+    .pricing-card.featured .desc {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .featured-label {
+      background-color: #00e0d4;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 5px 12px;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+
+      .pricing-card,
+      .pricing-card.featured {
+        min-height: auto;
+        margin-top: 0;
+      }
+    }
+
+    .form-title-x91 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle-x91 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #d1d5db;
+    }
+
+    .contact-form-x91 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row-x91 {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .form-group-x91 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group-x91 label {
+      font-size: 0.75rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+      color: #f1f5f9;
+    }
+
+    .form-group-x91 input,
+    .form-group-x91 textarea {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.75rem;
+      border-radius: 8px;
+      color: white;
+      font-size: 0.9rem;
+      resize: none;
+      outline: none;
+    }
+
+    .form-group-x91 textarea {
+      height: 120px;
+    }
+
+    .send-btn-x91 {
+      margin-top: 1rem;
+      background: white;
+      color: #1e3a8a;
+      font-weight: 500;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .send-btn-x91:hover {
+      background: #e0e0e0;
+    }
+
+    .email-footer-x91 {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    .email-footer-x91 a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .form-section-wrapper-x91 {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #245BFF, #7C3AED, #2AD3C9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Rinter', sans-serif;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .form-section-wrapper-x91 .form-container-x91 {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .form-section-wrapper-x91 .form-heading-x91 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .form-section-wrapper-x91 .form-subheading-x91 {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 40px;
+    }
+
+    .form-section-wrapper-x91 .form-box-x91 {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(20px);
+    }
+
+    .form-section-wrapper-x91 .form-row-x91 {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-section-wrapper-x91 .form-group-x91 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section-wrapper-x91 .form-group-x91 label {
+      font-size: 11px;
+      font-weight: 500;
+      text-align: left;
+      color: #ffffffcc;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-section-wrapper-x91 .form-group-x91 input,
+    .form-section-wrapper-x91 .form-group-x91 textarea {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      resize: none;
+    }
+
+    .form-section-wrapper-x91 .form-group-x91 input::placeholder,
+    .form-section-wrapper-x91 .form-group-x91 textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-section-wrapper-x91 textarea {
+      height: 120px;
+    }
+
+    .form-section-wrapper-x91 .form-button-x91 {
+      background: white;
+      color: #444;
+      padding: 14px 20px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      margin-top: 20px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .form-section-wrapper-x91 .form-button-x91:hover {
+      opacity: 0.9;
+    }
+
+    .form-section-wrapper-x91 .form-footer-x91 {
+      margin-top: 30px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-section-wrapper-x91 .form-footer-x91 a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-section {
+      padding: 60px 20px;
+      background-color: #232437;
+      color: #ffffff;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      /* Menambahkan ruang kiri-kanan */
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 250px;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-link {
+      color: #b0b3c4;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+    }
+
+    .footer-divider {
+      border-top: 1px solid #2e2f44;
+      margin-top: 40px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      padding-top: 20px;
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 768px) {
+      .footer-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-container {
+        padding: 0 20px;
+      }
+    }
+
+    .deconone {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="brand-section">
+    <div class="container">
+      <p class="mb-4">TRUSTED BY INNOVATIVE COMPANIES WORLDWIDE</p>
+      <div class="d-flex flex-wrap justify-content-center btn-group">
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center btn-group">
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        </div>
+      </div>
+  </section>
+
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <span class="badge-custom mb-3 d-inline-block">ABOUT US</span>
+          <h1>We Build Digital <br> Products That Matter</h1>
+          <p class="my-4">
+            Cypher Digital is a full-service digital agency specializing in transforming complex business challenges
+            into elegant, scalable solutions.
+            <br><br>
+            Our team of strategists, designers, and developers work collaboratively to decode your unique challenges and
+            design digital experiences that drive measurable results.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="TOJA">Work With Us</a>
+            <a href="#" class="btn btn-outline">View Projects</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-5 mt-md-0">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="stats-box">
+                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/QCFQV6Dq/Icon-1.png" alt=""></div>
+                <h4>5+</h4>
+                <p>Years Experience</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="stats-box">
+                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/jdJ6bkZK/Icon-2.png" alt=""></div>
+                <h4>50+</h4>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="stats-box">
+                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/W1GMDqR2/Icon.png" alt=""></div>
+                <h4>100+</h4>
+                <p>Projects Completed</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="stats-box">
+                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/d0nr6Mtx/Vector.png" alt=""></div>
+                <h4>98%</h4>
+                <p>Success Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <span class="why-badge">OUR APPROACH</span>
+      <h2>Why Choose Cypher Digital?</h2>
+      <p class="lead">We combine strategic thinking with creative execution to deliver exceptional results.</p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+          <div class="why-card">
+            <div class="why-icon icon-teal">
+              <img src="https://i.postimg.cc/KY14kQ87/Icon-4.png" alt="">
+            </div>
+            <h5>Strategic Thinking</h5>
+            <p class="why-text">Data-driven insights that decode market complexity and uncover opportunities.</p>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="why-card">
+            <div class="why-icon icon-blue">
+              <img src="https://i.postimg.cc/05Yjwz9q/Icon-5.png" alt="">
+            </div>
+            <h5>Rapid Execution</h5>
+            <p class="why-text">Agile workflows that transform concepts into production-ready solutions fast.</p>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="why-card">
+            <div class="why-icon icon-purple">
+              <img src="https://i.postimg.cc/hPKjbKGy/Icon-7.png" alt="">
+            </div>
+            <h5>Built to Last</h5>
+            <p class="why-text">Scalable architecture and security-first development for long-term growth.</p>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="why-card">
+            <div class="why-icon icon-green">
+              <img src="https://i.postimg.cc/x82dZ2ys/Icon-3.png" alt="">
+            </div>
+            <h5>Results Focused</h5>
+            <p class="why-text">Every pixel, every line of code serves your business objectives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="idservice" class="service-section">
+    <div class="section-badge">SERVICES</div>
+    <h2>What We Do Best</h2>
+    <p class="description">End-to-end digital solutions designed to elevate your brand and drive measurable results.</p>
+
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-6">
+          <a class="deconone" href="Web Development.html">
+            <div class="service-box h-100">
+              <div class="service-icon">
+                <img src="https://i.postimg.cc/Hs3QbZTL/Icon-9.png" alt="">
+              </div>
+              <div class="service-badge">Fast & Scalable</div>
+              <div class="service-title">Web Development</div>
+              <div class="service-text">Lightning-fast React apps with modern tech stacks that scale with your business.
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6">
+          <a class="deconone" href="UIUX.html">
+            <div class="service-box h-100">
+              <div class="service-icon">
+                <img src="https://i.postimg.cc/8z5L4RCy/Icon-8.png" alt="">
+              </div>
+              <div class="service-badge">User-Centered</div>
+              <div class="service-title">UI/UX Design</div>
+              <div class="service-text">Interfaces that users love and understand intuitively, crafted with precision.
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6">
+          <a class="deconone" href="Digital Strategy.html">
+            <div class="service-box h-100">
+              <div class="service-icon">
+                <img src="https://i.postimg.cc/Dy7rJk3k/Icon-10.png" alt="">
+              </div>
+              <div class="service-badge">ROI Driven</div>
+              <div class="service-title">Digital Strategy</div>
+              <div class="service-text">Data-backed roadmaps for sustainable growth and market dominance.</div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6">
+          <a class="deconone" href="Brand Identity.html">
+            <div class="service-box h-100">
+              <div class="service-icon">
+                <img src="https://i.postimg.cc/PfWb5fcW/Icon-11.png" alt="">
+              </div>
+              <div class="service-badge">Distinctive</div>
+              <div class="service-title">Brand Identity</div>
+              <div class="service-text">Memorable visuals that cut through the noise and captivate audiences.</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="impact-showcase">
+    <div class="impact-header">
+      <span class="badge">CASE STUDIES</span>
+      <h2>Projects That Made Impact</h2>
+      <p>Real results for real businesses. Explore how we’ve helped companies transform their digital presence.</p>
+    </div>
+
+    <div class="impact-cards">
+      <div class="impact-card">
+        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+        <div class="card-body-a">
+          <span class="card-tag">WEB APP</span>
+          <h5>FinTech Revolution</h5>
+          <p>Real-time trading platform serving 10k+ active users with seamless performance.</p>
+          <div class="card-stats">
+            <span class="highlight">300% User Growth</span>
+            <a href="#">View Case →</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="impact-card">
+        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+        <div class="card-body-a">
+          <span class="card-tag">DESIGN SYSTEM</span>
+          <h5>Healthcare Portal</h5>
+          <p>Patient management system streamlining operations for 50+ medical clinics.</p>
+          <div class="card-stats">
+            <span class="highlight">40% Time Saved</span>
+            <a href="#">View Case →</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="impact-card">
+        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+        <div class="card-body-a">
+          <span class="card-tag">FULL STACK</span>
+          <h5>E-commerce Scale</h5>
+          <p>Multi-vendor marketplace with AI-powered recommendations driving revenue.</p>
+          <div class="card-stats">
+            <span class="highlight">$2M+ Revenue</span>
+            <a href="#">View Case →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="clients-section py-5 text-center">
+    <div class="container">
+      <span class="clients-badge mb-3">OUR CLIENTS</span>
+      <h2 class="clients-title mb-3">Partnering With Industry Leaders</h2>
+      <p class="clients-subtext mb-5">We're proud to work with innovative companies across industries, helping them
+        achieve their digital transformation goals.</p>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">TF</div>
+            <h5 class="mt-3 mb-1 fw-semibold">TechFlow</h5>
+            <span class="client-tag">SaaS</span>
+            <p class="client-desc mb-0">Cloud infrastructure platform</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">HS</div>
+            <h5 class="mt-3 mb-1 fw-semibold">HealthSync</h5>
+            <span class="client-tag">Healthcare</span>
+            <p class="client-desc mb-0">Patient management system</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">RP</div>
+            <h5 class="mt-3 mb-1 fw-semibold">RetailPro</h5>
+            <span class="client-tag">E-commerce</span>
+            <p class="client-desc mb-0">Multi-vendor marketplace</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">FH</div>
+            <h5 class="mt-3 mb-1 fw-semibold">FinanceHub</h5>
+            <span class="client-tag">FinTech</span>
+            <p class="client-desc mb-0">Trading platform</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">ET</div>
+            <h5 class="mt-3 mb-1 fw-semibold">EduTech</h5>
+            <span class="client-tag">Education</span>
+            <p class="client-desc mb-0">Learning management system</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">CS</div>
+            <h5 class="mt-3 mb-1 fw-semibold">CloudScale</h5>
+            <span class="client-tag">Infrastructure</span>
+            <p class="client-desc mb-0">Cloud solutions provider</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">DS</div>
+            <h5 class="mt-3 mb-1 fw-semibold">DataSync</h5>
+            <span class="client-tag">Analytics</span>
+            <p class="client-desc mb-0">Business intelligence</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="client-card p-4">
+            <div class="client-icon">MF</div>
+            <h5 class="mt-3 mb-1 fw-semibold">MediaFlow</h5>
+            <span class="client-tag">Media</span>
+            <p class="client-desc mb-0">Content distribution</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row text-center mt-5">
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <h4>50+</h4>
+            <p class="text-muted">Active Clients</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <h4>12</h4>
+            <p class="text-muted">Industries Served</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <h4>100+</h4>
+            <p class="text-muted">Projects Delivered</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stats-item">
+            <h4>98%</h4>
+            <p class="text-muted">Retention Rate</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="testimonial-wrapper py-5 text-center">
+    <div class="container">
+      <span class="testimonial-badge mb-3">TESTIMONIALS</span>
+      <h2 class="testimonial-title mb-2">What Our Clients Say</h2>
+      <p class="testimonial-subtitle mb-5">
+        Don’t just take our word for it. Here's what industry leaders have to say about working with Cypher Digital.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3">★★★★★</div>
+            <p class="testimonial-text">
+              "Cypher Digital transformed our outdated platform into a modern, high-performing application. Their
+              strategic approach and technical expertise exceeded our expectations."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=1" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Sarah Chen</strong><br>
+                <span class="text-muted small">CEO, TechFlow Solutions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3">★★★★★</div>
+            <p class="testimonial-text">
+              "Working with Cypher Digital was a game-changer. They didn’t just build a product—they became true
+              partners in our growth journey. Incredible results."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=2" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Michael Rodriguez</strong><br>
+                <span class="text-muted small">Founder, HealthSync</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★☆</div>
+            <p class="testimonial-text">
+              "Cypher Digital didn’t just meet our expectations—they redefined what we thought was possible. The
+              collaboration felt like an extension of our own team."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=7" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Elena Grace</strong><br>
+                <span class="text-muted small">Head of Product, NovaTech</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-success">★★★★★</div>
+            <p class="testimonial-text">
+              "The attention to detail, creative thinking, and consistent delivery make Cypher Digital our first call
+              for any digital initiative. Truly world-class!"
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=12" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Jasper Lee</strong><br>
+                <span class="text-muted small">VP Marketing, SphereCloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-primary">★★★★☆</div>
+            <p class="testimonial-text">
+              "From start to finish, the Cypher Digital team was responsive, strategic, and incredibly efficient. We now
+              have a product we’re proud to show off."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=32" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Ravi Menon</strong><br>
+                <span class="text-muted small">COO, BrightBridge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
+            <p class="testimonial-text">
+              "Their ability to turn our vague ideas into a polished, user-friendly platform was impressive. Cypher
+              Digital is now our go-to partner for innovation."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=45" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Anna Weber</strong><br>
+                <span class="text-muted small">Innovation Lead, PixelForge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-success">★★★★☆</div>
+            <p class="testimonial-text">
+              "What impressed us most was the communication and transparency. The Cypher team always kept us in the loop
+              and delivered ahead of schedule."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=58" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Leo Chan</strong><br>
+                <span class="text-muted small">CTO, VentureLeap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-primary">★★★★★</div>
+            <p class="testimonial-text">
+              "Cypher Digital helped us break into a new market with a powerful digital product. Their business insight
+              was just as valuable as their technical skills."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=16" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Maya Patel</strong><br>
+                <span class="text-muted small">CEO, GreenRoute</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="testimonial-card p-4 h-100">
+            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
+            <p class="testimonial-text">
+              "We’ve worked with many vendors, but Cypher Digital felt like an extension of our own team. Their
+              strategic thinking and technical delivery were unmatched."
+            </p>
+            <div class="d-flex align-items-center mt-4">
+              <img src="https://i.pravatar.cc/40?img=33" class="rounded-circle me-3" alt="avatar">
+              <div class="text-start">
+                <strong>Jordan Lee</strong><br>
+                <span class="text-muted small">Product Manager, NovaLink</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1 style="margin-top: 3rem;">Ready to become our next success story?</h1>
+      <div class="mt-5">
+        <a href="#" class="btn-testimonial-cta">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+  <section class="pricing-section py-5">
+    <div class="container text-center">
+      <div class="mb-4">
+        <span class="badge rounded-pill text-bg-light px-3 py-2 mb-3">PRICING</span>
+        <h2 class="fw-bold display-6">Simple, Transparent Pricing</h2>
+        <p class="text-muted">Choose the perfect plan for your project. No hidden fees, just exceptional results.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center align-items-end">
+
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h5>Starter</h5>
+            <p class="desc">Perfect for small projects</p>
+            <h2>$2,500 <small>per project</small></h2>
+            <ul>
+              <li>✅ Single page website</li>
+              <li>✅ Responsive design</li>
+              <li>✅ Basic SEO optimization</li>
+              <li>✅ 1 month support</li>
+              <li>✅ Content management</li>
+            </ul>
+            <a href="#" class="btn-gradient">Get Started →</a>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="pricing-card featured">
+            <span class="featured-label">MOST POPULAR</span>
+            <h5>Professional</h5>
+            <p class="desc">For growing businesses</p>
+            <h2>$7,500 <small>per project</small></h2>
+            <ul>
+              <li>✅ Multi-page website</li>
+              <li>✅ Custom UI/UX design</li>
+              <li>✅ Advanced SEO & analytics</li>
+              <li>✅ 3 months support</li>
+              <li>✅ CMS integration</li>
+              <li>✅ E-commerce ready</li>
+            </ul>
+            <a href="#" class="btn-gradient">Get Started →</a>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <h5>Enterprise</h5>
+            <p class="desc">Custom solutions at scale</p>
+            <h2>Custom <small>contact us</small></h2>
+            <ul>
+              <li>✅ Full-stack application</li>
+              <li>✅ Custom integrations</li>
+              <li>✅ Dedicated team</li>
+              <li>✅ 12 months support</li>
+              <li>✅ Cloud infrastructure</li>
+              <li>✅ Priority development</li>
+            </ul>
+            <a href="#" class="btn-gradient">Get Started →</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4 text-muted">
+        Need a custom solution? <a href="#" class="text-decoration-none fw-semibold link-primary">Let's talk →</a>
+      </p>
+    </div>
+  </section>
+  <section class="form-section-wrapper-x91">
+    <div class="form-container-x91">
+      <h1 class="form-heading-x91">Ready to Build Something Amazing?</h1>
+      <p class="form-subheading-x91">Tell us about your project and let's create digital magic together.</p>
+
+      <form class="form-box-x91">
+        <div class="form-row-x91">
+          <div class="form-group-x91">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Doe" />
+          </div>
+          <div class="form-group-x91">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@company.com" />
+          </div>
+        </div>
+
+        <div class="form-group-x91">
+          <label>Project Type</label>
+          <input type="text" />
+        </div>
+
+        <div class="form-group-x91">
+          <label>Tell Us About Your Project</label>
+          <textarea placeholder="I need help with..."></textarea>
+        </div>
+
+        <button type="submit" class="form-button-x91">
+          ✉ Send Message →
+        </button>
+
+        <p class="form-footer-x91">
+          or email us directly at <a href="mailto:hello@cypherdigital.com">hello@cypherdigital.com</a>
+        </p>
+      </form>
+    </div>
+  </section>
+  <footer class="footer-section py-5 ">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
+            <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
+          </div>
+          <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
+          </p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="Web Development.html" class="footer-link">Web Development</a></li>
+            <li><a href="UIUX.html" class="footer-link">UI/UX Design</a></li>
+            <li><a href="Digital Strategy.html" class="footer-link">Digital Strategy</a></li>
+            <li><a href="Brand Identity.html" class="footer-link">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Case Studies</a></li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="footer-link">Documentation</a></li>
+            <li><a href="#" class="footer-link">Help Center</a></li>
+            <li><a href="#" class="footer-link">Community</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider mt-4" />
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('.brand-section, .hero-section, .why-section, .service-section, .impact-showcase, .clients-section, .testimonial-wrapper, .pricing-section, .form-section-wrapper-x91, .footer-section');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-animate', 'visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        section.classList.add('section-animate');
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1077 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand Identity — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: Rinter;
+      src: url('Rinter.woff2')
+    }
+
+    :root {
+      --b: #245bff;
+      --t: #2ad3c9;
+      --ink: #0b0c2a;
+      --card: 18px
+    }
+
+    body {
+      font-family: Rinter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: var(--ink)
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+    }
+
+    .brand-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      padding: .45rem .8rem;
+      border-radius: 999px
+    }
+
+    .btn-grad {
+      border: 0;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .7rem 1.1rem;
+      font-weight: 700
+    }
+
+    .hero {
+      padding: 24px 0 64px
+    }
+
+    .showcase {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden
+    }
+
+    .showcase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* .showcase:after {
+      content: '🚀';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .35);
+      font-size: 140px
+    } */
+
+    .section {
+      padding: 56px 0
+    }
+
+    .section h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-align: center
+    }
+
+    .section p.lead {
+      color: #6c757d;
+      text-align: center;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .pill {
+      background: #f2f6fb;
+      border: 1px solid #e9eef5;
+      border-radius: 12px;
+      padding: .75rem 1rem
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .metric,
+    .case {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 18px
+    }
+
+    .benefit,
+    .process,
+    .price,
+    .testi,
+    .case {
+      box-shadow: 0 10px 28px rgba(16, 24, 40, .06)
+    }
+
+    .benefit .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--t), var(--b));
+      box-shadow: 0 6px 16px rgba(36, 91, 255, .25)
+    }
+
+    .num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--t), var(--b))
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid #e9eef5;
+      background: #f8fafc;
+      font-size: .8rem;
+      color: #475569
+    }
+
+    .chip.time {
+      background: #eefaf9;
+      color: #0b8a82;
+      border-color: #c8efe9
+    }
+
+    .price.pop {
+      border-color: #b7ccff;
+      box-shadow: 0 20px 44px rgba(36, 91, 255, .18);
+      min-height: 560px;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column
+    }
+
+    .price .btn {
+      margin-top: auto
+    }
+
+    .dark {
+      background: #0e1420;
+      color: #e8eef7
+    }
+
+    .tool {
+      background: #0f1a2a;
+      border: 1px solid #1d2a3d;
+      border-radius: 14px;
+      padding: 1rem;
+      text-align: center
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--t), var(--b));
+      color: #e9f3ff
+    }
+
+    .band p.lead {
+      color: #ffffff
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .18)
+    }
+
+    .thumb {
+      height: 200px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+      border-bottom: 1px solid #e9eef5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumb img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Case Study Modal (CSS-only) */
+    .story-link {
+      display: block;
+      color: inherit;
+      text-decoration: none
+    }
+
+    .story-modal-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1055;
+      background: rgba(13, 18, 28, .6);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease
+    }
+
+    .story-modal-overlay:target {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto
+    }
+
+    .story-modal {
+      width: min(920px, 95vw);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(13, 18, 28, .35);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform .2s ease
+    }
+
+    .story-modal-overlay:target .story-modal {
+      transform: translateY(0)
+    }
+
+    .story-modal .modal-hero {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background: linear-gradient(120deg, #e6faff, #f0f4ff);
+    }
+
+    .modal-hero img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    @media (min-width: 992px) {
+      .story-modal .modal-hero {
+        height: 320px
+      }
+    }
+
+    .story-modal .modal-body {
+      padding: 18px 22px 24px
+    }
+
+    .story-modal .modal-title {
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .story-modal .modal-sub {
+      color: #6c757d
+    }
+
+    .story-modal .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(42, 211, 201, .18);
+      color: #1aa5a2;
+      font-weight: 800;
+      font-size: .8rem;
+      box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25);
+      margin-right: 8px
+    }
+
+    .overlay-close {
+      position: absolute;
+      inset: 0;
+      display: block
+    }
+
+    .cta {
+      background: linear-gradient(180deg, var(--brand-teal, var(--t)), var(--brand-blue, var(--b)));
+      color: #fff;
+      text-align: center;
+      padding: 80px 0
+    }
+
+    .faq .accordion-button {
+      border-radius: 12px;
+      background: #fff
+    }
+
+    .faq .accordion-item {
+      border: 0;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(24, 32, 56, .06)
+    }
+
+    .cta .btn {
+      font-weight: 700
+    }
+
+    .cta+footer {
+      margin-top: 0
+    }
+
+    footer {
+      background: #0e1420;
+      color: #94a3b8;
+      padding: 28px 0
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar + crumbs -->
+  <div class="container topbar">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+      <div class="brand-chip">
+        <div class="brand-avatar">C</div>
+        <div class="fw-semibold">Cypher Digital</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="crumbs mb-2">Home › <a href="#">Services</a> › Brand Identity</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge-custom">DISTINCTIVE</span>
+          <h1 class="display-4 fw-bold mt-3">Brand Identity</h1>
+          <div class="h5 text-muted fw-semibold mb-3">Memorable Brands That Stand Out</div>
+          <p class="text-muted mb-4">We create distinctive brand identities that capture attention and build lasting
+            connections. From logos to complete visual systems, we bring your brand to life.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-grad" href="#contact">Get Started →</a>
+            <a class="btn btn-outline" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase">
+            <img src="Brand Identity Icon/BRAND IDENTITY SHOWCASE (1).jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Modals -->
+  <div id="bi-case1" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="biTitle1">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="Brand Identity Icon/Image (Tech Startup Rebrand).jpg" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="chip">Brand Identity</span>
+        <h3 id="biTitle1" class="modal-title mt-2 mb-1">Tech Startup Rebrand</h3>
+        <div class="modal-sub mb-3">NexaTech</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>Brand recognition up 220%</li>
+            <li><span class="check-dot">✓</span>Investor interest increased 5x</li>
+            <li><span class="check-dot">✓</span>Launched in 3 new markets</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Technologies Used:</div>
+          <span class="chip">Illustrator</span> <span class="chip">Figma</span> <span class="chip">After Effects</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="bi-case2" class="story-modal-overlay" aria-hidden="true">
+    <a href="#" class="overlay-close" aria-label="Close"></a>
+    <div class="story-modal" role="dialog" aria-modal="true" aria-labelledby="biTitle2">
+      <a href="#idsuccess" class="modal-close btn btn-light position-absolute top-0 end-0 m-3 rounded-circle"
+        aria-label="Close">&times;</a>
+      <div class="modal-hero">
+        <img src="Brand Identity Icon/Image (Lifestyle Brand Launch).jpg" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="chip">Brand Identity</span>
+        <h3 id="biTitle2" class="modal-title mt-2 mb-1">Lifestyle Brand Launch</h3>
+        <div class="modal-sub mb-3">Urban Essence</div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Results:</div>
+          <ul class="list-unstyled mb-0">
+            <li><span class="check-dot">✓</span>Sold out first product line in 48 hours</li>
+            <li><span class="check-dot">✓</span>100K social followers in 3 months</li>
+            <li><span class="check-dot">✓</span>Featured in 15 major publications</li>
+          </ul>
+        </div>
+        <div class="mb-3">
+          <div class="fw-semibold mb-1">Technologies Used:</div>
+          <span class="chip">Illustrator</span> <span class="chip">Photoshop</span> <span class="chip">Procreate</span>
+        </div>
+        <a href="#" class="btn btn-light">Start Similar Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Building Brands That Last -->
+  <section class="section pt-0">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Building Brands That Last</h2>
+      <p class="lead text-muted mb-4">Create a memorable identity that resonates with your audience</p>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="pill">✓ Comprehensive brand strategy and positioning</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Logo design and visual identity systems</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Brand guidelines and style documentation</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Marketing collateral and asset creation</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Brand voice and messaging framework</div>
+        </div>
+        <div class="col">
+          <div class="pill">✓ Social media and digital brand presence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section" style="background:#f7fafc">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">What You Get</h2>
+      <p class="lead text-muted mb-4">Comprehensive solutions designed for excellence</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Brand Strategy.png" alt="">
+              </div>
+              <div class="fw-bold">Brand Strategy</div>
+            </div>
+            <div class="text-muted">Define your unique position in the market and core brand values</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Visual Identity.png" alt="">
+              </div>
+              <div class="fw-bold">Visual Identity</div>
+            </div>
+            <div class="text-muted">Logos, colors, typography, and visual elements that tell your story</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Brand Voice.png" alt="">
+              </div>
+              <div class="fw-bold">Brand Voice</div>
+            </div>
+            <div class="text-muted">Consistent messaging and tone that resonates with your audience</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Brand System.png" alt="">
+              </div>
+              <div class="fw-bold">Brand Systems</div>
+            </div>
+            <div class="text-muted">Comprehensive guidelines ensuring consistent application across all touchpoints
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Collateral Design.png" alt="">
+              </div>
+              <div class="fw-bold">Collateral Design</div>
+            </div>
+            <div class="text-muted">Business cards, presentations, social media templates, and more</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="benefit p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon">
+                <img src="Brand Identity Icon/Brand Positioning.png" alt="">
+              </div>
+              <div class="fw-bold">Brand Positioning</div>
+            </div>
+            <div class="text-muted">Differentiation strategy that sets you apart from competitors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Our Process</h2>
+      <p class="lead text-muted mb-4">A proven methodology that delivers results</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">1</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">DISCOVERY</div>
+                <div class="fw-semibold">Brand Foundation</div>
+              </div>
+            </div>
+            <div class="text-muted">Understanding your mission, values, audience, and competitive landscape.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Brand Workshop</span> <span
+                class="chip">Stakeholder Interviews</span> <span class="chip">Market Research</span> <span
+                class="chip">Brand Strategy</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">2</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">STRATEGY</div>
+                <div class="fw-semibold">Brand Positioning</div>
+              </div>
+            </div>
+            <div class="text-muted">Define your unique position, messaging, and brand personality.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Brand Positioning</span> <span
+                class="chip">Messaging Framework</span> <span class="chip">Brand Personality</span> <span
+                class="chip">Tone of Voice</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">3</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">DESIGN</div>
+                <div class="fw-semibold">Visual Identity</div>
+              </div>
+            </div>
+            <div class="text-muted">Create logos, color palettes, typography, and visual elements.</div>
+            <div class="mt-2"><span class="chip time">2‑3 weeks</span> <span class="chip">Logo Design</span> <span
+                class="chip">Color Palette</span> <span class="chip">Typography System</span> <span class="chip">Visual
+                Elements</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">4</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">SYSTEM</div>
+                <div class="fw-semibold">Brand Guidelines</div>
+              </div>
+            </div>
+            <div class="text-muted">Comprehensive documentation for consistent brand application.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Brand Guidelines</span> <span
+                class="chip">Usage Examples</span> <span class="chip">Do's and Don'ts</span> <span
+                class="chip">Templates</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">5</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">ASSETS</div>
+                <div class="fw-semibold">Collateral Creation</div>
+              </div>
+            </div>
+            <div class="text-muted">Design marketing materials and brand touchpoints.</div>
+            <div class="mt-2"><span class="chip time">1‑2 weeks</span> <span class="chip">Business Cards</span> <span
+                class="chip">Letterhead</span> <span class="chip">Social Templates</span> <span
+                class="chip">Presentations</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="process p-3">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="num">6</div>
+              <div>
+                <div class="badge bg-light text-primary fw-bold mb-1">LAUNCH</div>
+                <div class="fw-semibold">Brand Rollout</div>
+              </div>
+            </div>
+            <div class="text-muted">Support for brand launch and team training.</div>
+            <div class="mt-2"><span class="chip time">1 week</span> <span class="chip">Launch Plan</span> <span
+                class="chip">Team Training</span> <span class="chip">Brand Assets</span> <span class="chip">Ongoing
+                Support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Investment Options</h2>
+      <p class="lead text-muted mb-4">Flexible packages to match your needs</p>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Identity</div>
+            <div class="display-5 mb-3">$6,000 <span class="fs-6 text-muted">USD</span></div>
+            <div class="text-muted mb-2">Essential brand identity</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Logo design (3 concepts)</li>
+              <li>✓ Color palette</li>
+              <li>✓ Typography selection</li>
+              <li>✓ Basic brand guidelines</li>
+              <li>✓ Business card design</li>
+              <li>✓ Social media profile kit</li>
+              <li>✓ 3 revision rounds</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price pop p-3">
+            <div class="d-flex justify-content-between">
+              <div class="h5">Complete</div><span class="badge bg-primary-subtle text-primary fw-bold">Most
+                Popular</span>
+            </div>
+            <div class="display-5 mb-3">$14,000 <span class="fs-6 text-muted">USD</span></div>
+            <div class="text-muted mb-2">Full brand system</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Everything in Identity</li>
+              <li>✓ Brand strategy workshop</li>
+              <li>✓ Messaging framework</li>
+              <li>✓ Extended visual system</li>
+              <li>✓ Comprehensive guidelines</li>
+              <li>✓ Marketing collateral (5 items)</li>
+              <li>✓ Social media templates</li>
+              <li>✓ Unlimited revisions</li>
+            </ul><a class="btn btn-grad w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="price p-3">
+            <div class="h5">Enterprise</div>
+            <div class="display-5 mb-3">Custom</div>
+            <div class="text-muted mb-2">Complete brand transformation</div>
+            <ul class="small list-unstyled mb-3">
+              <li>✓ Everything in Complete</li>
+              <li>✓ Sub‑brand strategy</li>
+              <li>✓ Motion design system</li>
+              <li>✓ Brand experience design</li>
+              <li>✓ 3D brand elements</li>
+              <li>✓ Packaging design</li>
+              <li>✓ Environmental design</li>
+              <li>✓ Ongoing brand support</li>
+            </ul><a class="btn btn-outline w-100" href="#contact">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Client Testimonials</h2>
+      <p class="lead text-muted mb-4">Hear from those who've worked with us</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"The rebrand Cypher Digital created positioned us perfectly for our Series A. Investors
+              immediately understood our value proposition, and the modern identity opened doors we couldn't access
+              before. Worth every penny."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden">
+                <img src="Brand Identity Icon/Alex Thompson.jpg" width="40px" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">Alex Thompson</div>
+                <div class="text-muted">Founder, NexaTech</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="testi p-3 h-100">
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-4">"Our brand launch exceeded all expectations thanks to Cypher's incredible work. The identity
+              they created resonates perfectly with our target audience. We sold out in 48 hours and have been featured
+              in Vogue, Elle, and Harper's Bazaar."</p>
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle" style="overflow: hidden;">
+                <img src="Brand Identity Icon/Sofia Martinez.jpg" width="40px" alt="">
+              </div>
+              <div>
+                <div class="fw-bold">Sofia Martinez</div>
+                <div class="text-muted">Creative Director, Urban Essence</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section dark">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Technologies & Tools</h2>
+      <p class="lead mb-4">Industry‑leading tools for exceptional results</p>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="tool">Adobe Illustrator<br /><small>Logo Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Adobe Photoshop<br /><small>Visual Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Figma<br /><small>Brand Systems</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">After Effects<br /><small>Motion Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">InDesign<br /><small>Collateral</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Procreate<br /><small>Illustration</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Cinema 4D<br /><small>3D Design</small></div>
+        </div>
+        <div class="col">
+          <div class="tool">Canva<br /><small>Templates</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section band">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Proven Results</h2>
+      <p class="lead mb-4">Data-backed outcomes from real projects</p>
+
+      <div class="row g-3">
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="185">+185%</div>
+            <div>Brand Recognition</div><small class="d-block mt-1">Increase in recognition after rebrand</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="92">+92%</div>
+            <div>Customer Trust</div><small class="d-block mt-1">Improvement in trust and credibility</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3 counter" data-target="340">+340%</div>
+            <div>Brand Value</div><small class="d-block mt-1">Increase in perceived brand value</small>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="metric p-3 h-100 text-center">
+            <div class="display-5 mb-3" data-prefix="Top " data-target="3">Top 3</div>
+            <div>Market Position</div><small class="d-block mt-1">Average category rank post-rebrand</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section id="idsuccess" class="section">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Success Stories</h2>
+      <p class="lead text-muted mb-4">Real results from real clients</p>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <a href="#bi-case1" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="Brand Identity Icon/Image (Tech Startup Rebrand).jpg" alt="">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">Brand Identity</span>
+                <div class="h5 mb-1">Tech Startup Rebrand</div>
+                <div class="text-muted mb-2">NexaTech</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ Brand recognition up 220%</li>
+                  <li>✓ Investor interest increased 5×</li>
+                  <li>✓ Successfully launched in 3 new markets</li>
+                </ul>
+                <div><span class="chip">Illustrator</span> <span class="chip">Figma</span> <span class="chip">After
+                    Effects</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a href="#bi-case2" class="story-link">
+            <div class="case h-100">
+              <div class="thumb">
+                <img src="Brand Identity Icon/Image (Lifestyle Brand Launch).jpg" alt="">
+              </div>
+              <div class="p-3"><span class="badge bg-info-subtle text-info fw-bold mb-2">Brand Identity</span>
+                <div class="h5 mb-1">Lifestyle Brand Launch</div>
+                <div class="text-muted mb-2">Urban Essence</div>
+                <ul class="small list-unstyled mb-2">
+                  <li>✓ Sold out first product line in 48 hours</li>
+                  <li>✓ Social media following grew to 100K in 3 months</li>
+                  <li>✓ Featured in 15 major publications</li>
+                </ul>
+                <div><span class="chip">Illustrator</span> <span class="chip">Photoshop</span> <span
+                    class="chip">Procreate</span></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ  Jensen  -->
+  <section class="section faq py-5" id="faq">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-2">Frequently Asked Questions</h2>
+      <p class="lead text-muted mb-4">Everything you need to know</p>
+
+      <div class="accordion" id="faqBrandIdentity">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b1">
+              What is included in brand identity?
+            </button>
+          </h2>
+          <div id="b1" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              Brand identity includes logo, color palette, typography, visual direction, and brand usage guidelines.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b2">
+              How long does the branding process take?
+            </button>
+          </h2>
+          <div id="b2" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              Typically 2–6 weeks depending on scope, iterations, and number of deliverables.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b3">
+              Can you rebrand our existing company?
+            </button>
+          </h2>
+          <div id="b3" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              Yes — we audit your current brand and develop a stronger visual identity while maintaining brand essence.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b4">
+              What files will we receive?
+            </button>
+          </h2>
+          <div id="b4" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              You will receive vector files (AI, SVG, PDF), exports (PNG/JPG), and a full brand guideline document.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b5">
+              Do you design packaging and physical materials?
+            </button>
+          </h2>
+          <div id="b5" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              Yes — we design packaging, business cards, posters, merch, and booth branding.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#b6">
+              What if we need more assets later?
+            </button>
+          </h2>
+          <div id="b6" class="accordion-collapse collapse" data-bs-parent="#faqBrandIdentity">
+            <div class="accordion-body">
+              We offer add-on design packages and long-term brand support for new assets or expansions.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <div>
+        <h2 class="display-5 mb-3">Ready to Get Started?</h2>
+        <p class="lead mb-4">Let's build something amazing together. Schedule a free consultation to discuss your
+          project.
+        </p>
+        <div class="d-flex gap-2 justify-content-center flex-wrap">
+          <a class="btn btn-light px-4" href="#">Schedule Consultation →</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      let started = false;
+
+      function animateCounter() {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute("data-target");
+          const prefix = counter.getAttribute("data-prefix") || "";
+          const duration = 1500;
+          let current = 0;
+          const increment = target / (duration / 3);
+
+          function update() {
+            current += increment;
+            if (current < target) {
+              counter.textContent = prefix + (Math.floor(current)) + (prefix ? "" : "%");
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = prefix + target + (prefix ? "" : "%");
+            }
+          }
+          update();
+        });
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !started) {
+          animateCounter();
+          started = true;
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.querySelector(".band"));
+    });
+  </script>
+
+</body>
+
+</html>
