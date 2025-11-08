@@ -383,10 +383,35 @@
       margin-top: 0
     }
 
-    footer {
-      background: #0e1420;
-      color: #94a3b8;
-      padding: 28px 0
+    /* ====== Footer (same look as main) ====== */
+    .footer-section {
+      padding: 60px 0;
+      background-color:#232437;
+      color: #fff;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, var(--accent-a) 0%, var(--accent-b) 100%);
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .footer-link {
+      color: #b0b3c4;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-divider {
+      border-top: 1px solid #2e2f44;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -700,7 +725,7 @@
     <div class="container">
       <h2 class="display-5 fw-bold mb-2">Investment Options</h2>
       <p class="lead text-muted mb-4">Flexible packages to match your needs</p>
-      <div class="row g-4">
+      <div class="row g-4 align-items-center">
         <div class="col-lg-4">
           <div class="price p-3">
             <div class="h5">Identity</div>
@@ -1030,9 +1055,53 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  <footer class="footer-section py-5 ">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
+            <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
+          </div>
+          <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
+          </p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="Web Development.html" class="footer-link">Web Development</a></li>
+            <li><a href="UIUX.html" class="footer-link">UI/UX Design</a></li>
+            <li><a href="Digital Strategy.html" class="footer-link">Digital Strategy</a></li>
+            <li><a href="Brand Identity.html" class="footer-link">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a href="About.html" class="footer-link">About Us</a></li>
+            <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Careers.html" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="signin.html" class="footer-link">Login</a></li>
+            <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+            <li><a href="documentation.html" class="footer-link">Documentation</a></li>
+            <li><a href="Contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider mt-4" />
+    </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
