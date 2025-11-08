@@ -27,6 +27,7 @@
         }
 
         .badge-soft {
+            
             background-color: #e8f4ff;
             color: #007bff;
             padding: 6px 14px;
@@ -56,7 +57,7 @@
 
         /* Hero */
         .hero-contact {
-            padding: 70px 0 40px;
+            padding: 40px 0 40px;
             text-align: center;
         }
 
@@ -85,7 +86,6 @@
         .contact-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 14px 30px rgba(36, 91, 255, .15);
-            border-color: var(--c2);
         }
 
         .icon-box {
@@ -96,23 +96,28 @@
             align-items: center;
             justify-content: center;
             color: #fff;
-            background: linear-gradient(180deg, var(--c1), var(--c2));
             font-weight: 700;
         }
 
         /* Form */
         .form-wrap {
-            background: linear-gradient(180deg, #4a63af39, #007bff56);
+            background: linear-gradient(270deg, #232437, #2b2f36);
             border: 1px solid #e5e7eb;
             border-radius: 18px;
             padding: 24px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
         }
 
-        .form-label {
+        .form-label,
+        .form-check-label {
             font-size: .8rem;
-            color: #334155;
+            color: #eceff2;
         }
+
+        .start {
+            color: #eceff2;
+        }
+
 
         .form-control,
         .form-select {
@@ -129,8 +134,9 @@
         .info-band {
             border-radius: 20px;
             padding: 26px;
-            background: linear-gradient(180deg, var(--c1), var(--c2));
+            background: linear-gradient(270deg, #232437, #2b2f36);
             color: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.39);
         }
 
 
@@ -180,7 +186,7 @@
             aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 
         }
 
@@ -190,199 +196,315 @@
             border: none;
             display: block;
         }
+
+        /* Css. Header */
+        .back-link {
+            color: #5b6677;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .brand-chip {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            background: var(--surface);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+        }
+
+        .brand-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            flex: 0 0 28px;
+            background: linear-gradient(180deg, var(--c1) 0%, var(--c2) 100%);
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: .9rem;
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: #2b2f36;
+            font-size: .95rem;
+        }
+
+        /* Breadcrumbs */
+        .crumbs {
+            font-size: .9rem;
+            color: #98a2b3
+        }
+
+        .crumbs a {
+            color: #6c7a8a;
+            text-decoration: none
+        }
+
+        .crumbs a:hover {
+            color: #2b2f36;
+            text-decoration: underline
+        }
+
+        .topbar {
+            padding: 12px 0
+        }
+
+        .aqua-soft-gradient {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aqua-soft-gradient::before,
+        .aqua-soft-gradient::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            background: radial-gradient(circle,
+                    rgba(33, 44, 49, 0.251) 15%,
+                    rgba(42, 211, 201, 0.02) 40%,
+                    rgba(42, 211, 201, 0) 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+
+            .aqua-soft-gradient::before,
+            .aqua-soft-gradient::after {
+                width: 70px;
+                opacity: 0.12;
+                z-index: -1;
+            }
+        }
+
+        .aqua-soft-gradient::before {
+            left: -40px;
+            /* posisi ke kiri */
+        }
+
+        .aqua-soft-gradient::after {
+            right: -40px;
+            /* posisi ke kanan */
+        }
     </style>
 </head>
 
 <body>
-
-    <!-- HERO -->
-    <section class="hero-contact">
-        <span class="badge-soft">CONTACT</span>
-        <h1>Let's Build Something Great</h1>
-        <p>Tell us about your goals and constraints. Our team will reply within 1 business day with the next steps.</p>
-    </section>
-
-    <!-- QUICK CONTACT CARDS -->
-    <section class="container pb-4">
-        <div class="row g-3">
-            <div class="col-md-4">
-                <div class="contact-card h-100">
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                        <div class="icon-box">@</div>
-                        <div>
-                            <h6 class="mb-0">Email</h6>
-                            <small class="text-muted">We reply in 24 hours</small>
-                        </div>
-                    </div>
-                    <a href="mailto:hello@cypherdigital.com" class="text-decoration-none">hello@cypherdigital.com</a>
+    <div class="aqua-soft-gradient">
+        <!-- Header -->
+        <header class="topbar">
+            <div class="container d-flex align-items-center justify-content-between">
+                <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
+                <div class="brand-chip">
+                    <div class="brand-avatar">C</div>
+                    <div class="brand-name">Cypher Digital</div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="contact-card h-100">
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                        <div class="icon-box">☎</div>
-                        <div>
-                            <h6 class="mb-0">Phone / WA</h6>
-                            <small class="text-muted">Mon–Fri, 09.00–18.00 WIB</small>
-                        </div>
-                    </div>
-                    <span>+62 812-0000-0000</span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="contact-card h-100">
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                        <div class="icon-box">⏱</div>
-                        <div>
-                            <h6 class="mb-0">Project Start</h6>
-                            <small class="text-muted">Typical lead time</small>
-                        </div>
-                    </div>
-                    <span>7–10 business days after scope lock</span>
-                </div>
+        </header>
+        <div class="container">
+            <div class="crumbs mb-4 mt-3">
+                <a href="Main page.html">Home</a> &nbsp;›&nbsp; <strong>Contact</strong>
             </div>
         </div>
-    </section>
-
-    <!-- FORM + INFO -->
-    <section class="container py-4">
-        <div class="row g-4 align-items-start">
-            <div class="col-lg-7">
-                <div class="form-wrap">
-                    <h4 class="mb-3">Start a Project</h4>
-                    <form id="contactForm" novalidate>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" class="form-control" name="name" required />
-                                <div class="invalid-feedback">Please enter your name.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Work Email</label>
-                                <input type="email" class="form-control" name="email" required />
-                                <div class="invalid-feedback">Please enter a valid email.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Company</label>
-                                <input type="text" class="form-control" name="company" />
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Budget (USD)</label>
-                                <select class="form-select" name="budget" required>
-                                    <option value="" selected disabled>Choose…</option>
-                                    <option value="2500-5000">$2,500–5,000</option>
-                                    <option value="5000-15000">$5,000–15,000</option>
-                                    <option value="15000-50000">$15,000–50,000</option>
-                                    <option value=">50000">$50,000+</option>
-                                </select>
-                                <div class="invalid-feedback">Pick a budget range.</div>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Project Type</label>
-                                <div class="row g-2">
-                                    <div class="col-6 col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Web Development"
-                                                id="t1">
-                                            <label class="form-check-label" for="t1">Web Development</label>
+        <!-- HERO -->
+        <section class="hero-contact">
+            <span class="badge-soft">CONTACT</span>
+            <h1 class="mt-4">Let's Build Something Great</h1>
+            <p>Tell us about your goals and constraints. Our team will reply within 1 business day with the next steps.
+            </p>
+        </section>
+        <!-- FORM + INFO -->
+        <section class="container py-4">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-7">
+                    <div class="form-wrap">
+                        <h4 class="start mb-3">Start a Project</h4>
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" name="name" required />
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Work Email</label>
+                                    <input type="email" class="form-control" name="email" required />
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Company</label>
+                                    <input type="text" class="form-control" name="company" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Budget (USD)</label>
+                                    <select class="form-select" name="budget" required>
+                                        <option value="" selected disabled>Choose…</option>
+                                        <option value="2500-5000">$2,500–5,000</option>
+                                        <option value="5000-15000">$5,000–15,000</option>
+                                        <option value="15000-50000">$15,000–50,000</option>
+                                        <option value=">50000">$50,000+</option>
+                                    </select>
+                                    <div class="invalid-feedback">Pick a budget range.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Project Type</label>
+                                    <div class="row g-2">
+                                        <div class="col-6 col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Web Development"
+                                                    id="t1">
+                                                <label class="form-check-label" for="t1">Web Development</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="UI/UX" id="t2">
-                                            <label class="form-check-label" for="t2">UI/UX Design</label>
+                                        <div class="col-6 col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="UI/UX" id="t2">
+                                                <label class="form-check-label" for="t2">UI/UX Design</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Strategy" id="t3">
-                                            <label class="form-check-label" for="t3">Digital Strategy</label>
+                                        <div class="col-6 col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Strategy"
+                                                    id="t3">
+                                                <label class="form-check-label" for="t3">Digital Strategy</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Brand" id="t4">
-                                            <label class="form-check-label" for="t4">Brand Identity</label>
+                                        <div class="col-6 col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Brand" id="t4">
+                                                <label class="form-check-label" for="t4">Brand Identity</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12">
+                                    <label class="form-label">Tell us about your project</label>
+                                    <textarea class="form-control" rows="5" name="message"
+                                        placeholder="Goals, timelines, must-haves…" required></textarea>
+                                    <div class="invalid-feedback">Please add a short brief.</div>
+                                </div>
+                                <div class="col-12 d-flex align-items-center gap-2">
+                                    <button class="btn btn-light rounded-pill px-2" type="submit">Send Message
+                                        →</button>
+                                    <span class="help">We’ll get back within 1 business day.</span>
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <label class="form-label">Tell us about your project</label>
-                                <textarea class="form-control" rows="5" name="message"
-                                    placeholder="Goals, timelines, must-haves…" required></textarea>
-                                <div class="invalid-feedback">Please add a short brief.</div>
-                            </div>
-                            <div class="col-12 d-flex align-items-center gap-2">
-                                <button class="btn-gradient" type="submit">Send Message →</button>
-                                <span class="help">We’ll get back within 1 business day.</span>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="info-band mb-3">
+                        <h5 class="mb-2">Prefer talking first?</h5>
+                        <p class="mb-3">Book a 20‑minute discovery call with our team to align goals and fit.</p>
+                        <a href="#" class="btn btn-light rounded-pill px-3">Book a Call</a>
+                    </div>
+                    <div class="contact-card mb-3">
+                        <h6 class="mb-1">Office Hours</h6>
+                        <p class="mb-0">Mon–Fri: 09.00–18.00 WIB</p>
+                        <small class="text-white-50">Response within 24h</small>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2922682856957!2d106.82250267595176!3d-6.219007593771342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e5c87f6bbf%3A0xfad1ee7e5f5e3b83!2sJakarta!5e0!3m2!1sen!2sid!4v1709999999999"
+                            loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-lg-5">
-                <div class="info-band mb-3">
-                    <h5 class="mb-2">Prefer talking first?</h5>
-                    <p class="mb-3">Book a 20‑minute discovery call with our team to align goals and fit.</p>
-                    <a href="#" class="btn btn-light rounded-pill px-3">Book a Call</a>
-                </div>
-
-                <div class="contact-card mb-3">
-                    <h6 class="mb-1">Office Hours</h6>
-                    <p class="mb-0">Mon–Fri: 09.00–18.00 WIB</p>
-                    <small class="text-white-50">Response within 24h</small>
-                </div>
-
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2922682856957!2d106.82250267595176!3d-6.219007593771342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e5c87f6bbf%3A0xfad1ee7e5f5e3b83!2sJakarta!5e0!3m2!1sen!2sid!4v1709999999999"
-                        loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ  -->
-    <section class="container py-4">
-        <div class="row g-3">
-            <div class="col-lg-6">
-                <div class="contact-card h-100">
-                    <h6 class="mb-3">Frequently Asked</h6>
-                    <div class="accordion" id="faqContact">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#fc1">Do you sign NDAs?</button></h2>
-                            <div id="fc1" class="accordion-collapse collapse" data-bs-parent="#faqContact">
-                                <div class="accordion-body">Yes, we can sign an NDA before sharing any sensitive
-                                    materials.</div>
+        </section>
+        <!-- FAQ  -->
+        <section class="container py-4">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="contact-card h-100">
+                        <h6 class="mb-3">Frequently Asked</h6>
+                        <div class="accordion" id="faqContact">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#fc1">Do you sign NDAs?</button></h2>
+                                <div id="fc1" class="accordion-collapse collapse" data-bs-parent="#faqContact">
+                                    <div class="accordion-body">Yes, we can sign an NDA before sharing any sensitive
+                                        materials.</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#fc2">How soon can we start?</button></h2>
-                            <div id="fc2" class="accordion-collapse collapse" data-bs-parent="#faqContact">
-                                <div class="accordion-body">Typically within 7–10 business days after scope and
-                                    contract.</div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#fc2">How soon can we start?</button>
+                                </h2>
+                                <div id="fc2" class="accordion-collapse collapse" data-bs-parent="#faqContact">
+                                    <div class="accordion-body">Typically within 7–10 business days after scope and
+                                        contract.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="contact-card h-100">
-                    <h6 class="mb-3">Payment & Legal</h6>
-                    <ul class="mb-0">
-                        <li>Invoices in USD or IDR</li>
-                        <li>50/30/20 milestone billing</li>
-                        <li>Contracts available for US/EU/APAC entities</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="contact-card h-100">
+                        <h6 class="mb-3">Payment & Legal</h6>
+                        <ul class="mb-0">
+                            <li>Invoices in USD or IDR</li>
+                            <li>50/30/20 milestone billing</li>
+                            <li>Contracts available for US/EU/APAC entities</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- QUICK CONTACT CARDS -->
+        <section class="container pb-4">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="icon-box">
+                                <img src="Contact icon/email.png" width="46" alt="">
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Email</h6>
+                                <small class="text-muted">We reply in 24 hours</small>
+                            </div>
+                        </div>
+                        <a href="mailto:hello@cypherdigital.com"
+                            class="text-reset text-decoration-none">hello@cypherdigital.com</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="icon-box">
+                                <img src="Contact icon/whatsapp.png" width="42">
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Phone / WA</h6>
+                                <small class="text-muted">Mon–Fri, 09.00–18.00 WIB</small>
+                            </div>
+                        </div>
+                        <span>+62 812-0000-0000</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="icon-box">
+                                <img src="Contact icon/project.png" width="42">
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Project Start</h6>
+                                <small class="text-muted">Typical lead time</small>
+                            </div>
+                        </div>
+                        <span>7–10 business days after scope lock</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <footer class="footer-section py-5 ">
         <div class="container text-light">
