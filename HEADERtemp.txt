@@ -64,3 +64,25 @@
     .topbar {
       padding: 12px 0
     }
+
+
+
+    #################### cover template
+        .career2-section {
+      position: relative;
+      background: url("Careers Icon/covercontact.png") center/cover no-repeat;
+      padding: 60px 0;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Optional soft overlay agar teks lebih jelas */
+    .career2-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.4));
+      z-index: 0;
+    }
+

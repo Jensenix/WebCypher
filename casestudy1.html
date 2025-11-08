@@ -21,7 +21,8 @@
 
         /* Section wrapper */
         .demo-section {
-            padding: clamp(56px, 6vw, 100px) 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.886), rgba(237, 247, 252, 0.258), rgba(255, 255, 255, 0.985)), url('Case Study icon/dots_blob_aqua.png');
+            padding: clamp(56px, vw, 100px) 0;
             text-align: center;
         }
 
@@ -54,7 +55,6 @@
             box-shadow: 0 8px 28px rgba(36, 91, 255, 0.12) inset;
         }
 
-        /* Scrollbar */
         .tablet-screen::-webkit-scrollbar {
             width: 6px;
         }
@@ -64,7 +64,6 @@
             border-radius: 6px;
         }
 
-        /* Konten di dalam layar */
 
         h1,
         h2 {
@@ -90,10 +89,10 @@
             color: #2af598;
         }
 
-        /* Headline */
         .page-title {
             font-weight: 700;
             font-size: clamp(1.6rem, 4.8vw, 2.5rem);
+            font-size: 400%;
         }
 
         .page-sub {
@@ -102,19 +101,200 @@
             margin: 6px auto 0;
         }
 
-        /* Responsiveness fine-tune bila bezel berbeda */
         @media (max-width: 768px) {
             .tablet-frame {
                 width: 92vw;
             }
 
-            /* Jika PNG bezel kamu butuh koreksi di mobile, tweak sedikit berikut: */
-            /* .tablet-screen{ top: 9.5%; left: 13.8%; width: 72.8%; height: 82%; } */
+        }
+
+        .cs-table-wrapper {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e8eef7;
+            background: #ffffff;
+            margin-top: 12px;
+        }
+
+        .cs-table-modern {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .cs-table-modern th {
+            background: #f4f7ff;
+            font-weight: 700;
+            padding: 14px 18px;
+            text-align: left;
+            color: #0b0c2a;
+        }
+
+        .cs-table-modern td {
+            padding: 14px 18px;
+            border-top: 1px solid #f1f1f1;
+            color: #3a3f51;
+        }
+
+        .cs-table-modern tbody tr:hover {
+            background: #f9fbff;
+        }
+
+        .cs-table-modern .success {
+            color: #0abf67;
+            font-weight: 700;
+        }
+
+        .cs-narrative {
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(254, 255, 255, 0.668), rgba(255, 255, 255, 0.984)), url("Case Study icon/Cover1.png") center/cover no-repeat;
+            position: relative;
+            padding: 60px 0;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .cs-narrative::before {
+            content: "";
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.3),
+                    rgba(0, 0, 0, 0.4));
+            z-index: 0;
+        }
+
+
+
+        .cs-narrative p,
+        .cs-narrative ul {
+            color: #272525;
+            opacity: .8;
+            line-height: 1.6;
+            /* z-index: 5; */
+        }
+
+        .cs-narrative h3,  h2{
+            font-weight: 700;
+            color: rgb(22, 19, 20);
+        }
+
+        .cs-quote {
+            background: #121829;
+            color: #fff;
+            padding: 20px 26px;
+            border-radius: 16px;
+            font-size: 0.95rem;
+        }
+
+        .footer-section {
+            padding: 60px 20px;
+            background-color: #232437;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-link {
+            color: #b0b3c4;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #2e2f44;
+            margin-top: 40px;
+        }
+
+        /* Css. Header */
+        .back-link {
+            color: #5b6677;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .brand-chip {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            background: var(--surface);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+        }
+
+        .brand-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            flex: 0 0 28px;
+            background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: .9rem;
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: #2b2f36;
+            font-size: .95rem;
+        }
+
+        /* Breadcrumbs */
+        .crumbs {
+            font-size: .9rem;
+            color: #98a2b3
+        }
+
+        .crumbs a {
+            color: #6c7a8a;
+            text-decoration: none
+        }
+
+        .crumbs a:hover {
+            color: #2b2f36;
+            text-decoration: underline
+        }
+
+        .topbar {
+            padding: 12px 0
         }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
+    <header class="topbar">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="Main page.html#idcasestudy" class="back-link">← Back to Home</a>
+            <div class="brand-chip">
+                <div class="brand-avatar">C</div>
+                <div class="brand-name">Cypher Digital</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- crumbs -->
+
+    <div class="container">
+        <div class="crumbs mb-4 mt-3">
+            <a href="Main page.html">Home</a> &nbsp;›&nbsp;Case Studies&nbsp; ›&nbsp; <strong>Fintech Revolution</strong>
+        </div>
+    </div>
 
     <section class="demo-section">
         <h1 class="page-title">FinTech Revolution</h1>
@@ -123,30 +303,169 @@
         <div class="tablet-frame">
             <div class="tablet-screen" role="region" aria-label="Case Study Scroll Area">
                 <div class="case-content">
-                    <img src="https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen.jpg"
+                    <img src="https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-1080.jpeg" 
                         sizes="(max-width: 479px) 68vw, 48vw"
-                        srcset="https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-500.jpeg 500w, https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-800.jpeg 800w, https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-1080.jpeg 1080w, https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-1600.jpeg 1600w, https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen.jpg 1728w"
-                        alt="" class="website-image">
+                        srcset="https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-1080.jpeg 1080w, "
+                        alt="Kosong" >
+                        <!-- https://assets.website-files.com/5d9637ce424c6527baaa819b/61b8ca971b3b9e3c3e46a3e9_screenshot-moritz-petersen-p-1080.jpeg -->
                 </div>
             </div>
         </div>
     </section>
+    <!-- ================= CASE STUDY NARRATIVE ================= -->
+    <section class="cs-narrative">
+        <div class="container">
+            <h2>FinTech Revolution</h2>
+            <p class="lead-sub">
+                A real-time trading platform built to handle <b>10,000+ active users</b> with instant market execution.
+                Cypher Digital
+                redesigned the system architecture and UI to improve performance, stability, and user trust.
+            </p>
+            <p>
+                Trading in financial markets is extremely time-sensitive — a difference of just <b>0.8 seconds</b> can
+                change user profit
+                outcomes. Before partnering with us, the client struggled to build confidence with traders, especially
+                power
+                users
+                who required <b>instant execution and live order book updates</b>. The platform was functional but not
+                optimized for
+                speed, scalability, or user clarity.
+            </p>
 
-    <!-- FOOTER SAMA DENGAN MAIN PAGE -->
-    <footer class="footer-section py-5">
+            <p>
+                We focused on eliminating friction across the entire flow: searching assets, checking real-time price
+                movement,
+                placing trades, and confirming orders. Our goal was simple — if users trust the platform’s speed, they
+                will
+                trust the
+                platform with their money.
+            </p>
+            <h3 class="mt-4">The Challenge</h3>
+            <p>
+                The previous platform was not capable of handling traffic surges. During volatile market sessions, the
+                app
+                could take
+                <b>15–20 seconds</b> to execute a trade — an eternity in rapid trading situations. When more than <b>500
+                    users</b> sent orders
+                simultaneously, the backend <b>froze or crashed entirely</b>. Customer support tickets spiked, users
+                complained in
+                communities, and daily trading volume dropped noticeably.
+            </p>
+            <p>
+                Worse, users started spreading screenshots on Telegram groups showing delays and failed executions. In
+                the
+                trading
+                world, reputation is everything — and the platform was losing trust fast.
+            </p>
+            <h3 class="mt-4">The Transformation</h3>
+            <p>
+                Cypher Digital rebuilt the platform from the ground up using a real-time-first architecture:
+            </p>
+            <ul>
+                <li><b>WebSocket streaming</b> for sub-second market updates</li>
+                <li><b>Firebase Realtime Database</b> to sync order books instantly across all users</li>
+                <li><b>Optimistic UI</b> → users see the result <i>immediately</i> before server confirmation</li>
+                <li><b>React</b> for fast UI rendering across desktop and mobile</li>
+            </ul>
+            <p>
+                Instead of waiting for the server to respond before reflecting UI changes, we implemented <b>optimistic
+                    rendering</b>.
+                The trade appears instantly — then the data syncs in the background. This drastically reduced friction
+                and
+                made the
+                platform feel lightning fast.
+            </p>
+    </section>
+
+
+    <!-- ================= METRIC RESULT TABLE ================= -->
+    <section class="container cs-band mt-4">
+        <h3 class="mb-2">Measured Outcomes</h3>
+        <p class="lead-sub">Performance and business results after launching the new platform</p>
+
+        <div class="cs-table-wrapper">
+            <table class="cs-table-modern">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Before</th>
+                        <th>After</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Average Order Execution Time</td>
+                        <td>15–20s</td>
+                        <td><span class="counter" data-target="0.8" data-decimals="1" data-suffix="s">0.0s</span></td>
+                        <td class="success">-96%</td>
+                    </tr>
+                    <tr>
+                        <td>System Stability Under Load</td>
+                        <td>Crashes at 500 users</td>
+                        <td>Stable at <b>10,000+</b></td>
+                        <td class="success">20× Scale</td>
+                    </tr>
+                    <tr>
+                        <td>New User Registration Growth</td>
+                        <td>+12%</td>
+                        <td><span class="counter" data-target="300" data-suffix="%">0%</span></td>
+                        <td class="success">+300% Growth</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion to Paying Traders</td>
+                        <td>18%</td>
+                        <td>51%</td>
+                        <td class="success">+183%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- ================= CLOSING ================= -->
+    <section class="container mt-4">
+        <h3>Final Impact</h3>
+        <p>
+            Faster execution and platform reliability directly translated into revenue growth. Power users increased
+            their trading frequency,
+            new users converted faster, and churn dropped significantly. The platform evolved from a slow “high risk”
+            app into an efficient and
+            trusted trading engine.
+        </p>
+
+        <p>
+            In the end, traders stopped talking about execution delays — and started talking about profit wins. That’s
+            the core of a FinTech
+            revolution: <b>technology that gets out of the way and lets users focus on making better decisions.</b>
+        </p>
+        <p>
+            The platform transitioned from unstable to a scalable real-time trading engine.
+            This directly increased <b>investor trust</b>, reduced operational issues,
+            and generated a measurable rise in daily trading volume.
+        </p>
+
+        <blockquote class="cs-quote mt-3">
+            “Cypher Digital turned our trading app from slow and fragile into a platform we can scale our business on.”
+            <br>
+            <small>CTO — FinTech Client</small>
+        </blockquote>
+    </section>
+
+    <!-- FOOTER (SAMA DENGAN MAINPAGE.HTML) -->
+    <footer class="footer-section py-5 ">
         <div class="container text-light">
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="d-flex align-items-center mb-3">
-                        <div class="footer-logo d-flex align-items-center justify-content-center"
-                            style="width:40px;height:40px;background:linear-gradient(180deg,#2AD3C9 0%, #245BFF 100%);border-radius:10px;font-weight:bold;font-size:14px;color:#fff;">
-                            C
-                        </div>
+                        <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
                         <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
                     </div>
                     <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
                     <p class="text small">We transform complex challenges into elegant digital solutions that drive real
-                        results.</p>
+                        results.
+                    </p>
                 </div>
 
                 <div class="col-md-2 mb-4">
