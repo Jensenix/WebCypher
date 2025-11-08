@@ -31,6 +31,7 @@
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.886), rgba(237, 247, 252, 0.258), rgba(255, 255, 255, 0.985)), url('Case Study icon/dots_blob_aqua.png');
             padding: clamp(56px, vw, 100px) 0;
             text-align: center;
+            margin: 60px;
         }
 
         /* ---- TABLET BEZEL (PNG) RESPONSIVE ---- */
@@ -155,9 +156,9 @@
         .cs-narrative {
             background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(254, 255, 255, 0.668), rgba(255, 255, 255, 0.984)), url("Case Study icon/Cover1.png") center/cover no-repeat;
             position: relative;
-            padding: 60px 0;
             color: #fff;
             overflow: hidden;
+            padding: 60px 0;
         }
 
         .cs-narrative::before {
@@ -375,10 +376,9 @@
             color: #c9d6ea
         }
 
-        /* Sections */
-        .section {
-            padding: 56px 0
-        }
+        /* .visual h2{
+            color: white;
+        } */
 
         .light {
             background: #f7fafc
@@ -468,7 +468,8 @@
             border: 1px solid #e9eef5;
             border-radius: 16px;
             padding: 1rem 1.25rem;
-            box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
+            box-shadow: 0 10px 26px rgba(16, 24, 40, .06);
+            margin: 10px 0;
         }
 
         .step-pill {
@@ -704,6 +705,13 @@
             border-top: 1px solid #2e2f44;
             margin-top: 40px;
         }
+
+        .visualcon {
+            padding: 60px 0;
+        }
+        .development {
+            padding: 60px 0;
+        }
     </style>
 </head>
 
@@ -841,7 +849,7 @@
     </section>
 
     <!-- 5) Development Process -->
-    <section class="section" id="development">
+    <section class="development section" id="development">
         <div class="container">
             <h2 class="display-5 fw-bold text-center">Development Process</h2>
             <p class="lead text-muted text-center mb-4">A structured approach from concept to launch</p>
@@ -1054,7 +1062,7 @@
 
     <!-- 6) Visual Showcase -->
     <section class="section dark">
-        <div class="container">
+        <div class="visualcon container">
             <h2 class="display-6 fw-bold text-center">Visual Showcase</h2>
             <p class="lead text-center mb-4">Explore the interface design and user experience</p>
             <div class="row g-3">
