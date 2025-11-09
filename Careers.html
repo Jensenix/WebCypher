@@ -58,9 +58,9 @@
     }
 
     .hero-careers {
-      padding: 60px 0 70px;
+      padding: 0 0 30px;
       background: #ffffff;
-      text-align: center;
+      text-align: left;
     }
 
     .hero-careers h1 {
@@ -71,7 +71,6 @@
     .hero-careers p {
       color: #6c757d;
       max-width: 700px;
-      margin: auto;
     }
 
     .mission-panel {
@@ -91,6 +90,7 @@
     }
 
     .job-card {
+      background: linear-gradient(180deg, rgba(36, 91, 255, .06), rgba(42, 211, 201, .06));
       border: 1px solid #e5e7eb;
       border-radius: 15px;
       padding: 28px;
@@ -103,6 +103,10 @@
       transform: translateY(-5px);
     }
 
+    .job-card p {
+      color: #0b0c2a
+    }
+
     .job-card h4 {
       font-weight: 700;
     }
@@ -113,11 +117,16 @@
     }
 
     .perk-box {
-      background: #ffffff;
+      background: #232437;
       border-radius: 14px;
       padding: 24px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, .06);
       text-align: center;
+    }
+
+    .perk-box h5,
+    p {
+      color: #fff;
     }
 
     .perk-box h5 {
@@ -165,15 +174,7 @@
       font-weight: 600;
     }
 
-    .brand-chip {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .25rem .5rem;
-      border-radius: 999px;
-      background: var(--surface);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
-    }
+
 
     .brand-avatar {
       width: 28px;
@@ -228,6 +229,7 @@
       padding: 60px 0;
       color: #fff;
       overflow: hidden;
+      margin: 60px 0;
     }
 
     .career2-section::before {
@@ -237,6 +239,7 @@
       background: linear-gradient(rgba(0, 0, 0, 0.3),
           rgba(0, 0, 0, 0.4));
       z-index: 0;
+
     }
 
     .career2-section .container {
@@ -256,6 +259,48 @@
       background: rgba(255, 255, 255, 0.15);
       padding: 15px;
     }
+
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
+    }
+
+    .topbar {
+      padding: 12px 0
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600
+    }
   </style>
 </head>
 
@@ -264,10 +309,7 @@
   <header class="topbar">
     <div class="container d-flex align-items-center justify-content-between">
       <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
-      <div class="brand-chip">
-        <div class="brand-avatar">C</div>
-        <div class="brand-name">Cypher Digital</div>
-      </div>
+      <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
     </div>
   </header>
 
@@ -277,17 +319,20 @@
     </div>
   </div>
 
+
+  <section class="hero-careers container">
+    <div class="container">
+      <h1 class="mt-3">Join Our Team</h1>
+      <p>We don't hire employees — we grow partners in innovation. Build world-class digital products with us.</p>
+      <a href="#openroles" class="btn-gradient mt-4">See Open Positions →</a>
+    </div>
+  </section>
+
   <section class="career-section text-center">
-    <img src="Careers Icon/Career Showcase.png" class="img-fluid rounded" width="600">
-  </section>
 
-  <section class="hero-careers">
-    <span class="badge-soft">CAREERS</span>
-    <h1 class="mt-3">Join Our Team</h1>
-    <p>We don't hire employees — we grow partners in innovation. Build world-class digital products with us.</p>
-    <a href="#openroles" class="btn-gradient mt-4">See Open Positions →</a>
+    <div class="container"><img src="Careers Icon/Career Showcase.png" class="img-fluid" style="border-radius: 30px;"
+        width="1800"></div>
   </section>
-
 
   <section class="career2-section text-white">
     <div class="container py-5">
@@ -326,8 +371,6 @@
       </div>
     </div>
   </section>
-
-
 
 
   <section class="container my-5">
@@ -409,17 +452,16 @@
     </div>
   </section>
 
-  <!-- FOOTER (SAMA DENGAN MAINPAGE.HTML) -->
+  <!-- bagian footer ni -->
   <footer class="footer-section py-5 ">
     <div class="container text-light">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="d-flex align-items-center mb-3">
-            <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
-            <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
-          </div>
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+              style="transform: translate(-20px, -15px)"></div>
           <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
-          <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real
+            results.
           </p>
         </div>
 
@@ -437,9 +479,9 @@
           <h6 class="fw-semibold mb-3">Company</h6>
           <ul class="list-unstyled small">
             <li><a href="About.html" class="footer-link">About Us</a></li>
-            <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
             <li><a href="Careers.html" class="footer-link">Careers</a></li>
-            <li><a href="#" class="footer-link">Blog</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
           </ul>
         </div>
 

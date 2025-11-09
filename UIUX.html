@@ -30,25 +30,20 @@
     }
 
     .brand-chip {
+      height: 3rem;
+      width: 8rem;
       display: flex;
       align-items: center;
       gap: .6rem;
-      padding: .25rem .6rem;
-      border-radius: 999px;
-      background: #fff;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
     }
 
-    .brand-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      background: linear-gradient(180deg, var(--t), var(--b))
+    .logo-img {
+      width: 100%;
+      justify-content: center
     }
 
     .back-link {
@@ -438,18 +433,6 @@
       box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
     }
 
-    /* .showcase:after {
-      content: "</>";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, .35);
-      font-weight: 800;
-      font-size: 160px;
-      letter-spacing: -.04em
-    } */
-
     @media (min-width:992px) {
       .hero {
         padding: 16px 0 88px
@@ -615,24 +598,6 @@
       height: 100%;
     }
 
-    /* .showcase::after {
-      content: "<ee/>";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, .35);
-      font-weight: 800;
-      font-size: 160px;
-      letter-spacing: -.04em;
-    } */
-
-    /* @media (min-width: 992px) {
-      .showcase {
-        height: 440px
-      }
-    } */
-
     /* Sections */
     .section {
       padding: 56px 0
@@ -748,12 +713,6 @@
       border-radius: 18px
     }
 
-    /* Thumbs */
-    /* .thumb {
-      height: 200px;
-      background: linear-gradient(120deg, #e6faff, #f0f4ff);
-      border-bottom: 1px solid #e9eef5
-    } */
 
     /* CTA */
     .cta {
@@ -791,17 +750,108 @@
       border-radius: 999px;
     }
 
+    /* Utilities */
+    .hero+.cta {
+      display: none
+    }
+
     /* Footer */
     footer {
       background: #0e1220;
       color: #b7c1d6;
       padding: 24px 0;
-      text-align: center
     }
 
-    /* Utilities */
-    .hero+.cta {
-      display: none
+
+    .footer-section {
+      padding: 60px 20px;
+      background-color: #232437;
+      color: #ffffff;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      /* Menambahkan ruang kiri-kanan */
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 250px;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-link {
+      color: #b0b3c4;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+    }
+
+    .footer-divider {
+      border-top: 1px solid #2e2f44;
+      margin-top: 40px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      padding-top: 20px;
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 768px) {
+      .footer-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-container {
+        padding: 0 20px;
+      }
+    }
+
+    .deconone {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -816,7 +866,10 @@
     </div>
   </div>
   <div class="container">
-    <div class="crumbs mb-2">Home › <a href="#">Services</a> › UI/UX Design</div>
+    <div class="crumbs mb-2">
+      <a href="Main page.html">Home</a> &nbsp;›&nbsp; <a href="Main page.html#idservice"><span>Services</span></a>
+      &nbsp;›&nbsp; UI/UX Design
+    </div>
   </div>
 
   <!-- Hero -->
@@ -1400,16 +1453,60 @@
           project.
         </p>
         <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a class="btn btn-light px-4" href="#">Schedule Consultation</a>
+          <a class="btn btn-light px-4" href="Main page.html#contact">Schedule Consultation</a>
 
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container small text-center">© 2025 Cypher Digital. Decode the Chaos. Design the Future.</div>
+  <!-- bagian footer ni -->
+  <footer class="footer-section py-5 ">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+              style="transform: translate(-20px, -15px)"></div>
+          <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
+          </p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="Web Development.html" class="footer-link">Web Development</a></li>
+            <li><a href="UIUX.html" class="footer-link">UI/UX Design</a></li>
+            <li><a href="Digital Strategy.html" class="footer-link">Digital Strategy</a></li>
+            <li><a href="Brand Identity.html" class="footer-link">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a href="About.html" class="footer-link">About Us</a></li>
+            <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Careers.html" class="footer-link">Careers</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="signin.html" class="footer-link">Login</a></li>
+            <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+            <li><a href="documentation.html" class="footer-link">Documentation</a></li>
+            <li><a href="Contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider mt-4" />
+    </div>
   </footer>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {

@@ -342,30 +342,75 @@
             font-weight: 800;
         }
 
-        /* ====== Footer (same look as main) ====== */
+        /* Footer */
+        footer {
+            background: #0e1220;
+            color: #b7c1d6;
+            padding: 24px 0;
+        }
+
+
         .footer-section {
-            padding: 60px 0;
-            background-color: var(--panel);
-            color: #fff;
+            padding: 60px 20px;
+            background-color: #232437;
+            color: #ffffff;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            /* Menambahkan ruang kiri-kanan */
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+            flex: 1 1 250px;
+            min-width: 200px;
         }
 
         .footer-logo {
             width: 40px;
             height: 40px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(180deg, var(--accent-a) 0%, var(--accent-b) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
             border-radius: 10px;
-            font-weight: 700;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
         }
 
         .footer-link {
             color: #b0b3c4;
             text-decoration: none;
+            transition: color 0.2s ease-in-out;
         }
 
         .footer-link:hover {
-            color: #fff;
+            color: #ffffff;
         }
 
         .footer-divider {
@@ -373,7 +418,29 @@
             margin-top: 40px;
         }
 
-        /* Container overflow safety for animations */
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            padding-top: 20px;
+        }
+
+        /* Responsif Mobile */
+        @media (max-width: 768px) {
+            .footer-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-container {
+                padding: 0 20px;
+            }
+        }
+
+        .deconone {
+            text-decoration: none;
+        }
+
         .hero-about,
         .values,
         .process,
@@ -395,15 +462,6 @@
             font-weight: 600;
         }
 
-        .brand-chip {
-            display: flex;
-            align-items: center;
-            gap: .6rem;
-            padding: .25rem .5rem;
-            border-radius: 999px;
-            background: var(--surface);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
-        }
 
         .brand-avatar {
             width: 28px;
@@ -439,6 +497,23 @@
             color: #2b2f36;
             text-decoration: underline
         }
+
+        .brand-chip {
+            height: 3rem;
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            border-radius: 50px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .logo-img {
+            width: 100%;
+            justify-content: center
+        }
     </style>
 </head>
 
@@ -447,10 +522,7 @@
     <header class="topbar">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
-            <div class="brand-chip">
-                <div class="brand-avatar">C</div>
-                <div class="brand-name">Cypher Digital</div>
-            </div>
+            <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
         </div>
     </header>
 
@@ -677,14 +749,13 @@
         </div>
     </section>
 
+    <!-- bagian footer ni -->
     <footer class="footer-section py-5 ">
         <div class="container text-light">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
-                        <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
-                    </div>
+                    <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+                            style="transform: translate(-20px, -15px)"></div>
                     <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
                     <p class="text small">We transform complex challenges into elegant digital solutions that drive real
                         results.
@@ -705,9 +776,9 @@
                     <h6 class="fw-semibold mb-3">Company</h6>
                     <ul class="list-unstyled small">
                         <li><a href="About.html" class="footer-link">About Us</a></li>
-                        <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
+                        <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
                         <li><a href="Careers.html" class="footer-link">Careers</a></li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="Blog.html" class="footer-link">Blog</a></li>
                     </ul>
                 </div>
 
@@ -725,10 +796,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Reveal-on-scroll (matching main)
         document.addEventListener('DOMContentLoaded', function () {
             const sections = document.querySelectorAll('.hero-about, .values, .process, .team, .timeline, .cta-band, .footer-section');
             const observer = new IntersectionObserver((entries) => {

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Rinter';
+      src: url(Rinter.woff2);
+    }
+
+    body {
+      font-family: 'Rinter', sans-serif;
+      background-color: #ffffff;
+      color: #0b0c2a;
+      margin: 0;
+    }
+
+    /* Shared utilities */
+    .badge-soft {
+      background-color: #e8f4ff;
+      color: #007bff;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .btn-gradient {
+      background: linear-gradient(180deg, #2ad3c9 0%, #245bff 100%);
+      color: #fff !important;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+      display: inline-block;
+      border: 0;
+      box-shadow: 0 8px 24px rgba(36, 91, 255, .25);
+    }
+
+    .btn-gradient:hover {
+      filter: brightness(1.02);
+      transform: none;
+      opacity: 1;
+    }
+
+    /* Subscribe toggle (CSS-only) */
+    .subscribe-toggle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .subscribe-toggle:focus+.subscribe-btn {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+
+    .subscribe-btn .label-on {
+      display: none;
+    }
+
+    .subscribe-toggle:checked+.subscribe-btn .label-off {
+      display: none;
+    }
+
+    .subscribe-toggle:checked+.subscribe-btn .label-on {
+      display: inline;
+    }
+
+    /* Subscribed state: white with blue outline, same visual size */
+    .subscribe-toggle:checked+.subscribe-btn {
+      background: #ffffff;
+      color: var(--brand-blue) !important;
+      border: 2px solid var(--brand-blue);
+      box-shadow: none;
+      padding: 10px 24px;
+      /* offsets 2px border to match size */
+    }
+
+    .subscribe-toggle:checked+.subscribe-btn:hover {
+      filter: none;
+    }
+
+    /* Header styles copied from Web Development */
+    :root {
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+      --ink: #0b0c2a;
+      --surface: #ffffff;
+    }
+
+    .topbar {
+      padding: 12px 0;
+      background: #fff;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      color: #2b2f36;
+      font-size: .95rem;
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2b2f36;
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3;
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none;
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline;
+    }
+
+    .badge-custom {
+      display: inline-block;
+      background: #e8f7ff;
+      color: #00bcd4;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+    }
+
+    .hero-title {
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .hero-sub {
+      color: #5c6676;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      color: #6c757d;
+      max-width: 54ch;
+    }
+
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #2b2f36;
+      border-radius: 999px;
+      padding: .75rem 1.1rem;
+      font-weight: 700;
+    }
+
+    .hero-wrap {
+      padding: 24px 0 48px;
+      background: #fff;
+    }
+
+    .hero-left {
+      padding-top: 24px;
+    }
+
+    @media (min-width: 992px) {
+      .hero-wrap {
+        padding: 16px 0 88px;
+      }
+
+      .hero-left {
+        padding-top: 40px;
+      }
+    }
+
+    .showcase {
+      background: linear-gradient(180deg, var(--brand-teal) 0%, var(--brand-blue) 100%);
+      height: 360px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(24, 32, 56, .15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase::after {
+      content: none;
+    }
+
+    .showcase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Story card styles (from Web Development) */
+    .story-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .story-card {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(24, 32, 56, .08);
+      height: 100%;
+    }
+
+    .story-img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .story-body {
+      padding: 18px;
+    }
+
+    .mini-pill {
+      display: inline-block;
+      background: #eef4ff;
+      border: 1px solid #e2e8f0;
+      color: #6b7a8a;
+      font-size: .75rem;
+      border-radius: 8px;
+      padding: .2rem .5rem;
+      margin-right: .25rem
+    }
+
+    /* Add spacing between sections and footer */
+    .section {
+      padding: 56px 0;
+    }
+
+    /* Footer (same as Careers) */
+    .footer-section {
+      padding: 60px 20px;
+      background-color: #232437;
+      color: #ffffff;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-link {
+      color: #b0b3c4;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-divider {
+      border-top: 1px solid #2e2f44;
+      margin-top: 40px;
+    }
+
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Header copied to match Web Development header -->
+  <header class="topbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="Main page.html" class="back-link">&larr; Back to Home</a>
+      <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
+    </div>
+  </header>
+
+  <!-- Hero copied to match Web Development hero layout -->
+  <main class="hero-wrap">
+    <div class="container">
+      <div class="crumbs mb-4">
+        <a href="Main page.html">Home</a> &nbsp;&raquo;&nbsp; <strong>Blog</strong>
+      </div>
+
+      <div class="row align-items-start g-4 g-lg-5">
+        <div class="col-lg-6 hero-left">
+          <div class="mb-3"><span class="badge-custom">BLOG</span></div>
+          <h1 class="display-4 hero-title mb-3">Insights &amp; Stories</h1>
+          <h5 class="hero-sub mb-3">From the Cypher Digital team</h5>
+          <p class="hero-copy mb-4">Ideas, case studies, and product thinking from Cypher Digital.</p>
+          <div class="d-flex gap-3 align-items-center">
+            <input type="checkbox" id="subscribeToggle" class="subscribe-toggle" />
+            <label for="subscribeToggle" class="btn btn-gradient subscribe-btn" aria-live="polite">
+              <span class="label-off">Subscribe</span>
+              <span class="label-on">Subscribed</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="showcase"><img src="BlogPic.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Latest Posts (cards like Success Stories) -->
+  <section class="section">
+    <div class="container">
+      <h2 class="display-5 mb-2">Latest Posts</h2>
+      <p class="lead mb-4">Fresh insights from our team</p>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="blog-crafting-digital-experiences.html" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200"
+                alt="developer desk" />
+              <div class="story-body">
+                <span class="mini-pill">Product</span>
+                <h5 class="mt-2 mb-1">Crafting Digital Experiences That Feel Effortless</h5>
+                <div class="text-muted mb-2">5 min read • Jan 2025</div>
+                <div class="mb-2">
+                  <div class="text-muted">Why friction is your biggest UX risk</div>
+                  <div class="text-muted">Speed, clarity, and trust signals</div>
+                  <div class="text-muted">Designing for modern user intent</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a href="blog-design-systems-that-scale.html" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200"
+                alt="design system board" />
+              <div class="story-body">
+                <span class="mini-pill">Design</span>
+                <h5 class="mt-2 mb-1">Design Systems That Scale With Your Team</h5>
+                <div class="text-muted mb-2">7 min read • Dec 2024</div>
+                <div class="mb-2">
+                  <div class="text-muted">Tokens, components, and governance</div>
+                  <div class="text-muted">Avoiding drift across platforms</div>
+                  <div class="text-muted">Practical rollout in sprints</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4">
+          <a href="blog-performance-matters.html" class="story-link">
+            <div class="story-card">
+              <img class="story-img" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200"
+                alt="performance metrics" />
+              <div class="story-body">
+                <span class="mini-pill">Engineering</span>
+                <h5 class="mt-2 mb-1">Performance Matters: Speed As a Product Feature</h5>
+                <div class="text-muted mb-2">6 min read • Nov 2024</div>
+                <div class="mb-2">
+                  <div class="text-muted">Core Web Vitals that actually move KPIs</div>
+                  <div class="text-muted">Caching and edge strategies that scale</div>
+                  <div class="text-muted">Ship faster without breaking UX</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- bagian footer ni -->
+  <footer class="footer-section py-5 ">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+              style="transform: translate(-20px, -15px)"></div>
+          <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real
+            results.
+          </p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="Web Development.html" class="footer-link">Web Development</a></li>
+            <li><a href="UIUX.html" class="footer-link">UI/UX Design</a></li>
+            <li><a href="Digital Strategy.html" class="footer-link">Digital Strategy</a></li>
+            <li><a href="Brand Identity.html" class="footer-link">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a href="About.html" class="footer-link">About Us</a></li>
+            <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Careers.html" class="footer-link">Careers</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="signin.html" class="footer-link">Login</a></li>
+            <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+            <li><a href="documentation.html" class="footer-link">Documentation</a></li>
+            <li><a href="Contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider mt-4" />
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

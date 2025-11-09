@@ -19,6 +19,209 @@
       padding: 0px;
     }
 
+     /* Section 1 (Gradient + Image Background) */
+    #sec1 {
+      position: relative;
+      background: linear-gradient(to bottom, #2AD3C9, #245BFF, #6B46FF);
+      color: #fff;
+      font-family: "Rinter";
+      min-height: 100vh;
+      overflow-x: hidden;
+      z-index: 1;
+    }
+
+    /* Tambahkan layer gambar di atas gradient */
+    #sec1::before {
+        
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://i.postimg.cc/MTTJTbHV/unsplash-xu-TJZ7u-D7-PI-1.png") center/cover no-repeat;
+      opacity: 0.2; /* opacity 20% */
+      z-index: 0;
+    }
+
+    /* Pastikan semua konten di atas layer gambar */
+    #sec1 * {
+      position: relative;
+      z-index: 1;
+    }
+.custom-badge {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparan */
+  backdrop-filter: blur(10px); /* efek blur kaca */
+  -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+  color: #ffffff; /* biru elegan */
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* bayangan lembut */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.3px;
+}
+
+
+    /* Navbar */
+    .navbar {
+      background: transparent;
+      padding: 15px 60px;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #fff !important;
+      font-size: 1.8rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #eafaff !important;
+      margin: 0 15px;
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #fff !important;
+    }
+
+    .btn-login {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 500;
+      margin-right: 32px;
+      font-size: 1.6rem;
+    }
+
+    .ap{
+      
+      font-size: 1.6rem;
+      padding: 15px 10px;
+    }
+
+    .btn-signup {
+      background-color: #ffffff;
+      color: #0083b0;
+      font-weight: 600;
+      border-radius: 200px;
+      padding: 16px 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+      font-size: 1.6rem;
+    }
+
+    .btn-signup:hover {
+      background-color: #dff8ff;
+      color: #005f7a;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 130px 20px 100px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 9rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #3dfba5;
+    }
+
+    .hero p {
+      font-size: 2.8rem;
+      color: #dff9ff;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    .hero .btn-primary {
+          width: 24rem;
+        height: 6rem;
+      background-color: #fff;
+      color: #0083b0;
+      border: none;
+      border-radius: 200px;
+      padding: 12px 35px;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+      font-size: 1.6rem;
+    }
+
+    .hero .btn-primary:hover {
+      background-color: #dff8ff;
+      color: #005f7a;
+    }
+
+    .btn-outline {
+        width: 24rem;
+        height: 6rem;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      margin-top: 10px;
+      border-radius: 200px;
+      padding: 10px 30px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+      font-size: 1.6rem;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Button Boxes */
+    .buttons {
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* Stats Boxes */
+    .stats {
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      width: 20rem;
+      border-radius: 15px;
+      padding: 25px 40px;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 4.6rem;
+      margin-top: 16px;
+      margin-bottom: 3px;
+    }
+
+    .stat-box p {
+      margin-top: 1px;
+      font-size: 1.618rem;
+      color: #bdf4ff;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        padding: 15px 25px;
+      }
+    }
+
     .brand-section {
       background-color: #0b0c2a;
       color: white;
@@ -151,6 +354,19 @@
 
     .GLGOE {
       margin-top: 0.8rem;
+    }
+
+    .btn-outlinee{
+      background: white;
+      border: 2px solid lightblue;
+      border-radius: 25px;
+      height: 3rem;
+      width: 9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: Black;
     }
 
     .TOJA {
@@ -317,6 +533,7 @@
     .service-badge {
       background-color: #e6f7ff;
       color: #007bff;
+      opacity: 0.65;
       font-size: 0.7rem;
       font-weight: 600;
       padding: 4px 10px;
@@ -982,19 +1199,19 @@
     }
 
     .form-section-wrapper-x91 .form-container-x91 {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
       text-align: center;
     }
 
     .form-section-wrapper-x91 .form-heading-x91 {
-      font-size: 32px;
+      font-size: 48px;
       font-weight: 600;
       margin-bottom: 10px;
     }
 
     .form-section-wrapper-x91 .form-subheading-x91 {
-      font-size: 16px;
+      font-size: 20px;
       opacity: 0.8;
       margin-bottom: 40px;
     }
@@ -1010,7 +1227,7 @@
     .form-section-wrapper-x91 .form-row-x91 {
       display: flex;
       gap: 20px;
-      margin-bottom: 20px;
+      
       flex-wrap: wrap;
     }
 
@@ -1021,11 +1238,12 @@
     }
 
     .form-section-wrapper-x91 .form-group-x91 label {
-      font-size: 11px;
+      font-size: 16px;
       font-weight: 500;
       text-align: left;
       color: #ffffffcc;
-      margin-bottom: 6px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       letter-spacing: 0.5px;
     }
 
@@ -1058,8 +1276,8 @@
       border: none;
       cursor: pointer;
       font-weight: 500;
-      font-size: 14px;
-      margin-top: 20px;
+      font-size: 20px;
+      margin-top: 40px;
       width: 100%;
       transition: all 0.3s ease;
     }
@@ -1070,7 +1288,7 @@
 
     .form-section-wrapper-x91 .form-footer-x91 {
       margin-top: 30px;
-      font-size: 12px;
+      font-size: 16px;
       color: rgba(255, 255, 255, 0.7);
     }
 
@@ -1174,24 +1392,88 @@
 
 <body>
 
+<div id="sec1">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="Main Page Icon/Cypher Horizontal PNG.png" width="320" height="110" class="me-2" alt="Logo" style="transform: translateX(-60px);">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="About.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idservice">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idcasestudy">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex">
+          <a href="signin.html" class="ap"><button class="btn-login">Log In</button></a>
+          <a href="signup.html"><button class="btn btn-signup">Sign Up</button></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+
+        <h1>Decode the chaos.<br /><span>Design the Future.</span></h1>
+        <p>We transform complex challenges into elegant digital solutions that drive real results.</p>
+        <div class="buttons">
+          <div class="button-box">
+            <a href="#contact"><button class="btn btn-primary">Start Your Project &nbsp; &#x279C;</button></a><br />
+          </div>
+          <div class="button-box"> 
+            <a href="#idcasestudy"><button class="btn btn-outline">View Our Work</button></a>
+          </div> 
+        </div>
+        <div class="stats">
+          <div class="stat-box">
+            <div><img src="Main Page Icon/customer (1).png" width="80" height="80" alt=""></div>
+            <h3>50+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-box">
+            <div><img src="Main Page Icon/suitcase.png" width="80" height="80" alt=""></div>
+            <h3>100+</h3>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="stat-box">
+            <img src="Main Page Icon/customer-review.png" width="80" height="80" alt="">
+            <h3>98%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
 
   <section class="brand-section">
     <div class="container">
       <p class="mb-4">TRUSTED BY INNOVATIVE COMPANIES WORLDWIDE</p>
       <div class="d-flex flex-wrap justify-content-center btn-group">
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/211.png" alt="">
         </div>
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/212.png" alt="">
         </div>
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/213.png" alt="">
         </div>
       </div>
       <div class="d-flex flex-wrap justify-content-center btn-group">
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/217.png" alt="">
         </div>
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/215.png" alt="">
         </div>
-        <div class="TOMBOL"><img src="https://i.postimg.cc/hjhxr5mX/TB1-Hs8-Ga-MFY-1-Vj-SZFn-XXc-FHXXa.png" alt="">
+        <div class="TOMBOL"><img src="Main Page Icon/brand/216.png" alt="">
         </div>
       </div>
   </section>
@@ -1211,8 +1493,8 @@
             design digital experiences that drive measurable results.
           </p>
           <div class="d-flex gap-3">
-            <a href="#" class="TOJA">Work With Us</a>
-            <a href="#" class="btn btn-outline">View Projects</a>
+            <a href="#contact" class="TOJA">Work With Us</a>
+            <a href="#idcasestudy" class="btn btn-outlinee">View Projects</a>
           </div>
         </div>
 
@@ -1220,28 +1502,28 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <div class="stats-box">
-                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/QCFQV6Dq/Icon-1.png" alt=""></div>
+                <div class="LGOE"><img class="GLGOE" src="Main Page Icon/time.png"  width="40"></div>
                 <h4>5+</h4>
                 <p>Years Experience</p>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="stats-box">
-                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/jdJ6bkZK/Icon-2.png" alt=""></div>
+                <div class="LGOE"><img class="GLGOE" src="Main Page Icon/customer (1).png" width="40" alt=""></div>
                 <h4>50+</h4>
                 <p>Happy Clients</p>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="stats-box">
-                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/W1GMDqR2/Icon.png" alt=""></div>
+                <div class="LGOE"><img class="GLGOE" src="Main Page Icon/suitcase.png" width="40"></div>
                 <h4>100+</h4>
                 <p>Projects Completed</p>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="stats-box">
-                <div class="LGOE"><img class="GLGOE" src="https://i.postimg.cc/d0nr6Mtx/Vector.png" alt=""></div>
+                <div class="LGOE"><img class="GLGOE" src="Main Page Icon/star.png" width="40"></div>
                 <h4>98%</h4>
                 <p>Success Rate</p>
               </div>
@@ -1262,7 +1544,7 @@
         <div class="col-md-5">
           <div class="why-card">
             <div class="why-icon icon-teal">
-              <img src="https://i.postimg.cc/KY14kQ87/Icon-4.png" alt="">
+              <img src="Main Page Icon/target.png" width="32">
             </div>
             <h5>Strategic Thinking</h5>
             <p class="why-text">Data-driven insights that decode market complexity and uncover opportunities.</p>
@@ -1272,7 +1554,7 @@
         <div class="col-md-5">
           <div class="why-card">
             <div class="why-icon icon-blue">
-              <img src="https://i.postimg.cc/05Yjwz9q/Icon-5.png" alt="">
+              <img src="Main Page Icon/rapid.png" width="32">
             </div>
             <h5>Rapid Execution</h5>
             <p class="why-text">Agile workflows that transform concepts into production-ready solutions fast.</p>
@@ -1282,7 +1564,7 @@
         <div class="col-md-5">
           <div class="why-card">
             <div class="why-icon icon-purple">
-              <img src="https://i.postimg.cc/hPKjbKGy/Icon-7.png" alt="">
+              <img src="Main Page Icon/increase.png" width="32">
             </div>
             <h5>Built to Last</h5>
             <p class="why-text">Scalable architecture and security-first development for long-term growth.</p>
@@ -1292,7 +1574,7 @@
         <div class="col-md-5">
           <div class="why-card">
             <div class="why-icon icon-green">
-              <img src="https://i.postimg.cc/x82dZ2ys/Icon-3.png" alt="">
+              <img src="Main Page Icon/target (1).png" width="32">
             </div>
             <h5>Results Focused</h5>
             <p class="why-text">Every pixel, every line of code serves your business objectives.</p>
@@ -1382,8 +1664,7 @@
     <!-- disini -->
     <div class="impact-cards">
       <div class="impact-card" style="overflow: hidden;">
-        <img src="image.png" style="overflow: hidden; object-fit: cover" alt="">
-        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+        <img src="Main Page Icon/Case/FinTech Revolution.jpg" style="overflow: hidden; object-fit: cover" alt="">
         <div class="card-body-a">
           <span class="card-tag">WEB APP</span>
           <h5>FinTech Revolution</h5>
@@ -1396,8 +1677,8 @@
       </div>
 
 
-      <div class="impact-card">
-        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+      <div class="impact-card" style="overflow: hidden;">
+        <img src="Main Page Icon/Case/Healthcare Portal.jpg" style="overflow: hidden; object-fit: cover" alt="">
         <div class="card-body-a">
           <span class="card-tag">DESIGN SYSTEM</span>
           <h5>Healthcare Portal</h5>
@@ -1410,8 +1691,8 @@
       </div>
 
 
-      <div class="impact-card">
-        <div class="arrow-icon"><a href=""><img src="https://i.postimg.cc/QNgfFJPf/Container.png" alt=""></a></div>
+      <div class="impact-card" style="overflow: hidden;">
+        <img src="Main Page Icon/Case/E-Commerce Scale.jpg" style="overflow: hidden; object-fit: cover" alt="">
         <div class="card-body-a">
           <span class="card-tag">FULL STACK</span>
           <h5>E-commerce Scale</h5>
@@ -1435,7 +1716,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">TF</div>
+            <div class=""><img src="Main Page Icon/client/TechFlow.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">TechFlow</h5>
             <span class="client-tag">SaaS</span>
             <p class="client-desc mb-0">Cloud infrastructure platform</p>
@@ -1444,7 +1725,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">HS</div>
+            <div class=""><img src="Main Page Icon/client/Healthsync.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">HealthSync</h5>
             <span class="client-tag">Healthcare</span>
             <p class="client-desc mb-0">Patient management system</p>
@@ -1453,7 +1734,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">RP</div>
+            <div class=""><img src="Main Page Icon/client/RetailPro.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">RetailPro</h5>
             <span class="client-tag">E-commerce</span>
             <p class="client-desc mb-0">Multi-vendor marketplace</p>
@@ -1462,7 +1743,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">FH</div>
+            <div class=""><img src="Main Page Icon/client/FinanceHub.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">FinanceHub</h5>
             <span class="client-tag">FinTech</span>
             <p class="client-desc mb-0">Trading platform</p>
@@ -1471,7 +1752,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">ET</div>
+            <div class=""><img src="Main Page Icon/client/EduTech.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">EduTech</h5>
             <span class="client-tag">Education</span>
             <p class="client-desc mb-0">Learning management system</p>
@@ -1480,7 +1761,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">CS</div>
+            <div class=""><img src="Main Page Icon/client/CloudSync.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">CloudScale</h5>
             <span class="client-tag">Infrastructure</span>
             <p class="client-desc mb-0">Cloud solutions provider</p>
@@ -1489,7 +1770,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">DS</div>
+            <div class=""><img src="Main Page Icon/client/DataSync.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">DataSync</h5>
             <span class="client-tag">Analytics</span>
             <p class="client-desc mb-0">Business intelligence</p>
@@ -1498,7 +1779,7 @@
 
         <div class="col-md-3 col-sm-6">
           <div class="client-card p-4">
-            <div class="client-icon">MF</div>
+            <div class=""><img src="Main Page Icon/client/MediaFlow.png" alt="" width="33%" height="33%"></div>
             <h5 class="mt-3 mb-1 fw-semibold">MediaFlow</h5>
             <span class="client-tag">Media</span>
             <p class="client-desc mb-0">Content distribution</p>
@@ -1551,8 +1832,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3">★★★★★</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "Cypher Digital transformed our outdated platform into a modern, high-performing application. Their
               strategic approach and technical expertise exceeded our expectations."
@@ -1570,8 +1851,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3">★★★★★</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "Working with Cypher Digital was a game-changer. They didn’t just build a product—they became true
               partners in our growth journey. Incredible results."
@@ -1587,7 +1868,7 @@
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
             <div class="testimonial-stars mb-3 text-warning">★★★★☆</div>
             <p class="testimonial-text">
               "Cypher Digital didn’t just meet our expectations—they redefined what we thought was possible. The
@@ -1605,8 +1886,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3 text-success">★★★★★</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "The attention to detail, creative thinking, and consistent delivery make Cypher Digital our first call
               for any digital initiative. Truly world-class!"
@@ -1623,8 +1904,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3 text-primary">★★★★☆</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★☆</div>
             <p class="testimonial-text">
               "From start to finish, the Cypher Digital team was responsive, strategic, and incredibly efficient. We now
               have a product we’re proud to show off."
@@ -1641,7 +1922,7 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
             <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "Their ability to turn our vague ideas into a polished, user-friendly platform was impressive. Cypher
@@ -1660,8 +1941,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3 text-success">★★★★☆</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★☆</div>
             <p class="testimonial-text">
               "What impressed us most was the communication and transparency. The Cypher team always kept us in the loop
               and delivered ahead of schedule."
@@ -1679,8 +1960,8 @@
 
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
-            <div class="testimonial-stars mb-3 text-primary">★★★★★</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
+            <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "Cypher Digital helped us break into a new market with a powerful digital product. Their business insight
               was just as valuable as their technical skills."
@@ -1696,7 +1977,7 @@
         </div>
         <div class="col-md-4 col-sm-6">
           <div class="testimonial-card p-4 h-100">
-            <div class="testimonial-logo mb-2">💬</div>
+            <div class="testimonial-logo mb-2"><img src="Main Page Icon/comment.png" alt=""></div>
             <div class="testimonial-stars mb-3 text-warning">★★★★★</div>
             <p class="testimonial-text">
               "We’ve worked with many vendors, but Cypher Digital felt like an extension of our own team. Their
@@ -1715,14 +1996,14 @@
 
       <h1 style="margin-top: 3rem;">Ready to become our next success story?</h1>
       <div class="mt-5">
-        <a href="#" class="btn-testimonial-cta">Start Your Project</a>
+        <a href="#contact" class="btn-testimonial-cta">Start Your Project</a>
       </div>
     </div>
   </section>
-  <section class="pricing-section py-5">
+  <section class="pricing-section py-5" id="pricing">
     <div class="container text-center">
       <div class="mb-4">
-        <span class="badge rounded-pill text-bg-light px-3 py-2 mb-3">PRICING</span>
+        <span class="testimonial-badge mb-3">PRICING</span>
         <h2 class="fw-bold display-6">Simple, Transparent Pricing</h2>
         <p class="text-muted">Choose the perfect plan for your project. No hidden fees, just exceptional results.</p>
       </div>
@@ -1731,7 +2012,7 @@
 
         <div class="col-md-4">
           <div class="pricing-card">
-            <h5>Starter</h5>
+            <h2>Starter</h2>
             <p class="desc">Perfect for small projects</p>
             <h2>$2,500 <small>per project</small></h2>
             <ul>
@@ -1741,7 +2022,7 @@
               <li>✅ 1 month support</li>
               <li>✅ Content management</li>
             </ul>
-            <a href="#" class="btn-gradient">Get Started →</a>
+            <a href="#contact" class="btn-gradient">Get Started →</a>
           </div>
         </div>
 
@@ -1749,7 +2030,7 @@
         <div class="col-md-4">
           <div class="pricing-card featured">
             <span class="featured-label">MOST POPULAR</span>
-            <h5>Professional</h5>
+            <h2>Professional</h2>
             <p class="desc">For growing businesses</p>
             <h2>$7,500 <small>per project</small></h2>
             <ul>
@@ -1760,14 +2041,14 @@
               <li>✅ CMS integration</li>
               <li>✅ E-commerce ready</li>
             </ul>
-            <a href="#" class="btn-gradient">Get Started →</a>
+            <a href="#contact" class="btn-gradient">Get Started →</a>
           </div>
         </div>
 
 
         <div class="col-md-4">
           <div class="pricing-card">
-            <h5>Enterprise</h5>
+            <h2>Enterprise</h2>
             <p class="desc">Custom solutions at scale</p>
             <h2>Custom <small>contact us</small></h2>
             <ul>
@@ -1778,7 +2059,7 @@
               <li>✅ Cloud infrastructure</li>
               <li>✅ Priority development</li>
             </ul>
-            <a href="#" class="btn-gradient">Get Started →</a>
+            <a href="#contact" class="btn-gradient">Get Started →</a>
           </div>
         </div>
       </div>
@@ -1789,7 +2070,7 @@
       </p>
     </div>
   </section>
-  <section class="form-section-wrapper-x91">
+  <section class="form-section-wrapper-x91" id="contact">
     <div class="form-container-x91">
       <h1 class="form-heading-x91">Ready to Build Something Amazing?</h1>
       <p class="form-subheading-x91">Tell us about your project and let's create digital magic together.</p>
@@ -1832,10 +2113,7 @@
     <div class="container text-light">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="d-flex align-items-center mb-3">
-            <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
-            <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
-          </div>
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%" style="transform: translate(-20px, -15px)"></div>
           <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
           <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
           </p>
@@ -1857,7 +2135,7 @@
             <li><a href="About.html" class="footer-link">About Us</a></li>
             <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
             <li><a href="Careers.html" class="footer-link">Careers</a></li>
-            <li><a href="#" class="footer-link">Blog</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
           </ul>
         </div>
 

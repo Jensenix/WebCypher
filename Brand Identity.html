@@ -30,25 +30,30 @@
     }
 
     .brand-chip {
+      height: 3rem;
+      width: 8rem;
       display: flex;
       align-items: center;
       gap: .6rem;
-      padding: .25rem .6rem;
-      border-radius: 999px;
-      background: #fff;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .06)
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
     }
 
-    .brand-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      background: linear-gradient(180deg, var(--t), var(--b))
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline
     }
 
     .back-link {
@@ -383,35 +388,103 @@
       margin-top: 0
     }
 
-    /* ====== Footer (same look as main) ====== */
+    /* Footer */
+    footer {
+      background: #0e1220;
+      color: #b7c1d6;
+      padding: 24px 0;
+    }
+
+
     .footer-section {
-      padding: 60px 0;
-      background-color:#232437;
-      color: #fff;
+      padding: 60px 20px;
+      background-color: #232437;
+      color: #ffffff;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      /* Menambahkan ruang kiri-kanan */
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 250px;
+      min-width: 200px;
     }
 
     .footer-logo {
       width: 40px;
       height: 40px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, var(--accent-a) 0%, var(--accent-b) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
       border-radius: 10px;
-      font-weight: 700;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
     }
 
     .footer-link {
       color: #b0b3c4;
       text-decoration: none;
+      transition: color 0.2s ease-in-out;
     }
 
     .footer-link:hover {
-      color: #fff;
+      color: #ffffff;
     }
 
     .footer-divider {
       border-top: 1px solid #2e2f44;
       margin-top: 40px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      padding-top: 20px;
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 768px) {
+      .footer-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-container {
+        padding: 0 20px;
+      }
+    }
+
+    .deconone {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -423,13 +496,15 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="Main page.html#idservice" class="back-link">← Back to Home</a>
       <div class="brand-chip">
-        <div class="brand-avatar">C</div>
-        <div class="fw-semibold">Cypher Digital</div>
+        <img class="logo-img" src="image.png" alt="">
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="crumbs mb-2">Home › <a href="#">Services</a> › Brand Identity</div>
+    <div class="crumbs mb-2">
+      <a href="Main page.html">Home</a> &nbsp;›&nbsp; <a href="Main page.html#idservice"><span>Services</span></a>
+      &nbsp;›&nbsp; Brand Identity
+    </div>
   </div>
 
   <!-- Hero -->
@@ -1048,21 +1123,20 @@
           project.
         </p>
         <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a class="btn btn-light px-4" href="#">Schedule Consultation →</a>
+          <a class="btn btn-light px-4" href="Main page.html#contact">Schedule Consultation →</a>
 
         </div>
       </div>
     </div>
   </section>
 
+  <!-- bagian footer ni -->
   <footer class="footer-section py-5 ">
     <div class="container text-light">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="d-flex align-items-center mb-3">
-            <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
-            <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
-          </div>
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+              style="transform: translate(-20px, -15px)"></div>
           <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
           <p class="text small">We transform complex challenges into elegant digital solutions that drive real results.
           </p>
@@ -1082,9 +1156,9 @@
           <h6 class="fw-semibold mb-3">Company</h6>
           <ul class="list-unstyled small">
             <li><a href="About.html" class="footer-link">About Us</a></li>
-            <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
             <li><a href="Careers.html" class="footer-link">Careers</a></li>
-            <li><a href="#" class="footer-link">Blog</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
           </ul>
         </div>
 

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performance Matters: Speed As a Product Feature — Cypher Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Rinter';
+      src: url('Rinter.woff2');
+    }
+
+    :root {
+      --brand-blue: #245bff;
+      --brand-teal: #2ad3c9;
+      --ink: #0b0c2a;
+    }
+
+    body {
+      font-family: 'Rinter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      margin: 0;
+      background: #ffffff;
+    }
+
+    .topbar {
+      padding: 12px 0;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      color: #2b2f36;
+      font-size: .95rem;
+    }
+
+    .back-link {
+      color: #5b6677;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2b2f36;
+    }
+
+    .crumbs {
+      font-size: .9rem;
+      color: #98a2b3;
+    }
+
+    .crumbs a {
+      color: #6c7a8a;
+      text-decoration: none;
+    }
+
+    .crumbs a:hover {
+      color: #2b2f36;
+      text-decoration: underline;
+    }
+
+    .post-hero {
+      padding: 22px 0 10px;
+    }
+
+    .post-title {
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .post-meta {
+      color: #6c757d;
+    }
+
+    .post-img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 18px 0;
+    }
+
+    .post p {
+      color: #364152;
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .footer-section {
+      padding: 60px 20px;
+      background-color: #232437;
+      color: #ffffff;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #2AD3C9 0%, #245BFF 100%);
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-link {
+      color: #b0b3c4;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-divider {
+      border-top: 1px solid #2e2f44;
+      margin-top: 40px;
+    }
+
+    .brand-chip {
+      height: 3rem;
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      justify-content: center;
+    }
+
+    .logo-img {
+      width: 100%;
+      justify-content: center
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="Blog.html" class="back-link">&larr; Back to Blog</a>
+      <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
+    </div>
+  </header>
+
+  <main class="container post-hero">
+    <div class="crumbs mb-3">
+      <a href="Main page.html">Home</a> &nbsp;&raquo;&nbsp; <a href="Blog.html">Blog</a> &nbsp;&raquo;&nbsp;
+      <strong>Performance Matters</strong>
+    </div>
+    <h1 class="display-5 post-title">Performance Matters: Speed As a Product Feature</h1>
+    <div class="post-meta mb-2">By Cypher Team • Nov 2024 • 6 min read</div>
+    <img class="post-img" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600"
+      alt="performance metrics" />
+
+    <article class="post">
+      <p>Speed changes behavior. Every 100ms of latency compounds drop-off across funnels. Treat performance as a core
+        feature and it will pay back across SEO, conversion, and retention.</p>
+      <p>Optimize what users feel first: LCP, TTI, and input delay. Pre-render critical paths, cache at the edge, and
+        use streaming where possible. Measure regressions on every PR.</p>
+      <p>Perceived performance matters too. Skeletons, optimistic UI, and instant feedback maintain momentum even when
+        the network can’t.</p>
+      <p>Great products are fast by default—and resilient when things aren’t.</p>
+    </article>
+  </main>
+
+  <!-- bagian footer ni -->
+  <footer class="footer-section py-5 ">
+    <div class="container text-light">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+              style="transform: translate(-20px, -15px)"></div>
+          <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
+          <p class="text small">We transform complex challenges into elegant digital solutions that drive real
+            results.
+          </p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="Web Development.html" class="footer-link">Web Development</a></li>
+            <li><a href="UIUX.html" class="footer-link">UI/UX Design</a></li>
+            <li><a href="Digital Strategy.html" class="footer-link">Digital Strategy</a></li>
+            <li><a href="Brand Identity.html" class="footer-link">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a href="About.html" class="footer-link">About Us</a></li>
+            <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
+            <li><a href="Careers.html" class="footer-link">Careers</a></li>
+            <li><a href="Blog.html" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="signin.html" class="footer-link">Login</a></li>
+            <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+            <li><a href="documentation.html" class="footer-link">Documentation</a></li>
+            <li><a href="Contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider mt-4" />
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -22,7 +22,7 @@
         }
 
         .doc-header {
-            padding: 60px 0 30px;
+            padding: 30px 0 30px;
         }
 
         .doc-title {
@@ -56,12 +56,13 @@
 
         /* Card Group */
         .doc-card {
-            background: #fff;
             border-radius: 18px;
             padding: 26px;
             border: 1px solid #eaeef4;
             box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
             transition: .25s;
+            background: linear-gradient(180deg, rgba(36, 91, 255, .06), rgba(42, 211, 201, .06));
+
         }
 
         .doc-card:hover {
@@ -94,14 +95,25 @@
         }
 
         .quick-card {
+            background: #232437;
             border-radius: 14px;
             padding: 20px;
             border: 1px solid #eceef3;
             transition: .2s;
         }
 
+        .quick-card b {
+            color: #fff;
+        }
+
+        .quick-card p {
+            margin: 10px 0;
+            font-size: smaller;
+            color: #a3a0a09b;
+        }
+
         .quick-card:hover {
-            background: #f9fbff;
+            background: #313249;
         }
 
         .footer-section {
@@ -182,15 +194,70 @@
                 padding-left: 18px;
             }
         }
+
+        .brand-chip {
+            height: 3rem;
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            border-radius: 50px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .logo-img {
+            width: 100%;
+            justify-content: center
+        }
+
+        .crumbs {
+            font-size: .9rem;
+            color: #98a2b3
+        }
+
+        .crumbs a {
+            color: #6c7a8a;
+            text-decoration: none
+        }
+
+        .crumbs a:hover {
+            color: #2b2f36;
+            text-decoration: underline
+        }
+
+        .topbar {
+            padding: 12px 0
+        }
+
+        .back-link {
+            color: #5b6677;
+            text-decoration: none;
+            font-weight: 600
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container py-3">
+    <!-- <div class="container py-3">
         <a href="Main page.html" style="text-decoration:none; color:#5b6677; font-weight:600">
             ← Back to Home
         </a>
+    </div> -->
+    <!-- Header -->
+    <header class="topbar">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="Main page.html" class="back-link">← Back to Home</a>
+            <div class="brand-chip"><img class="logo-img" src="image.png" alt="Cypher Digital logo"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="crumbs mb-4 mt-3">
+            <a href="Main page.html">Home</a> &nbsp;› &nbsp;<strong>Documentation</strong>
+        </div>
     </div>
 
 
@@ -214,7 +281,7 @@
             <div class="col-md-6 doc-card-wrapper"
                 data-doc="getting started introduction project setup workflow best practices guide onboarding quick start">
                 <div class="doc-card">
-                    <div class="doc-icon icon-green">🚀</div>
+                    <div class="doc-icon icon-green"><img src="Documentation icon/started.png" width="28"></div>
                     <h5 class="fw-semibold">Getting Started</h5>
                     <p class="text-muted">Onboarding guides and quick start setup.</p>
 
@@ -232,7 +299,7 @@
             <div class="col-md-6 doc-card-wrapper"
                 data-doc="api reference authentication authorization endpoints webhooks integration">
                 <div class="doc-card">
-                    <div class="doc-icon icon-blue">📘</div>
+                    <div class="doc-icon icon-blue"><img src="Documentation icon/api.png" width="28"></div>
                     <h5 class="fw-semibold">API Reference</h5>
                     <p class="text-muted">Integration docs & REST endpoints</p>
 
@@ -250,7 +317,7 @@
             <div class="col-md-6 doc-card-wrapper"
                 data-doc="design system color palette typography components accessibility">
                 <div class="doc-card">
-                    <div class="doc-icon icon-purple">💠</div>
+                    <div class="doc-icon icon-purple"><img src="Documentation icon/design.png" width="28"></div>
                     <h5 class="fw-semibold">Design System</h5>
                     <p class="text-muted">Brand, UI components and accessibility.</p>
 
@@ -268,7 +335,7 @@
             <div class="col-md-6 doc-card-wrapper"
                 data-doc="resources tools templates development case studies portfolio">
                 <div class="doc-card">
-                    <div class="doc-icon icon-blue">🧩</div>
+                    <div class="doc-icon icon-blue"><img src="Documentation icon/tool.png" width="28"></div>
                     <h5 class="fw-semibold">Resources & Tools</h5>
                     <p class="text-muted">Templates and development tools.</p>
 
@@ -294,19 +361,19 @@
             <div class="col-md-4">
                 <div class="quick-card">
                     <b>GitHub Repository</b>
-                    <p class="text-muted">Access our open-source code</p>
+                    <p>Access our open-source code</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="quick-card">
                     <b>Community Forum</b>
-                    <p class="text-muted">Join the discussion</p>
+                    <p>Join the discussion</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="quick-card">
                     <b>Support Center</b>
-                    <p class="text-muted">Get help from our team</p>
+                    <p>Get help from our team</p>
                 </div>
             </div>
         </div>
@@ -322,7 +389,7 @@
 
             <div class="col-md-6">
                 <div class="doc-card">
-                    <div class="doc-icon icon-blue">🎥</div>
+                    <div class="doc-icon icon-blue"><img src="Documentation icon/play.png" width="28"></div>
                     <h5 class="fw-semibold">Video Tutorial — Getting Started</h5>
                     <p class="text-muted">A quick guide to understanding the project setup & workflow.</p>
 
@@ -341,12 +408,12 @@
 
             <div class="col-md-6">
                 <div class="doc-card">
-                    <div class="doc-icon icon-green">🎧</div>
+                    <div class="doc-icon icon-green"><img src="Documentation icon/audio.png" width="28"></div>
                     <h5 class="fw-semibold">Audio — API Authentication Overview</h5>
                     <p class="text-muted">Listen to a short explanation while you code.</p>
 
                     <audio controls class="w-100 mt-3">
-                        <source src="assets/audio/authentication-guide.mp3" type="audio/mpeg">
+                        <source src="Documentation icon/What is an API_.mp3" type="audio/mpeg">
                         Browser Anda tidak mendukung audio player.
                     </audio>
                 </div>
@@ -362,10 +429,8 @@
         <div class="container text-light">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
-                        <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
-                    </div>
+                    <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
+                            style="transform: translate(-20px, -15px)"></div>
                     <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
                     <p class="text small">We transform complex challenges into elegant digital solutions that drive real
                         results.
@@ -386,9 +451,9 @@
                     <h6 class="fw-semibold mb-3">Company</h6>
                     <ul class="list-unstyled small">
                         <li><a href="About.html" class="footer-link">About Us</a></li>
-                        <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
+                        <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
                         <li><a href="Careers.html" class="footer-link">Careers</a></li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="Blog.html" class="footer-link">Blog</a></li>
                     </ul>
                 </div>
 
