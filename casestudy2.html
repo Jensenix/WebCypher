@@ -25,74 +25,7 @@
             margin: 0;
         }
 
-        .brand-chip {
-            height: 3rem;
-            width: 8rem;
-            display: flex;
-            align-items: center;
-            gap: .6rem;
-            border-radius: 50px;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
-            overflow: hidden;
-            justify-content: center;
-        }
-
-        .logo-img {
-            width: 100%;
-            justify-content: center
-        }
-
-        /* Dark hero */
-        .hero-dark {
-            background: radial-gradient(1200px 600px at 80% -10%, #0f2b3a 0%, #0e1420 55%), #0e1420;
-            color: #e8eef7;
-            padding: 20px 0 36px
-        }
-
-        .pill {
-            display: inline-block;
-            padding: .35rem .6rem;
-            border-radius: 999px;
-            background: #101a2b;
-            border: 1px solid #223046;
-            color: #b3c4da;
-            font-size: .75rem;
-            margin-right: .35rem
-        }
-
-        .hero-title {
-            font-weight: 800;
-            letter-spacing: .01em
-        }
-
-        .meta {
-            background: rgba(255, 255, 255, .05);
-            border: 1px solid rgba(255, 255, 255, .15);
-            border-radius: 14px;
-            padding: .9rem 1.1rem;
-            color: #c9d6ea
-        }
-
-        .btn-grad {
-            border: 0;
-            color: #fff;
-            font-weight: 700;
-            background: linear-gradient(180deg, var(--t), var(--b));
-            border-radius: 999px;
-            padding: .7rem 1.1rem;
-            box-shadow: 0 8px 24px rgba(36, 91, 255, .25)
-        }
-
-        .btn-outline {
-            border: 1px solid #2b3445;
-            background: rgba(255, 255, 255, .06);
-            color: #e8eef7;
-            border-radius: 999px;
-            padding: .7rem 1.1rem;
-            font-weight: 700
-        }
-
-        /* Demo bezel section */
+        /* Case study top background */
         .demo-section {
             background: linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(237, 247, 252, .28), rgba(255, 255, 255, .98)), url('Case Study icon/dots_blob_aqua.png');
             padding: clamp(56px, 6vw, 100px) 0;
@@ -162,150 +95,10 @@
 
         .cs-narrative p,
         .cs-narrative ul {
-            color: #2b2f36;
-            opacity: .9;
-            line-height: 1.6
+            color: #3a3f51;
+            line-height: 1.6;
         }
 
-        /* Dev tabs */
-        .dev-tabs input {
-            display: none
-        }
-
-        .dev-tabs .tab-panel {
-            display: none
-        }
-
-        #tab-timeline:checked~#dev-timeline,
-        #tab-features:checked~#dev-features,
-        #tab-team:checked~#dev-team {
-            display: block
-        }
-
-        .seg-wrap {
-            display: flex;
-            justify-content: center
-        }
-
-        .labels {
-            display: flex;
-            gap: 6px;
-            background: #eef2f6;
-            border-radius: 9999px;
-            padding: 6px
-        }
-
-        .seg-item {
-            padding: .4rem 1rem;
-            border-radius: 9999px;
-            color: #637186;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: .9rem;
-            cursor: pointer
-        }
-
-        #tab-timeline:checked~.seg-wrap .labels label[for="tab-timeline"],
-        #tab-features:checked~.seg-wrap .labels label[for="tab-features"],
-        #tab-team:checked~.seg-wrap .labels label[for="tab-team"] {
-            background: #fff;
-            color: #0b0c2a;
-            box-shadow: 0 4px 10px rgba(16, 24, 40, .08)
-        }
-
-        .process-card {
-            background: #fff;
-            border: 1px solid #e9eef5;
-            border-radius: 16px;
-            padding: 1rem 1.25rem;
-            box-shadow: 0 10px 26px rgba(16, 24, 40, .06);
-            margin: 10px 0;
-
-        }
-
-        .step-pill {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-weight: 800;
-            background: linear-gradient(180deg, var(--t), var(--b))
-        }
-
-        .progress-bar {
-            height: 8px;
-            border-radius: 999px;
-            background: #0b0c2a
-        }
-
-        .feat-card {
-            background: #fff;
-            border: 1px solid #e9eef5;
-            border-radius: 14px;
-            padding: .9rem 1.1rem;
-            box-shadow: 0 10px 20px rgba(16, 24, 40, .06);
-            display: flex;
-            align-items: center;
-            gap: .6rem
-        }
-
-        .check-icon {
-            width: 26px;
-            height: 26px;
-            border-radius: 999px;
-            display: grid;
-            place-items: center;
-            background: rgba(42, 211, 201, .18);
-            color: #0fa6a0;
-            font-weight: 800;
-            box-shadow: inset 0 0 0 2px rgba(26, 165, 162, .25)
-        }
-
-        .member-card {
-            background: #fff;
-            border: 1px solid #e9eef5;
-            border-radius: 16px;
-            padding: 1.25rem;
-            text-align: center;
-            box-shadow: 0 10px 26px rgba(16, 24, 40, .06)
-        }
-
-        .avatar-lg {
-            width: 72px;
-            height: 72px;
-            border-radius: 999px;
-            display: grid;
-            place-items: center;
-            margin: 0 auto .5rem;
-            background: linear-gradient(180deg, var(--t), var(--b));
-            color: #fff;
-            font-weight: 800;
-            box-shadow: 0 10px 24px rgba(36, 91, 255, .25)
-        }
-
-        .avatar-lg img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-
-        .role-chip {
-            display: inline-block;
-            padding: .2rem .5rem;
-            border-radius: 999px;
-            background: #eefaf9;
-            color: #0b8a82;
-            font-size: .75rem;
-            font-weight: 700;
-            border: 1px solid #c8efe9;
-            margin: .25rem 0 .35rem
-        }
-
-        /* Metrics table */
         .cs-table-wrapper {
             border-radius: 14px;
             overflow: hidden;
@@ -407,7 +200,16 @@
         .back-link {
             color: #5b6677;
             text-decoration: none;
-            font-weight: 600
+        }
+
+        .brand-chip {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            background: #fff;
+            padding: .25rem .6rem;
+            border-radius: 999px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
         }
 
 
@@ -518,176 +320,31 @@
         </div>
     </section>
 
-    <!-- Narrative -->
-    <section class="cs-narrative">
-        <div class="container">
-            <h2>From Fragmented Journeys to Connected Care</h2>
-            <p class="lead">
-                Patients needed a single, trusted place to schedule, consult virtually, access results, and message
-                clinicians—without sacrificing privacy.
-            </p>
-            <p>
-                Before our engagement, patients juggled multiple apps and phone calls just to confirm an appointment or
-                retrieve lab results. Staff were overwhelmed by manual intake, repetitive questions, and incomplete
-                charts. Telehealth was available, but disjointed from records and billing, causing delays and drop-offs.
-            </p>
-            <h3 class="mt-3">What We Changed</h3>
-            <ul>
-                <li><b>Unified portal</b> for appointments, telehealth, secure messaging, and billing.</li>
-                <li><b>EHR integration</b> (FHIR/HL7) to sync labs, medications, allergies, and visit notes.</li>
-                <li><b>Role-based privacy</b> and encryption to meet HIPAA requirements end-to-end.</li>
-                <li><b>Accessible UI</b> (WCAG 2.1 AA) with bilingual support for key flows.</li>
-            </ul>
-            <p>
-                The result is a calm, predictable care journey. Patients complete pre-visit triage from home, join video
-                visits in a click, and receive follow-up tasks automatically. Staff see fewer calls, fewer no-shows, and
-                cleaner data.
-            </p>
-        </div>
-    </section>
 
-    <!-- Development Process -->
-    <section class="section" id="development">
-        <div class="container">
-            <h2 class="display-5 fw-bold text-center">Development Process</h2>
-            <p class="lead text-muted text-center mb-4">A clinical-grade approach from discovery to rollout</p>
+    <section class="cs-narrative container mt-5">
+        <h2>The Challenge</h2>
+        <p>
+            The client, a multi-location hospital network, struggled with patient overload, manual appointment
+            management,
+            and increasing phone support demand. Patients couldn't access lab results or medical records unless they
+            visited
+            the hospital physically.
+        </p>
 
-            <div class="dev-tabs">
-                <input type="radio" name="devtab" id="tab-timeline" checked>
-                <input type="radio" name="devtab" id="tab-features">
-                <input type="radio" name="devtab" id="tab-team">
+        <h2 class="mt-4">The Transformation</h2>
+        <p>
+            Cypher Digital built a <b>secure healthcare portal</b> that allows patients to book appointments, view
+            records,
+            consult doctors online, and manage prescriptions — all from home.
+        </p>
 
-                <div class="seg-wrap mb-3">
-                    <div class="labels">
-                        <label for="tab-timeline" class="seg-item">Timeline</label>
-                        <label for="tab-features" class="seg-item">Features</label>
-                        <label for="tab-team" class="seg-item">Team</label>
-                    </div>
-                </div>
+        <ul>
+            <li>Online appointment scheduling with automated reminders</li>
+            <li>HIPAA-inspired secure record access & encrypted authentication</li>
+            <li>Telemedicine chat + video consultation</li>
+            <li>Role-based dashboard (Doctor / Patient / Admin)</li>
+        </ul>
 
-                <!-- Timeline -->
-                <div class="vstack gap-3 tab-panel" id="dev-timeline">
-                    <div class="process-card">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="step-pill">1</div>
-                                <div class="fw-semibold">Clinical Discovery</div>
-                            </div>
-                            <span class="badge bg-success">100% Complete</span>
-                        </div>
-                        <div class="text-muted small mb-2">User interviews, workflows, compliance review</div>
-                        <div class="progress-bar"></div>
-                    </div>
-                    <div class="process-card">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="step-pill">2</div>
-                                <div class="fw-semibold">Design & Accessibility</div>
-                            </div>
-                            <span class="badge bg-success">100% Complete</span>
-                        </div>
-                        <div class="text-muted small mb-2">WCAG AA, component library, bilingual flows</div>
-                        <div class="progress-bar"></div>
-                    </div>
-                    <div class="process-card">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="step-pill">3</div>
-                                <div class="fw-semibold">EHR Integration</div>
-                            </div>
-                            <span class="badge bg-success">100% Complete</span>
-                        </div>
-                        <div class="text-muted small mb-2">FHIR/HL7 sync, auth, audit logs</div>
-                        <div class="progress-bar"></div>
-                    </div>
-                    <div class="process-card">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="step-pill">4</div>
-                                <div class="fw-semibold">Pilot & Training</div>
-                            </div>
-                            <span class="badge bg-success">100% Complete</span>
-                        </div>
-                        <div class="text-muted small mb-2">Department pilots, staff onboarding</div>
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
-
-                <!-- Features -->
-                <div class="mt-2 tab-panel" id="dev-features">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Online Scheduling & Reminders
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Telehealth with E-Prescriptions
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Secure Messaging & Triage
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Lab Results & Care Plans
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Insurance & Billing Portal
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feat-card">
-                                <div class="check-icon">✓</div>Role-based Access & Audit
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team -->
-                <div class="mt-2 tab-panel" id="dev-team">
-                    <div class="row g-3">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member-card h-100">
-                                <div class="avatar-lg"><img src="https://i.pravatar.cc/160?img=5"></div>
-                                <div class="fw-semibold">Sarah Chen</div>
-                                <div class="role-chip">Lead Designer</div>
-                                <div class="text-muted small">Led UX research and design system</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member-card h-100">
-                                <div class="avatar-lg"><img src="https://i.pravatar.cc/160?img=32"></div>
-                                <div class="fw-semibold">Michael Ross</div>
-                                <div class="role-chip">Tech Lead</div>
-                                <div class="text-muted small">Architecture and backend development</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member-card h-100">
-                                <div class="avatar-lg"><img src="https://i.pravatar.cc/160?img=35"></div>
-                                <div class="fw-semibold">Emily Parker</div>
-                                <div class="role-chip">Frontend Dev</div>
-                                <div class="text-muted small">React implementation and animations</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member-card h-100">
-                                <div class="avatar-lg"><img src="https://i.pravatar.cc/160?img=65"></div>
-                                <div class="fw-semibold">David Kim</div>
-                                <div class="role-chip">Mobile Dev</div>
-                                <div class="text-muted small">React Native app development</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- dev-tabs -->
-        </div>
     </section>
 
     <!-- Metrics -->
@@ -741,29 +398,7 @@
         </div>
     </section>
 
-    <!-- Visuals -->
-    <section class="section dark">
-        <div class="container">
-            <h2 class="display-6 fw-bold text-center">Visual Showcase</h2>
-            <p class="lead text-center mb-4">Clean, calming, and accessible—designed for trust</p>
-            <div class="row g-3">
-                <div class="col-lg-6">
-                    <div class="shot"><img src="Main Page Icon/visual showcase/Web 1.jpg" alt=""></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shot"><img src="Main Page Icon/visual showcase/Web 2.jpg" alt=""></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shot"><img src="Main Page Icon/visual showcase/Web 3.jpg" alt=""></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shot"><img src="Main Page Icon/visual showcase/Web 4.jpg" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Closing -->
     <section class="container mt-4">
         <h3>Clinical Impact</h3>
         <p>
@@ -783,29 +418,19 @@
         </blockquote>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-dark">
-        <div class="container text-center">
-            <h2 class="display-4 fw-bold">Bring Calm to Your Care Journeys</h2>
-            <p class="lead">Let’s design a secure, patient-first portal for your organization.</p>
-            <div class="d-flex gap-2 justify-content-center">
-                <a class="btn btn-grad" href="Contact.html">Start a Project</a>
-                <a class="btn btn-outline" href="Main page.html#idcasestudy">View All Projects</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- bagian footer ni -->
+    <!-- FOOTER (SAMA DENGAN MAINPAGE.HTML) -->
     <footer class="footer-section py-5 ">
         <div class="container text-light">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div><img src="Main Page Icon/Cypher Horizontal PNG.png" width="80%"
-                            style="transform: translate(-20px, -15px)"></div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="footer-logo d-flex align-items-center justify-content-center">C</div>
+                        <h5 class="ms-2 mb-0 fw-semibold">Cypher Digital</h5>
+                    </div>
                     <p class="mb-2 small">Decode the Chaos. Design the Future.</p>
                     <p class="text small">We transform complex challenges into elegant digital solutions that drive real
-                        results.
-                    </p>
+                        results.</p>
                 </div>
 
                 <div class="col-md-2 mb-4">
@@ -822,7 +447,7 @@
                     <h6 class="fw-semibold mb-3">Company</h6>
                     <ul class="list-unstyled small">
                         <li><a href="About.html" class="footer-link">About Us</a></li>
-                        <li><a href="Main page.html#idcasestudy" class="footer-link">Case Studies</a></li>
+                        <li><a href="#idcasestudy" class="footer-link">Case Studies</a></li>
                         <li><a href="Careers.html" class="footer-link">Careers</a></li>
                         <li><a href="Blog.html" class="footer-link">Blog</a></li>
                     </ul>
